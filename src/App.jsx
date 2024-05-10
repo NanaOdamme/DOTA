@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Header from './components/Header.jsx';
+import HomePage from './components/First-page.jsx';
 import Footer from './components/Footer.jsx';
 import Home from './components/Home.jsx';
 import About from './components/About.jsx';
@@ -14,8 +15,12 @@ import AssetDetailsPage from './components/AssetDetailsPage.jsx';
 const App = () => {
   return (
     <Router>
-      <div >
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        </Routes>
+      <div>
         <Header />
+        
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />

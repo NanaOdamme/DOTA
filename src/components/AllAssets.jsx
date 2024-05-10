@@ -32,7 +32,7 @@ const AllAssets = () => {
       )
       : filteredAssets;
     return (
-        <section className=" bg-black p-2 all">
+        <section className="bg-black pt-20 p-2 all">
 
 <section className="hero grid grid-cols-1 gap-2 p-4 text-center">
       <div className="flex justify-between mb-10">

@@ -85,8 +85,9 @@ const AssetDetails = ({ asset }) => {
   };
 
   return (
-    <section className="assetid bg-black p-2 lg:p-10 text-white">
+    <section className="pt-20 lg:pt-24 assetid bg-black p-2 lg:p-10 text-white">
       {asset && (
+       
         <div  className="lg:p-10 bg-zinc-800 m-5 rounded-lg">
           <div className="grid grid-cols-1  lg:grid-cols-2 md:grid-cols-2 gap-2 p-4">
             <img

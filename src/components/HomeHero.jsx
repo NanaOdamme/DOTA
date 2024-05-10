@@ -34,7 +34,7 @@ export default function App() {
               alt={asset.title}
               className=""
             />
-            <div className="hometext lg:pt-80">
+            <div className="hometext lg:pt-80 ">
               <span className="font-bold mx-4 text-2xl">{asset.title}</span>
               <div className="flex mt-10">
                 <button
