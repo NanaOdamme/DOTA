@@ -1,11 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
 import './App.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Header from './Header.jsx';
 import HomePage from './First-page.jsx';
-
 import Home from './Home.jsx';
 import About from './About.jsx';
 import Contact from './Contact.jsx';
