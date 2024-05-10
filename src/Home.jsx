@@ -165,7 +165,7 @@ const Home = () => {
         <section className="mt-10 mb-10">
       <h1 className="mx-4 text-blue-400">Creative Artists</h1>
       <div className="flex justify-between">
-        <h1 className="mx-4 mb-10 text-white text-2xl">Top Sellers</h1>
+        <h1 className="mx-4 mb-10 text-white lg:2xl">Top Sellers</h1>
         <a href="allcreators.html" className="mx-4 text-white">View All<i className="mx-6 bi bi-arrow-right"></i></a>
       </div>
       <div className="creator">
@@ -228,7 +228,7 @@ const Home = () => {
       </div>
     </section>
     <section class="discover mb-10">
-  <h1 class="mx-4 mb-10 text-white text-2xl">Discover New Assets</h1>
+  <h1 class="mx-4 mb-10 text-white lg:2xl">Discover New Assets</h1>
   <div class="flex ">
     <div class="scroller" animation-duration="slow" data-direction="left">
         <div class="tag-list scroller_inner w-full">
@@ -239,13 +239,7 @@ const Home = () => {
             <p class="gradient-border">icons</p>
             <p class="gradient-border">logos</p>
             <p class="gradient-border">animations</p>
-            <p class="gradient-border">Photography</p>
-            <p class="gradient-border">Stickers</p>
-            <p class="gradient-border">illustrations</p>
-            <p class="gradient-border"> graphics</p>
-            <p class="gradient-border">icons</p>
-            <p class="gradient-border">logos</p>
-            <p class="gradient-border">animations</p>
+           
         </div>
     </div>
 </div>
@@ -259,13 +253,7 @@ const Home = () => {
           <p className="gradient-border">NFTs</p>
           <p className="gradient-border">3D models</p>
           <p className="gradient-border">digital sculptures</p>
-          <p className="gradient-border"> Music tracks</p>
-          <p className="gradient-border">sound effects</p>
-          <p className="gradient-border">Litecoin</p>
-          <p className="gradient-border">Utility tokens</p>
-          <p className="gradient-border">NFTs</p>
-          <p className="gradient-border">3D models</p>
-          <p className="gradient-border">digital sculptures</p>
+          
       </div>
   </div>
 </div>
@@ -275,27 +263,27 @@ const Home = () => {
  <section className="create-n-sell mb-10">
       <h1 className="mx-4 text-blue-400">Be a creator</h1>
       <div className="flex justify-between">
-        <h1 className="mx-4 mb-10 text-white text-2xl">Create and sell your asset</h1>
+        <h1 className="mx-4 mb-10 text-white lg:2xl">Create and sell your asset</h1>
         <a href="create-account.html" className="mx-4 text-white">Get started<i className="mx-6 bi bi-arrow-right"></i></a>
       </div>
 
-      <div className="flex justify-between mx-4">
-        <div className="first">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 p-3">
+        <div className="first ">
           <i className="text-white bi bi-wallet2"></i>
           <h2 className="text-white">Set up your Account</h2>
           <p className="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam neque laborum nobis reprehenderit tempora facilis.</p>
         </div>
-        <div className="first mx-3">
+        <div className="first ">
           <i className="bi bi-boxes"></i>
           <h2 className="text-white">Create your collection</h2>
           <p className="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam neque laborum nobis reprehenderit tempora facilis.</p>
         </div>
-        <div className="first mx-3">
+        <div className="first ">
           <i className="bi bi-file-plus"></i>
           <h2 className="text-white">Add Your Asset</h2>
           <p className="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam neque laborum nobis reprehenderit tempora facilis.</p>
         </div>
-        <div className="first mx-3">
+        <div className="first ">
           <i className="bi bi-card-list"></i>
           <h2 className="text-white">List them for Sale</h2>
           <p className="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam neque laborum nobis reprehenderit tempora facilis.</p>

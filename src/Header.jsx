@@ -29,23 +29,20 @@ const Header = () => {
       
         {/* Logo */}
         <div className="flex items-center justify-center">
-          <span className="text-xl font-bold text-white">DOTA ARTS</span>
+          <span className="lg:text-3xl font-bold text-white">DOTA</span>
         </div>
       
         {/* Search Bar */}
-        <div className="flex items-center">
-          <button className="text-white focus:outline-none mx-10" onClick={toggleSearch}>
+        <div className="flex items-center ">
+          <button className="text-white focus:outline-none mx-10  " onClick={toggleSearch}>
             search
-          </button>
-          <button className="hover:text-orange-400 transition duration-300 text-red-500  px-6    font-bold">
-            Sign In
           </button>
         </div>
       </nav>
       
       {/* Search Bar */}
-      <div className={`bg-white shadow-lg p-4 fixed top-16 left-0 right-0 z-50 ${isSearchOpen ? '' : 'hidden'}`}>
-        <input type="text" placeholder="Search..." className="px-4 py-2 w-full border rounded-md focus:outline-none focus:border-blue-500" />
+      <div className={`text-white backdrop-filter backdrop-blur-lg bg-black bg-opacity-50 shadow-lg p-4 fixed top-16 left-0 right-0 z-50 ${isSearchOpen ? '' : 'hidden'}`}>
+        <input type="text" placeholder="Search..." className="px-4 py-2 w-full border rounded-md focus:outline-none focus:border-blue-500 bg-black bg-opacity-50" />
       </div>
       
       {/* Sidebar Dropdown */}

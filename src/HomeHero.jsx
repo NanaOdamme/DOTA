@@ -5,7 +5,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import Assets from './db.json';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import { Link } from 'react-router-dom';
+
 
 export default function App() {
   // Filter assets with genre "3d art"
@@ -28,7 +28,6 @@ export default function App() {
       >
         {filteredAssets.map((asset) => (
           <SwiperSlide key={asset.id} className="swiper-slide contain">
-            <Link to={`/details/${asset.id}`} key={asset.id} className="asset-link">
               <img
                 src={asset['asset-image']}
                 alt={asset.title}
@@ -46,7 +45,6 @@ export default function App() {
                 </div>
                 <p>{asset.info}</p>
               </div>
-            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
