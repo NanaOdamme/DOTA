@@ -200,13 +200,18 @@ const Home = () => {
             <button key={asset.id} onClick={() => window.location.href = `/details/${asset.id}`} className="asset-list">
               <li className="card">
                 <div className="flex mx-2 auction">
+                  
                   <div className="p-4 main-card max-w-xs bg-white rounded-lg shadow-md overflow-hidden">
+                  
                   <img
-                    className="object-cover object-center rounded-lg"
+                    className="object-cover object-center rounded-lg w-52 h-52 lg:w-100 lg:h-80"
                     src={asset['asset-image']}
                       alt="Card"
                     />
-
+                    <div className="mt-2 flex justify-between">
+                    <p className='text-white'>{asset.days} Days</p>
+                      <p>Time Left: {asset.hours}:{asset.minutes}:{asset.seconds}</p>
+                    </div>
                     <h2 className="text-xl font-bold mx-2 mt-5 mb-3">{asset.title}</h2>
                     <div className="flex">
                       <img src={asset['creator-image']} className="imge" alt="" />

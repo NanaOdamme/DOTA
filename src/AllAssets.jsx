@@ -113,14 +113,14 @@ const AllAssets = () => {
                                 </div>
                             </div>
                             <div className="justify-center">
-                                <img src={asset['asset-image']} alt="Asset" id={asset.id} className="rounded-lg w-full h-80  lg:h-96" />
+                                <img src={asset['asset-image']} alt="Asset" id={asset.id} className="rounded-lg w-52 h-52 lg:w-full  lg:h-96" />
                             </div>
-                            <h1 className="font-bold text-2xl">{asset.title}</h1>
+                            <h1 className="font-bold lg:text-2xl">{asset.title}</h1>
                             <div className="grid">
                                 <p className="text-gray-400">current bids: {asset.bids} ETH</p>
                                 <div className="flex justify-end"> {/* Position at right side */}
                             <div >
-                                <p className="text-center bg-teal-500 w-20 mt-2 rounded-lg px-0.5">{asset.genre}</p>
+                                <p className="text-center bg-teal-500 w-24 mt-2 rounded-lg mx-2 ">{asset.genre}</p>
                             </div>
                         </div>
                             </div>
