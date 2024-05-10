@@ -5,7 +5,7 @@ import './App.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Header from './components/Header.jsx';
 import HomePage from './components/First-page.jsx';
-import Footer from './components/Footer.jsx';
+
 import Home from './components/Home.jsx';
 import About from './components/About.jsx';
 import Contact from './components/Contact.jsx';
@@ -28,7 +28,7 @@ const App = () => {
           <Route path="/allAssets" element={<AllAssets />} />
           <Route path="/details/:id" element={<AssetDetailsPage />} />
         </Routes>
-        <Footer />
+      
       </div>
     </Router>
   );

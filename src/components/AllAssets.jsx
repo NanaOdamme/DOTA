@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Assets from '../db.json';
-
+import Footer from './Footer.jsx';
 
 
 
@@ -133,6 +133,7 @@ const AllAssets = () => {
                 <button  className="hover:bg-blue-400 px-4 border border-2 border-white rounded-full">Load More</button>
             </div>
 
+            <Footer />
         </section>
     );
 }

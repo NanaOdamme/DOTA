@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Assets from '../db.json';
-
+import Footer from './Footer.jsx';
 const AssetDetails = ({ asset }) => {
   
   const [isDragging, setIsDragging] = useState(false);
@@ -203,6 +203,7 @@ const AssetDetails = ({ asset }) => {
         <i className="bi bi-arrow-right-circle-fill" id="right" onClick={scrollRight}></i>
       </div>
     </section>
+    <Footer />
     </section>
   );
 };
