@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
@@ -56,21 +57,20 @@ const Header = () => {
           </svg>
         </button>
         <ul className="py-4 pt-10">
-          <li className="px-4 py-2 hover:bg-orange-100 transition duration-300">
-            <button onClick={() => window.location.href = "/home"}>Home</button>
-          </li>
-          <li className="px-4 py-2 hover:bg-orange-100 transition duration-300">
-          <button onClick={() => window.location.href = "/about"}>About Us</button>
-            </li>
-          <li className="px-4 py-2 hover:bg-orange-100 transition duration-300">
-          <button onClick={() => window.location.href = "/contact"}>Contact Us</button>
-            </li>
-          <li className="px-4 py-2 hover:bg-orange-100 transition duration-300">
-          <button onClick={() => window.location.href = "/allAssets"}>All Assets</button>
-            </li>
-        
-          {/* Add more menu items */}
-        </ul>
+  <li className="px-4 py-2 hover:bg-orange-100 transition duration-300">
+    <Link to="/home">Home</Link>
+  </li>
+  <li className="px-4 py-2 hover:bg-orange-100 transition duration-300">
+    <Link to="/about">About Us</Link>
+  </li>
+  <li className="px-4 py-2 hover:bg-orange-100 transition duration-300">
+    <Link to="/contact">Contact Us</Link>
+  </li>
+  <li className="px-4 py-2 hover:bg-orange-100 transition duration-300">
+    <Link to="/allAssets">All Assets</Link>
+  </li>
+  {/* Add more menu items */}
+</ul>
       </div>
     </header>
   );
