@@ -81,6 +81,7 @@
             "auction-prize": "$400,000",
             "selling-prize": "$500,000",
             "status": "popular",
+            "auction-status": "True",
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
         },
         {
@@ -204,6 +205,7 @@
             "auction-prize": "$400,000",
             "selling-prize": "$500,000",
             "status": "popular",
+            "auction-status": "True",
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
         },
         {
@@ -245,6 +247,7 @@
             "auction-prize": "$400,000",
             "selling-prize": "$500,000",
             "status": "popular",
+            "auction-status": "True",
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
         },
         {
@@ -328,6 +331,7 @@
             "watched": "15.3k",
             "auction-prize": "$400,000",
             "selling-prize": "$500,000",
+            "auction-status": "True",
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
         },
         {
@@ -370,6 +374,7 @@
             "auction-prize": "$400,000",
             "selling-prize": "$500,000",
             "status": "popular",
+            "auction-status": "True",
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
         },
         {
@@ -390,6 +395,7 @@
             "watched": "15.3k",
             "auction-prize": "$400,000",
             "selling-prize": "$500,000",
+            "auction-status": "True",
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
         },
         {
@@ -473,6 +479,7 @@
             "watched": "15.3k",
             "auction-prize": "$400,000",
             "selling-prize": "$500,000",
+            "auction-status": "True",
             "info" : "A logo design with variations included and pdf files for reusability"
         },
         {
@@ -774,6 +781,7 @@
             "watched": "15.3k",
             "auction-prize": "$400,000",
             "selling-prize": "$500,000",
+            "auction-status": "True",
             "info" : "The one and only copy of this nft, digitally created and made for you"
         },
         {
@@ -934,6 +942,7 @@
             "watched": "15.3k",
             "auction-prize": "$400,000",
             "selling-prize": "$500,000",
+            "auction-status": "True",
             "info" : "The one and only copy of this nft, digitally created and made for you"
         },
         {
@@ -954,6 +963,7 @@
             "watched": "15.3k",
             "auction-prize": "$400,000",
             "selling-prize": "$500,000",
+            "auction-status": "True",
             "info" : "The one and only copy of this nft, digitally created and made for you"
         },
         {
@@ -974,6 +984,7 @@
             "watched": "15.3k",
             "auction-prize": "$400,000",
             "selling-prize": "$500,000",
+            "auction-status": "True",
             "info" : "The one and only copy of this nft, digitally created and made for you"
         }
 
