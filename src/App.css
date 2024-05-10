@@ -325,7 +325,12 @@ background-color: #161616;
 border: 1px solid #00eeff;
 color: #edfcfb;
 }
-
+.auction img{
+  border-radius: 10px;
+  height: 300px;
+  width: 300px;
+  
+}
 .auction .imge{
 width: 60px; 
 height: 60px;
@@ -340,7 +345,6 @@ width: 60px;
 height: 60px;
 border-radius: 50%;
 }
-
 
 
 

@@ -92,8 +92,8 @@ const AssetDetails = ({ asset }) => {
           <div className="grid grid-cols-1  lg:grid-cols-2 md:grid-cols-2 gap-2 p-4">
             <img
               src={asset['asset-image']}
-              style={{height: 450}}
-              className="w-full lg:w-full  rounded-lg shadow-md border border-white border-2"
+              style={{height: 600}}
+              className="w-full h-full  rounded-lg shadow-md border border-white border-2"
               alt="assetid"
             />
             <div className="py-4 px-4 lg:px-20">
