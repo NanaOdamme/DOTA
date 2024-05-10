@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Assets from '../db.json';
+import Assets from './db.json';
 import Footer from './Footer.jsx';
 
 

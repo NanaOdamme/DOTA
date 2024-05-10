@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import Assets from '../db.json';
+import Assets from './db.json';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 export default function App() {

@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './App.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import Header from './components/Header.jsx';
-import HomePage from './components/First-page.jsx';
+import Header from './Header.jsx';
+import HomePage from './First-page.jsx';
 
-import Home from './components/Home.jsx';
-import About from './components/About.jsx';
-import Contact from './components/Contact.jsx';
-import AllAssets from './components/AllAssets.jsx';
-import AssetDetailsPage from './components/AssetDetailsPage.jsx'; 
+import Home from './Home.jsx';
+import About from './About.jsx';
+import Contact from './Contact.jsx';
+import AllAssets from './AllAssets.jsx';
+import AssetDetailsPage from './AssetDetailsPage.jsx'; 
 
 const App = () => {
   return (

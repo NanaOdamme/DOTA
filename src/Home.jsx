@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import Assets from '../db.json';
+import Assets from './db.json';
 import HomeHero from './HomeHero.jsx';
 import Footer from './Footer.jsx';
 
