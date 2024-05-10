@@ -27,7 +27,7 @@ export default function App() {
       >
         {filteredAssets.map((asset) => (
           <SwiperSlide key={asset.id} className="swiper-slide contain">
-            <button key={asset.id} onClick={() => window.location.href = `/details/${asset.id}`} className="asset-link">
+            <Link to={`/details/${asset.id}`} key={asset.id} className="asset-link">
 
             <img
               src={asset['asset-image']}
@@ -55,7 +55,7 @@ export default function App() {
                 
               </p>
             </div>
-            </button>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

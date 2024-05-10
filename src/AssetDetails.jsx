@@ -173,7 +173,7 @@ const AssetDetails = ({ asset }) => {
       <div className="wrapper">
         <ul className="carousel">
           {Assets.assets.map((asset) => (
-            <button key={asset.id} onClick={() => window.location.href = `/details/${asset.id}`} className="asset-list">
+           <Link to={`/details/${asset.id}`} key={asset.id} className="asset-link">
               <li className="card">
                 <div className="flex mx-2 auction">
                   <div className="p-4 main-card max-w-xs bg-white rounded-lg shadow-md overflow-hidden">
@@ -195,7 +195,7 @@ const AssetDetails = ({ asset }) => {
                   </div>
                 </div>
               </li>
-            </button>
+            </Link>
             
           ))}
         </ul>

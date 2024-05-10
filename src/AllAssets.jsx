@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Assets from './db.json';
 import Footer from './Footer.jsx';
-
+import { Link } from 'react-router-dom';
 
 
 
@@ -96,8 +96,8 @@ const AllAssets = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:p-4">
             {searchedAssets.map(asset => (
-                    <button key={asset.id} onClick={() => window.location.href = `/details/${asset.id}`} className="asset-link">
-
+                    <Link to={`/details/${asset.id}`} key={asset.id} className="asset-link">
+                      
                         <div className="asset-card bg-zinc-600 text-white lg:p-5 p-2 rounded-lg">
                             <div className="flex mb-2 justify-between">
                                 <div className="flex">
@@ -125,7 +125,7 @@ const AllAssets = () => {
                         </div>
                             </div>
                         </div>
-                    </button>
+                        </Link>
                 ))}
             </div>
             <div className="mx-2 flex justify-between text-white">
