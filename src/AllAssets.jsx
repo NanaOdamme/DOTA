@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Assets from './db.json';
+import Creators from './creators.json'; // Import creators data
 import Footer from './Footer.jsx';
 import { Link } from 'react-router-dom';
 
 
-
 const AllAssets = () => {
-  
+  const [creatorsData, setCreatorsData] = useState([]); // State to hold creators data
+
   const [showDropdown, setShowDropdown] = useState(false);
   const [searchInput, setSearchInput] = useState('');
   const [filterId, setFilterId] = useState(null);
@@ -31,6 +32,11 @@ const AllAssets = () => {
           asset.creator.toLowerCase().includes(searchInput.toLowerCase())
       )
       : filteredAssets;
+
+
+      useEffect(() => {
+        setCreatorsData(Creators.creators); // Set creators data from JSON file
+      }, []);
     return (
         <section className="bg-black pt-20 p-2 all">
 
@@ -94,26 +100,29 @@ const AllAssets = () => {
       </h1>
     </section>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:p-4">
-            {searchedAssets.map(asset => (
+            <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:p-4">
+            {searchedAssets.map((asset) => {
+          const creator = creatorsData.find((creator) => creator['creator-id'] === asset['creator-id']); // Find the creator for the asset
+          if (!creator) return null; // Handle cases where creator is not found
+          return (
                     <Link to={`/details/${asset.id}`} key={asset.id} className="asset-link">
                       
                         <div className="asset-card bg-zinc-600 text-white lg:p-5 p-2 rounded-lg">
-                            <div className="flex mb-2 justify-between">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 mb-2">
                                 <div className="flex">
-                                    <img src={asset['creator-image']} className="imge" alt="Creator" />
+                                {creator.image && <img src={creator.image} alt={creator.name} className="rounded-full h-10 w-10 mr-1" />}
                                     <div className="info mx-2">
-                                        <h1 className="text-gray-400">creator</h1>
-                                        <p className="text-center">{asset.creator}</p>
+                                        <h1 className="text-gray-400 text-sm">creator</h1>
+                                        <p>{creator ? `${creator.name}` : 'Creator not found'}</p> {/* Display creator's name */}
                                     </div>
                                 </div>
-                                <div className="flex bg-black py-1 px-2 rounded-lg h-6" style={{ fontSize: '12px' }}>
+                                <div className="flex  justify-end  lg:py-1 lg:px-2 rounded-lg h-6" style={{ fontSize: '12px' }}>
                                     <i className="mx-1 bi bi-heart"></i>
                                     <p className="text-gray-200">{asset.bids}</p>
                                 </div>
                             </div>
                             <div className="justify-center">
-                                <img src={asset['asset-image']} alt="Asset" id={asset.id} className="rounded-lg w-52 h-52 lg:w-full  lg:h-96" />
+                                <img src={asset['asset-image']} alt="Asset" id={asset.id} className="rounded-lg  h-80 lg:w-full  lg:h-96" />
                             </div>
                             <h1 className="font-bold lg:text-2xl">{asset.title}</h1>
                             <div className="grid">
@@ -126,7 +135,8 @@ const AllAssets = () => {
                             </div>
                         </div>
                         </Link>
-                ))}
+                  );
+                })}
             </div>
             <div className="mx-2 flex justify-between text-white">
                 <h4 className="text-blue-400">Subscribe to our newsletter below to get updated on assets and bids</h4>

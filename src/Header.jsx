@@ -66,6 +66,9 @@ const Header = () => {
   <li className="px-4 py-2 hover:bg-orange-100 transition duration-300">
     <Link to="/allAssets">All Assets</Link>
   </li>
+  <li className="px-4 py-2 hover:bg-orange-100 transition duration-300">
+    <Link to="/creators">Dota Creators</Link>
+  </li>
   {/* Add more menu items */}
 </ul>
       </div>

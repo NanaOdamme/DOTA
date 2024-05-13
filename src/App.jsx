@@ -9,26 +9,26 @@ import About from './About.jsx';
 import Contact from './Contact.jsx';
 import AllAssets from './AllAssets.jsx';
 import AssetDetailsPage from './AssetDetailsPage.jsx'; 
+import Creators from './AllCreators.jsx';
+import CreatorProfile from './creatorsid.jsx';
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        </Routes>
-      <div>
-        <Header />
-        
-        <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/allAssets" element={<AllAssets />} />
-          <Route path="/details/:id" element={<AssetDetailsPage />} />
-        </Routes>
-      
-      </div>
-    </Router>
+      <Router>
+          <div>
+              <Header />
+              <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/home" element={<Home />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/allAssets" element={<AllAssets />} />
+                  <Route path="/details/:id" element={<AssetDetailsPage />} />
+                  <Route path="/creators" element={<Creators />} />
+                  <Route path="/creators/:id" element={<CreatorProfile />} />
+              </Routes>
+          </div>
+      </Router>
   );
 };
 
