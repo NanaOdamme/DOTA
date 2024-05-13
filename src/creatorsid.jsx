@@ -41,7 +41,7 @@ const CreatorProfile = () => {
 
     return (
         <section className="bg-black">
-            <section className="header flex justify-between p-10 pt-20">
+            <section className="header flex justify-between px-10 pt-20">
                 <div className="send-back">
                     <a href='/creators' >
                         <i className="text-white text-4xl hover:text-cyan-300 bi bi-back"></i>

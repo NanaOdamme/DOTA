@@ -2,8 +2,18 @@ import React, { useState, useRef, useEffect } from 'react';
 import Assets from './db.json';
 import HomeHero from './HomeHero.jsx';
 import Footer from './Footer.jsx';
+import { Link } from 'react-router-dom'; // Import Link from React Router
+import creatorsData from './creators.json'; // Importing the JSON data
 
 const Home = () => {
+  const [creators, setCreators] = useState([]);
+
+  useEffect(() => {
+    // Extract the first 6 creators from the creatorsData array
+    const firstSixCreators = creatorsData.creators.slice(0, 6);
+    setCreators(firstSixCreators);
+  }, []);
+
   useEffect(() => {
     const scrollers = document.querySelectorAll('.scroller');
 
@@ -27,15 +37,7 @@ const Home = () => {
     });
   };
 
-  const creators = [
-    { id: 1, name: '@loladeartist', hearts: '11.3k', imgSrc: 'assets/profile (5).jpg' },
-    { id: 2, name: '@pixaessentric', hearts: '11.3k', imgSrc: 'assets/profile (1).jpg' },
-    { id: 3, name: '@miakent101', hearts: '11.3k', imgSrc: 'assets/profile (2).jpeg' },
-    { id: 4, name: '@romeonadulai', hearts: '11.3k', imgSrc: 'assets/profile (3).jpeg' },
-    { id: 5, name: '@Henrydreamshade', hearts: '11.3k', imgSrc: 'assets/profile (6).jpeg' },
-    { id: 6, name: '@Pauladiscolights', hearts: '11.3k', imgSrc: 'assets/profile (7).jpg' },
-  ];
-
+  
   const [scrollPosition, setScrollPosition] = useState(0);
   const imageScrollerRef = useRef(null);
 
@@ -162,25 +164,30 @@ const Home = () => {
             </button>
           </div>
         </section>
-        <section className="mt-10 mb-10">
+      <section className="mt-10 mb-10">
       <h1 className="mx-4 text-blue-400">Creative Artists</h1>
       <div className="flex justify-between">
+      
         <h1 className="mx-4 mb-10 text-white lg:2xl">Top Sellers</h1>
-        <a href="allcreators.html" className="mx-4 text-white">View All<i className="mx-6 bi bi-arrow-right"></i></a>
+        <Link to="/creators" className="mx-4 text-white">
+              View All<i className="mx-6 bi bi-arrow-right"></i>
+            </Link>
       </div>
       <div className="creator">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-          {creators.map((creator) => (
-            <div key={creator.id} className="card bg-gray-200 rounded-lg shadow-md">
-              <div className="flex items-center p-4">
-                <img src={creator.imgSrc} className="w-12 h-12 rounded-full mx-4" alt="" />
-                <div className="flex flex-col text-white">
-                  <p>{creator.name}</p>
-                  <p><i className="bi bi-hearts"></i> {creator.hearts}</p>
-                </div>
-              </div>
-            </div>
-          ))}
+        {creators.map((creator, index) => (
+                <Link key={index} to={`/creators/${creator.id}`}>
+                  <div className="card bg-gray-200 rounded-lg shadow-md">
+                    <div className="flex items-center p-4">
+                      <img src={creator.image} className="w-12 h-12 rounded-full mx-4" alt="" />
+                      <div className="flex flex-col text-white">
+                        <p>{creator.name}</p>
+                        <p><i className="bi bi-hearts"></i> {creator.likes}</p>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
         </div>
       </div>
     </section>
@@ -219,7 +226,7 @@ const Home = () => {
                     </div>
                     <div className="mt-6 flex justify-between">
                       <p>{asset.bids} bids</p>
-                      <p>{asset.oneOfOne}</p>
+                      <p>{asset.total}</p>
                     </div>
                   </div>
                 </div>
