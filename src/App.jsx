@@ -11,7 +11,8 @@ import AllAssets from './AllAssets.jsx';
 import AssetDetailsPage from './AssetDetailsPage.jsx'; 
 import Creators from './AllCreators.jsx';
 import CreatorProfile from './creatorsid.jsx';
-
+import AuctionPage from './Auction.jsx';
+import AuctionDetailPage from './AuctionDetailPage.jsx';
 const App = () => {
   return (
       <Router>
@@ -26,6 +27,8 @@ const App = () => {
                   <Route path="/details/:id" element={<AssetDetailsPage />} />
                   <Route path="/creators" element={<Creators />} />
                   <Route path="/creators/:id" element={<CreatorProfile />} />
+                  <Route path="/auctions" element={<AuctionPage />} />
+                  <Route path="/auction/:id" element={<AuctionDetailPage />} />
               </Routes>
           </div>
       </Router>

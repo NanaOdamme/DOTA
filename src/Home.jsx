@@ -147,12 +147,12 @@ const Home = () => {
           </div>
           <div className="flex image-scroller p-4 rounded-lg shadow-lg" ref={imageScrollerRef}>
             {popularAssets.map((asset) => (
-              <a key={asset.id} href={`/details/${asset.id}`} className="asset-link">
-                <div className="image-container">
-                  <img src={asset['asset-image']} alt={asset.title} className="h-64" />
-                  <div className="hover-text">{asset.title}</div>
-                </div>
-              </a>
+             <Link key={asset.id} to={`/details/${asset.id}`} className="asset-link">
+             <div className="image-container">
+               <img src={asset['asset-image']} alt={asset.title} className="h-64" />
+               <div className="hover-text">{asset.title}</div>
+             </div>
+           </Link>
             ))}
           </div>
           <div className="navigation-buttons">
@@ -196,9 +196,9 @@ const Home = () => {
       <h1 className="mx-4 text-blue-400">Auctions</h1>
       <div className="flex justify-between">
         <h1 className="mx-4 mb-10 text-white text-2xl">Bid On Assets</h1>
-        <button type="button" className="mx-4 text-white">
+        <Link to="/auctions" className="mx-4 text-white">
   View All <i className="mx-6 bi bi-arrow-right"></i>
-</button>
+</Link>
 
       </div>
       <div className="wrapper">

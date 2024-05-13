@@ -12,7 +12,6 @@ const CreatorProfile = () => {
     const [creators, setCreators] = useState(creatorsData);
     const [assets, setAssets] = useState([]);
     useEffect(() => {
-        // Fetch assets from db.json based on creator's ID
         const creatorAssets = Assets.assets.filter(asset => asset['creator-id'] === parseInt(id));
         setAssets(creatorAssets);
     }, [id]);
@@ -35,7 +34,7 @@ const CreatorProfile = () => {
         const creatorToUpdate = updatedCreators.creators.find(creator => creator.id === parseInt(id));
         if (creatorToUpdate) {
             creatorToUpdate.Followers++;
-            setCreators(updatedCreators); // Update state to trigger re-render
+            setCreators(updatedCreators);
         }
     };
 
@@ -43,9 +42,9 @@ const CreatorProfile = () => {
         <section className="bg-black">
             <section className="header flex justify-between px-10 pt-20">
                 <div className="send-back">
-                    <a href='/creators' >
-                        <i className="text-white text-4xl hover:text-cyan-300 bi bi-back"></i>
-                        </a>
+                <Link to="/creators">
+              <i className="text-white text-4xl hover:text-cyan-300 bi bi-back"></i>
+            </Link>
                 </div>
             </section>
 
@@ -53,7 +52,7 @@ const CreatorProfile = () => {
           
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 p-2">
                 
-                    <div className="div1 p-10 mt-10 text-white">
+                    <div className="div1 p-6 mt-10 text-white">
                         <h1 className="mb-4 font-bold text-6xl">{creator.name}</h1>
                         <p className="text-purple-400">@{creator.username}</p>
                         <p className="mb-4 text-white">{creator['h-text']}</p>
@@ -61,7 +60,7 @@ const CreatorProfile = () => {
                         <button className="bg-cyan-400 w-28 h-10 px-8 hover:bg-purple-800 font-bold py-2 rounded-full" onClick={handleFollow}>Follow</button>
                         <p className='hover:text-yellow-400  font-bold text-2xl text-cyan-400'>{creator.Followers} Followers</p>
                         </div>
-                        <ul className="flex mt-10 text-white">
+                        <ul className="flex-col mt-10 text-white">
                         <li>
                                 <button className={`mx-8 ${activeTab === 'about' && 'active'}`} onClick={() => showContent('about')}>About</button>
                             </li>
