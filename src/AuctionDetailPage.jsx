@@ -27,19 +27,17 @@ const AuctionDetailPage = () => {
   }
 
   return (
-    <div className=" bg-black p-2 pt-20">
+    <section className=" bg-zinc-800 px-2 pt-20">
       
-      <h1 className="text-2xl text-white font-bold mb-4">{asset.title}</h1>
+      <h1 className="lg:ml-20 mt-10 text-2xl text-white font-bold mb-4">{asset.title}</h1>
       <div className="grid lg:grid-cols-2 gap-2">
-      <img src={asset['asset-image']} alt={asset.title} className="w-full h-96 mb-2 rounded-lg " />
-      <div className="div">
-      <p className="text-white mb-2">{asset.info}</p>
-      <p className="text-white mb-2">Current Bid: ${asset.bids}</p>
-      <p className="text-white mb-2">End Date: {asset.hours} Days, {asset.minutes} Minutes, {asset.seconds} Seconds</p>
-      
-      </div>
-      </div>
-      <div className="text-white border rounded-lg overflow-hidden lg:w-80">
+      <img src={asset['asset-image']} alt={asset.title} className="lg:ml-20  lg:w-96  w-full  lg:h-96 mb-2 rounded-lg border border-white" />
+      <div className="div p-4">
+        <h1 className='text-white font-bold text-2xl'>Description</h1>
+      <p className="text-white mb-6">{asset.info}</p>
+      <p className="text-white mb-4">Current Bid: ${asset.bids}</p>
+      <p className="text-white mb-5">End Date: {asset.hours} Days, {asset.minutes} Minutes, {asset.seconds} Seconds</p>
+      <div className="text-white border rounded-lg overflow-hidden">
               <div className="flex">
                 <div className="flex-1 border-r px-4 py-2">Auction Prize</div>
                 <div className="flex-1 px-4 py-2">Prize</div>
@@ -53,13 +51,26 @@ const AuctionDetailPage = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-2">
-              <button className="mt-2 mb-2 bg-white mx-1 w-24 hover:bg-zinc-700 text-cyan-400 font-bold py-2 px-4 rounded">Bid</button>
-              <button className="mt-2 mb-2 bg-cyan-500 mx-1 w-24 hover:bg-cyan-300 text-white font-bold py-2 px-4 rounded">Buy</button>
+            <div className="flex justify-end mt-6 mr-4">
+            <button
+              className="rounded-lg bg-zinc-200 py-2 px-10 text-black font-bold hover:bg-zinc-900 hover:text-white"
+            >
+              Buy
+            </button>
+            <button
+              
+              className="ml-3 rounded-lg bg-zinc-900 py-2 px-10 text-white font-bold hover:bg-zinc-200 hover:text-black"
+            >
+              Bid
+            </button>
             </div>
+      </div>
+      </div>
+     
+       
       
       <Footer />
-    </div>
+    </section>
   );
 };
 

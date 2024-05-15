@@ -103,44 +103,32 @@ return(
 <ul className="carousel">
   {Assets.assets.map((asset) => (
     <button key={asset.id} onClick={() => window.location.href = `/details/${asset.id}`} className="asset-list">
-      <li className="card">
-        <div className="flex mx-2 auction">
-          <div className="p-4 main-card max-w-xs bg-white rounded-lg shadow-md overflow-hidden">
-            <img
-              className="object-cover object-center rounded-lg"
-              src={asset['asset-image']}
-              alt="Card"
-            />
-            <div className="mt-2 flex justify-between">
-                    <p className='text-white'>{asset.days} Days</p>
-                      <p>Time Left: {asset.hours}:{asset.minutes}:{asset.seconds}</p>
-                    </div>
-            <h2 className="text-xl font-bold mx-2 mt-5 mb-3">{asset.title}</h2>
-            <div className="flex">
-            {creatorsData.map((creator) => {
-        if (creator['creator-id'] === asset['creator-id']) {
-          return (
-            <React.Fragment key={creator['creator-id']}>
-              <img src={creator.image} className="imge" alt="" />
-              <p className="text-center mt-4 mx-4">{creator.name}</p>
-              </React.Fragment>
-          );
-        }
-        return null;
-      })}
-            </div>
-            <div className="mt-6 flex justify-between">
-                      <p>{asset.bids} bids</p>
-                      <p>{asset.total}</p>
-                    </div>
-          </div>
-        </div>
-      </li>
+  <li className="card  hover:text-black">
+             <div className="flex mx-2 auction ">
+               <div className="p-4 bg-zinc-800  text-white main-card max-w-xs bg-white rounded-lg shadow-md overflow-hidden">
+                 <img
+                   className="object-cover object-center rounded-lg w-64 h-48  transition duration-500 transform hover:-translate-y-1"
+                   src={asset['asset-image']}
+                   alt="Card"
+                 />
+                 
+                 <h2 className="text-sm font-bold mx-2 mt-5 mb-3">{asset.title}</h2>
+                 <div className="flex">
+                   <img src={asset['creator-image']} className="imge" alt="" />
+                   <p className="text-center mt-4 mx-4">{asset.creator}</p>
+                 </div>
+                 <div className="mt-6 flex justify-end">
+                   
+                   <p>{asset.total}</p>
+                 </div>
+               </div>
+             </div>
+           </li>
     </button>
   ))}
 </ul>
-<i className="bi bi-arrow-left-circle-fill" id="left" onClick={scrollLeft}></i>
-<i className="bi bi-arrow-right-circle-fill" id="right" onClick={scrollRight}></i>
+<i className="bi-first bg-zinc-800 hover:bg-zinc-600 text-white   rounded-lg bi bi-arrow-left-short" id="left" onClick={scrollLeft}></i>
+        <i className="bi-second bg-zinc-800 hover:bg-zinc-600  text-white  rounded-lg  bi bi-arrow-right-short" id="right" onClick={scrollRight}></i>
 </div>
 </section>
 )

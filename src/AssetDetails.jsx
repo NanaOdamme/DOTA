@@ -31,12 +31,28 @@ const AssetDetails = ({ asset }) => {
     {asset && (
       <div className="lg:p-10 bg-zinc-800 m-5 rounded-lg">
         <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-2 p-4">
+          <div className="grid grid-cols-1 gap-4">
           <img
             src={asset['asset-image']}
-            style={{ height: 600 }}
-            className="w-full h-full rounded-lg shadow-md border border-white border-2"
+            
+            className="w-full h-96 rounded-lg shadow-md border border-white border-2"
             alt="assetid"
           />
+           <div className="border rounded-lg overflow-hidden ">
+              <div className="flex">
+                <div className="flex-1 border-r px-4 py-2">Auction Prize</div>
+                <div className="flex-1 px-4 py-2">Prize</div>
+              </div>
+              <div className="flex">
+                <div className="flex-1 border-r px-4 py-2">
+                  {asset['auction-prize']}
+                </div>
+                <div className="flex-1 px-4 py-2">
+                  {asset['selling-prize']}
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="py-4 px-4 lg:px-20">
             <button className="border border-2 border-white py-1 px-4 rounded-full">
               <i className="bi bi-heart mx-2"></i>
@@ -79,30 +95,16 @@ const AssetDetails = ({ asset }) => {
             <p className='mb-4'>
               {asset.info}
             </p>
-            <div className="border rounded-lg overflow-hidden lg:w-80">
-              <div className="flex">
-                <div className="flex-1 border-r px-4 py-2">Auction Prize</div>
-                <div className="flex-1 px-4 py-2">Prize</div>
-              </div>
-              <div className="flex">
-                <div className="flex-1 border-r px-4 py-2">
-                  {asset['auction-prize']}
-                </div>
-                <div className="flex-1 px-4 py-2">
-                  {asset['selling-prize']}
-                </div>
-              </div>
-            </div>
-            <div className="mt-10"></div>
+           
+            
             <button
-              style={{ backgroundColor: 'rgb(255, 0, 221)', fontWeight: 700 }}
-              className="py-2 px-6 text-white rounded-full"
+              className="rounded-lg bg-zinc-200 py-2 px-10 text-black font-bold hover:bg-zinc-900 hover:text-white"
             >
-              Buy This
+              Buy
             </button>
             <button
-              style={{ backgroundColor: 'rgb(255, 0, 221)', fontWeight: 700 }}
-              className="mx-5 py-2 px-10 text-white rounded-full ml-2"
+              
+              className="ml-3 rounded-lg bg-zinc-900 py-2 px-10 text-white font-bold hover:bg-zinc-200 hover:text-black"
             >
               Bid
             </button>

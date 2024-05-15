@@ -57,22 +57,22 @@ const AllAssets = () => {
             {showDropdown && (
               <div className="absolute mx-5 z-10 mt-12 bg-gray-400 rounded-md shadow-lg">
                 <div className="" role="menu" aria-orientation="vertical" aria-labelledby="filterBtn">
-                <button type="button" onClick={() => handleFilter('all')} className="block px-4 py-2 text-white hover:bg-gray-800" role="menuitem">
+                <button type="button" onClick={() => handleFilter('all')} className="block w-full px-4 py-2 text-white hover:bg-gray-800" role="menuitem">
   All
 </button>
-<button type="button" id='2' onClick={() => setFilterId(2)} className="block px-4 py-2 text-white hover:bg-gray-800" role="menuitem">
+<button type="button" id='2' onClick={() => setFilterId(2)} className="block px-4 py-2 w-full text-white hover:bg-gray-800" role="menuitem">
   NFTs
 </button>
-<button type="button" id='1' onClick={() => setFilterId(1)} className="block px-4 py-2 text-white hover:bg-gray-800" role="menuitem">
+<button type="button" id='1' onClick={() => setFilterId(1)} className="block px-4 py-2 w-full text-white hover:bg-gray-800" role="menuitem">
   Photography
 </button>
-<button type="button" id='0' onClick={() => setFilterId(0)} className="block px-4 py-2 text-white hover:bg-gray-800" role="menuitem">
+<button type="button" id='0' onClick={() => setFilterId(0)} className="block px-4 py-2 w-full text-white hover:bg-gray-800" role="menuitem">
   Digital Arts
 </button>
-<button type="button" id='3' onClick={() => setFilterId(3)} className="block px-4 py-2 text-white hover:bg-gray-800" role="menuitem">
+<button type="button" id='3' onClick={() => setFilterId(3)} className="block px-4 py-2 w-full text-white hover:bg-gray-800" role="menuitem">
   Logo
 </button>
-<button type="button" id='4' onClick={() => setFilterId(4)} className="block px-4 py-2 text-white hover:bg-gray-800" role="menuitem">
+<button type="button" id='4' onClick={() => setFilterId(4)} className="block px-4 py-2 w-full text-white  hover:bg-gray-800" role="menuitem">
   3d Arts
 </button>
 
@@ -100,14 +100,14 @@ const AllAssets = () => {
       </h1>
     </section>
 
-            <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:p-4">
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:p-4">
             {searchedAssets.map((asset) => {
           const creator = creatorsData.find((creator) => creator['creator-id'] === asset['creator-id']); // Find the creator for the asset
-          if (!creator) return null; // Handle cases where creator is not found
+          if (!creator) return null; //this handles cases where creator is not found
           return (
                     <Link to={`/details/${asset.id}`} key={asset.id} className="asset-link">
                       
-                        <div className="asset-card bg-zinc-600 text-white lg:p-5 p-2 rounded-lg">
+                        <div className="asset-card h-64 w-full bg-zinc-900 hover:bg-zinc-700 hover:-translate-y-2 transition duration-500  text-white lg:p-5 p-2 rounded-lg">
                             <div className="grid grid-cols-1 lg:grid-cols-2 mb-2">
                                 <div className="flex">
                                 {creator.image && <img src={creator.image} alt={creator.name} className="rounded-full h-10 w-10 mr-1" />}
@@ -118,21 +118,23 @@ const AllAssets = () => {
                                 </div>
                                 <div className="flex  justify-end  lg:py-1 lg:px-2 rounded-lg h-6" style={{ fontSize: '12px' }}>
                                     <i className="mx-1 bi bi-heart"></i>
-                                    <p className="text-gray-200">{asset.bids}</p>
+                                    <p className="text-gray-200">{asset.likes}</p>
                                 </div>
                             </div>
+                            <div className="grid grid-cols-2 ">
                             <div className="justify-center">
-                                <img src={asset['asset-image']} alt="Asset" id={asset.id} className="rounded-lg  h-80 lg:w-full  lg:h-96" />
+                                <img src={asset['asset-image']} alt="Asset" id={asset.id} className="rounded-lg  w-48 h-32 lg:w-54  lg:h-54 transition duration-500 transform hover:scale-95" />
                             </div>
-                            <h1 className="font-bold lg:text-2xl">{asset.title}</h1>
-                            <div className="grid">
-                                <p className="text-gray-400">current bids: {asset.bids} ETH</p>
-                                <div className="flex justify-end"> {/* Position at right side */}
-                            <div >
-                                <p className="text-center bg-teal-500 w-24 mt-2 rounded-lg mx-2 ">{asset.genre}</p>
+                            <div className="grid grid-cols-1 ml-3">
+                            <h1 className=" font-bold lg:text-1xl">{asset.title}</h1>
+                            
+                                <p className=" text-gray-400">current bids: {asset.bids} bids</p>
+                                </div>
+                                
+                            
+                       
                             </div>
-                        </div>
-                            </div>
+                           
                         </div>
                         </Link>
                   );
