@@ -4,7 +4,7 @@ import HomeHero from './HomeHero.jsx';
 import Footer from './Footer.jsx';
 import { Link } from 'react-router-dom'; // Import Link from React Router
 import creatorsData from './creators.json'; // Importing the JSON data
-
+import DiscoverSection from './scrollers.jsx'
 const Home = () => {
   const [creators, setCreators] = useState([]);
 
@@ -164,6 +164,7 @@ const Home = () => {
             </button>
           </div>
         </section>
+        <DiscoverSection />
       <section className="mt-10 mb-10">
       <h1 className="mx-4 text-blue-400">Creative Artists</h1>
       <div className="flex justify-between">
@@ -191,6 +192,7 @@ const Home = () => {
         </div>
       </div>
     </section>
+    
 
     <section className="mb-10">
       <h1 className="mx-4 text-blue-400">Auctions</h1>
@@ -237,38 +239,7 @@ const Home = () => {
         <i className="bi-second bg-zinc-800 hover:bg-zinc-600  text-white  rounded-lg  bi bi-arrow-right-short" id="right" onClick={scrollRight}></i>
       </div>
     </section>
-    <section class="discover mb-10">
-  <h1 class="mx-4 mb-10 text-white lg:2xl">Discover New Assets</h1>
-  <div class="flex ">
-    <div class="scroller" animation-duration="slow" data-direction="left">
-        <div class="tag-list scroller_inner w-full">
-            <p  class="gradient-border">Photography</p>
-            <p class="gradient-border">Stickers</p>
-            <p class="gradient-border">illustrations</p>
-            <p class="gradient-border">graphics</p>
-            <p class="gradient-border">icons</p>
-            <p class="gradient-border">logos</p>
-            <p class="gradient-border">animations</p>
-           
-        </div>
-    </div>
-</div>
-<div className="flex ">
-  <div className="scroller" animation-duration="slow" data-direction="right">
-      <div className="tag-list scroller_inner w-full">
-          <p className="gradient-border"> Music tracks</p>
-          <p className="gradient-border">sound effects</p>
-          <p className="gradient-border">Litecoin</p>
-          <p className="gradient-border">Utility tokens</p>
-          <p className="gradient-border">NFTs</p>
-          <p className="gradient-border">3D models</p>
-          <p className="gradient-border">digital sculptures</p>
-          
-      </div>
-  </div>
-</div>
-
- </section>
+  
 
  <section className="create-n-sell mb-10">
       <h1 className="mx-4 text-blue-400">Be a creator</h1>

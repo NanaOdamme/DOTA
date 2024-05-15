@@ -455,7 +455,7 @@ list-style: none;
 }
 .gradient-border {
 border-width: 3px;
-border-image: linear-gradient(to right, #00eeff, #ff00f7);
+border-image: linear-gradient(to right, #ff5900, #02fff2);
 border-image-slice: 1;
 border-image-repeat: stretch;
 padding-top: 10px;
@@ -466,9 +466,10 @@ cursor: pointer;
 transition: box-shadow 0.3s ease-in-out;
 }
 .gradient-border:hover{
-box-shadow: 0 0 20px rgb(0, 255, 251);
-background-color: #00ffee;
+box-shadow: 0 0 20px rgb(255, 145, 0);
+background-color: #ff8000;
 color: #000000;
+border-image:none;
 }
 .first{
 border: 1px solid #606060;
