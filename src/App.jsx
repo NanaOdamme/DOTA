@@ -13,6 +13,9 @@ import Creators from './AllCreators.jsx';
 import CreatorProfile from './creatorsid.jsx';
 import AuctionPage from './Auction.jsx';
 import AuctionDetailPage from './AuctionDetailPage.jsx';
+
+
+
 const App = () => {
   return (
       <Router>
@@ -29,6 +32,7 @@ const App = () => {
                   <Route path="/creators/:id" element={<CreatorProfile />} />
                   <Route path="/auctions" element={<AuctionPage />} />
                   <Route path="/auction/:id" element={<AuctionDetailPage />} />
+                  
               </Routes>
           </div>
       </Router>

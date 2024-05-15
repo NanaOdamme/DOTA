@@ -5,6 +5,7 @@ import Footer from './Footer.jsx';
 import { Link } from 'react-router-dom'; // Import Link from React Router
 import creatorsData from './creators.json'; // Importing the JSON data
 import DiscoverSection from './scrollers.jsx'
+
 const Home = () => {
   const [creators, setCreators] = useState([]);
 
