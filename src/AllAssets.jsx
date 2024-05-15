@@ -38,10 +38,10 @@ const AllAssets = () => {
         setCreatorsData(Creators.creators); // Set creators data from JSON file
       }, []);
     return (
-        <section className="bg-black pt-20 p-2 all">
+        <section className="bg-black pt-20  all">
 
 <section className="hero grid grid-cols-1 gap-2 p-4 text-center">
-      <div className="flex justify-between mb-10">
+      <div className="flex justify-between mb-10 mt-10">
         <h1 className="mx-2 text-white text-2xl">100+ items</h1>
         <div className="filter text-white">
           <div className="flex">
@@ -100,7 +100,7 @@ const AllAssets = () => {
       </h1>
     </section>
 
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:p-4">
+            <div className="p-6 mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:p-4">
             {searchedAssets.map((asset) => {
           const creator = creatorsData.find((creator) => creator['creator-id'] === asset['creator-id']); // Find the creator for the asset
           if (!creator) return null; //this handles cases where creator is not found
