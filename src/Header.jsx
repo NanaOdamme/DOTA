@@ -14,6 +14,7 @@ const Header = () => {
     setIsSearchOpen(!isSearchOpen);
   };
 
+  
   return (
     <header >
      <nav className="bg-black bg-opacity-50 text-white shadow-lg flex justify-between items-center px-4 py-5 backdrop-filter backdrop-blur-lg fixed top-0 left-0 w-full z-50">
