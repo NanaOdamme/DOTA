@@ -16,43 +16,44 @@ const Header = () => {
 
   return (
     <header >
-      <nav className="bg-black bg-opacity-50  text-white shadow-lg flex justify-between items-center px-4 py-5 backdrop-filter backdrop-blur-lg fixed top-0 left-0 w-full z-50">
-       
-        {/* Menu Bar */}
-        <div className='flex'>
-          <button className="text-white focus:outline-none" onClick={toggleMenu}>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-          </button>
-        </div>
-      
-        {/* Logo */}
-        <div className="flex  ml-20">
-          <span className="lg:text-3xl font-bold text-white">DOTA</span>
-        </div>
-        <div className="flex justify-end">
-        <div className="text-white ml-20 bg-zinc-900 py-2 px-4 text-center rounded-lg">
-        <div className="flex">
-        <i className="mx-2 bi bi-box-arrow-in-right text-1xl"></i><h1 className="hidden lg:block md:block text-1xl">Login</h1>
+     <nav className="bg-black bg-opacity-50 text-white shadow-lg flex justify-between items-center px-4 py-5 backdrop-filter backdrop-blur-lg fixed top-0 left-0 w-full z-50">
+  {/* Menu Bar */}
+  <div className="flex">
+    <button className="text-white focus:outline-none" onClick={toggleMenu}>
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+  </div>
 
-        </div>
+  {/* Logo */}
+  <div className="flex ml-4 lg:ml-20">
+    <span className="lg:text-3xl font-bold text-white">DOTA</span>
+  </div>
+
+  {/* Navigation Links */}
+  <div className="flex items-center ml-auto">
+    <button className="text-white focus:outline-none mx-2 lg:mx-4" onClick={toggleSearch}>
+      <div className="flex items-center">
+        <i className="bi bi-search mx-2"></i>
+        <h1 className="hidden lg:block text-1xl">Search</h1>
       </div>
+    </button>
+    <div className="text-white bg-zinc-900 py-2 px-4 text-center hover:bg-zinc-800 rounded-lg cursor-pointer">
+      <div className="flex items-center">
+        <i className="mx-2 bi bi-box-arrow-in-right text-1xl"></i>
+        <h1 className="hidden lg:block text-1xl">Login</h1>
+      </div>
+    </div>
+    <div className="flex items-center mx-2 lg:mx-4 bg-zinc-900 py-2 px-4 text-center hover:bg-zinc-800 rounded-lg cursor-pointer">
+      <i className="bi bi-person-circle text-2xl"></i>
+    </div>
+    <div className="flex items-center mx-2 lg:mx-4 bg-zinc-900 py-2 px-4 text-center hover:bg-zinc-800 rounded-lg cursor-pointer">
+      <i className="bi bi-cart3 text-2xl"></i>
+    </div>
+  </div>
+</nav>
 
-        {/* Search Bar */}
-        <div className="flex items-center ">
-          <button className="text-white focus:outline-none mx-10  " onClick={toggleSearch}>
-          <div className="flex">
-          <i class="bi bi-search mx-2"></i><h1 className='hidden lg:block md:block text-1xl'>Search</h1>
-          </div>
-          </button>
-        </div>
-        <div className="flex items-center">
-        <i class="bi bi-person-circle mx-2 text-2xl"></i>
-        <i class="bi bi-cart3 ml-5 text-2xl"></i>
-        </div>
-        </div>
-      </nav>
      
      
 
