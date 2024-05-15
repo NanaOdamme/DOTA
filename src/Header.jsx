@@ -16,10 +16,10 @@ const Header = () => {
 
   return (
     <header >
-      <nav className="bg-black bg-opacity-50 text-white shadow-lg flex justify-between items-center px-4 py-5 backdrop-filter backdrop-blur-lg fixed top-0 left-0 w-full z-50">
+      <nav className="bg-black bg-opacity-50  text-white shadow-lg flex justify-between items-center px-4 py-5 backdrop-filter backdrop-blur-lg fixed top-0 left-0 w-full z-50">
        
         {/* Menu Bar */}
-        <div className="flex items-center ">
+        <div className='flex'>
           <button className="text-white focus:outline-none" onClick={toggleMenu}>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
@@ -28,22 +28,40 @@ const Header = () => {
         </div>
       
         {/* Logo */}
-        <div className="flex items-center justify-center">
+        <div className="flex  ml-20">
           <span className="lg:text-3xl font-bold text-white">DOTA</span>
         </div>
-      
+        <div className="flex justify-end">
+        <div className="text-white ml-20 bg-zinc-900 py-2 px-4 text-center rounded-lg">
+        <div className="flex">
+        <i className="mx-2 bi bi-box-arrow-in-right text-1xl"></i><h1 className="hidden lg:block md:block text-1xl">Login</h1>
+
+        </div>
+      </div>
+
         {/* Search Bar */}
         <div className="flex items-center ">
           <button className="text-white focus:outline-none mx-10  " onClick={toggleSearch}>
-            search
+          <div className="flex">
+          <i class="bi bi-search mx-2"></i><h1 className='hidden lg:block md:block text-1xl'>Search</h1>
+          </div>
           </button>
         </div>
+        <div className="flex items-center">
+        <i class="bi bi-person-circle mx-2 text-2xl"></i>
+        <i class="bi bi-cart3 ml-5 text-2xl"></i>
+        </div>
+        </div>
       </nav>
-      
+     
+     
+
       {/* Search Bar */}
       <div className={`text-white backdrop-filter backdrop-blur-lg bg-black bg-opacity-50 shadow-lg p-4 fixed top-16 left-0 right-0 z-50 ${isSearchOpen ? '' : 'hidden'}`}>
         <input type="text" placeholder="Search..." className="px-4 py-2 w-full border rounded-md focus:outline-none focus:border-blue-500 bg-black bg-opacity-50" />
       </div>
+      
+
       
       {/* Sidebar Dropdown */}
       <div className={`bg-black bg-opacity-50 text-white shadow-lg flex justify-between  px-4 py-5 backdrop-filter backdrop-blur-lg fixed top-0 left-0 h-screen z-50 ${isMenuOpen ? '' : 'hidden'}`}>
@@ -75,6 +93,7 @@ const Header = () => {
   {/* Add more menu items */}
 </ul>
       </div>
+      
     </header>
   );
 };
