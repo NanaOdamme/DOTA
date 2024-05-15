@@ -45,10 +45,10 @@ const Header = () => {
         <h1 className="hidden lg:block text-1xl">Login</h1>
       </div>
     </div>
-    <div className="flex items-center mx-2 lg:mx-4 bg-zinc-900 py-2 px-4 text-center hover:bg-zinc-800 rounded-lg cursor-pointer">
+    <div className="account flex items-center mx-2 lg:mx-4 bg-zinc-900 py-2 px-4 text-center hover:bg-zinc-800 rounded-lg cursor-pointer">
       <i className="bi bi-person-circle text-2xl"></i>
     </div>
-    <div className="flex items-center mx-2 lg:mx-4 bg-zinc-900 py-2 px-4 text-center hover:bg-zinc-800 rounded-lg cursor-pointer">
+    <div className="cart flex items-center mx-2 lg:mx-4 bg-zinc-900 py-2 px-4 text-center hover:bg-zinc-800 rounded-lg cursor-pointer">
       <i className="bi bi-cart3 text-2xl"></i>
     </div>
   </div>
