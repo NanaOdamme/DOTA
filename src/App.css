@@ -597,12 +597,12 @@ text-shadow: 0 0 10px #6afdff,  0 0 30px #56fff1, 0 0 70px #0ff, 0 0 100px #0ff,
 }
 .this-card {
   transition: transform 0.3s ease;
-  border: 2px solid #0ff;
-  margin: 10px;
+  border: 2px solid rgb(253, 255, 255);
+  
 }
 .this-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgb(0, 251, 255);
+  box-shadow: 0 0 15px rgb(228, 255, 255);
 }
 .this-card .info {
   opacity: 0;
@@ -611,11 +611,7 @@ text-shadow: 0 0 10px #6afdff,  0 0 30px #56fff1, 0 0 70px #0ff, 0 0 100px #0ff,
 .this-card:hover .info {
   opacity: 1;
 }
-.this-card img{
-  
-  height: 45vh;
-  width: 100%;
-}
+
 .hidden {
   display: none;
 }

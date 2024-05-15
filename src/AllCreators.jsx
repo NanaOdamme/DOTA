@@ -22,20 +22,24 @@ const Creators = () => {
                 </div>
             </section>
 
-            <main className="mt-10 mb-10">
+            <section className="mt-10 mb-10">
                 <h1 className="text-cyan-300 mx-7 font-bold text-3xl">Meet DOTA Creators</h1>
-                <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2 p-4">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-5 ">
                     {creators.map((creator, index) => (
-                       <Link key={index} to={`/creators/${creator.id}`} className="this-card bg-teal-100 rounded">
-                            <img src={creator.image} alt="Image" className="rounded" />
-                            <div className="info absolute bottom-0 left-0 right-0 bg-gray-800 bg-opacity-75 text-white p-4 transition-opacity">
-                                <h3 className="font-semibold text-lg mb-2">{creator.name}</h3>
-                                <p className="text-sm">{creator.Bio}</p>
+                       <Link key={index} to={`/creators/${creator.id}`} className="this-card bg-zinc-900  rounded-lg">
+                            <div className="flex text-white">
+                            <img src={creator.image} alt="Image" className="rounded-lg h-48 w-48 " />
+                            
+                                <h1 className='mx-5 mt-20 hidden lg:block'>See more of {creator.name}</h1>
+                            </div>
+                            <div className="info absolute bottom-0 left-0 right-0 bg-zinc-700 bg-opacity-75 text-white p-2  transition-opacity">
+                                <h3 className="font-semibold  mb-2">{creator.name}</h3>
+                                <p className="text-sm">Learn More...</p>
                             </div>
                         </Link>
                     ))}
-                </section>
-            </main>
+                </div>
+            </section>
 
             <Footer />
         </section>

@@ -176,7 +176,7 @@ const Home = () => {
             </Link>
       </div>
       <div className="creator">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
         {creators.map((creator, index) => (
                 <Link key={index} to={`/creators/${creator.id}`}>
                   <div className="text-white card bg-zinc-900 rounded-lg shadow-md transition duration-500 transform hover:-translate-x-1 hover:bg-zinc-200 hover:text-black">
