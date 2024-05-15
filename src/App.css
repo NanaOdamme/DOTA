@@ -68,9 +68,9 @@
   .hover-text {
       display: none; 
       bottom: 0;
+      margin-top: -60px;
       left: 0;
       right: 0;
-      background-color: rgba(255, 0, 0, 0.8);
       color: white;
       padding: 10px;
       font-size: 12px;
@@ -463,6 +463,7 @@ padding-bottom: 10px;
 padding-left: 30px;
 padding-right: 30px;
 cursor: pointer;
+border-radius: 50px;
 transition: box-shadow 0.3s ease-in-out;
 }
 .gradient-border:hover{
@@ -542,7 +543,7 @@ text-shadow: 0 0 10px #6afdff,  0 0 30px #56fff1, 0 0 70px #0ff, 0 0 100px #0ff,
 .scroller[data-animated=true] .scroller_inner {
   width: max-content;
   flex-wrap: nowrap;
-  animation: scroll var(--_animation-duration, 30s) var(--_animation-direction, forwards) linear infinite;
+  animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
 }
 
 .scroller[data-direction="right"] {
@@ -554,7 +555,7 @@ text-shadow: 0 0 10px #6afdff,  0 0 30px #56fff1, 0 0 70px #0ff, 0 0 100px #0ff,
 }
 
 .scroller[animation-duration="slow"] {
-  --_animation-duration: 40s;
+  --_animation-duration: 90s;
 }
 
 .scroller[animation-duration="fast"] {

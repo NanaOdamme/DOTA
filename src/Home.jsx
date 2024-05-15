@@ -139,7 +139,7 @@ const Home = () => {
     <section className="neon-background bg-black">
       <div className="content">
       <section className="home" id="home">
-        <HomeHero />
+      <HomeHero />
       </section>
         <section className="scrollers mb-10">
           <div className="h1">
@@ -157,14 +157,15 @@ const Home = () => {
           </div>
           <div className="navigation-buttons">
             <button id="prevButton" onClick={() => handleScroll(-200)}>
-              &lt; &lt; &lt;
+              prev
             </button>
             <button id="nextButton" onClick={() => handleScroll(200)}>
-              &gt; &gt; &gt;
+              next
             </button>
           </div>
         </section>
-        <DiscoverSection />
+
+        
       <section className="mt-10 mb-10">
       <h1 className="mx-4 text-blue-400">Creative Artists</h1>
       <div className="flex justify-between">
@@ -192,7 +193,7 @@ const Home = () => {
         </div>
       </div>
     </section>
-    
+    <DiscoverSection />
 
     <section className="mb-10">
       <h1 className="mx-4 text-blue-400">Auctions</h1>
