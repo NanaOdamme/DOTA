@@ -30,7 +30,7 @@ const Login = () => {
                   autoComplete="email"
                   placeholder="Email"
                   required
-                  className="bg-zinc-900 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="text-white bg-zinc-900 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 />
               </div>
 
@@ -42,11 +42,11 @@ const Login = () => {
                   autoComplete="current-password"
                   placeholder="Password"
                   required
-                  className="bg-zinc-900 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="text-white bg-zinc-900 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 />
                 <i
                   id="togglePassword"
-                  className={`bi ${passwordVisible ? 'bi-eye-slash' : 'bi-eye'} text-black absolute top-1/4 right-3 cursor-pointer`}
+                  className={`bi ${passwordVisible ? 'bi-eye-slash' : 'bi-eye'} text-black absolute top-0 mt-2 text-white right-3 cursor-pointer`}
                   onClick={togglePasswordVisibility}
                 ></i>
                 <div className="text-sm mt-1 flex justify-end">
