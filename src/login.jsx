@@ -54,10 +54,11 @@ const Login = () => {
                 </div>
               </div>
 
+              <Link to='/home'>
               <button className="w-full lg:h-12 py-2 mt-5 bg-cyan-500 hover:bg-cyan-300 font-bold text-white hover:scale-105 duration-300 rounded-full">
                 Log In
               </button>
-           
+              </Link>
               
                 <div className="mt-3 text-xs flex justify-end">
                   <p className='text-white'>Don't have an account</p>

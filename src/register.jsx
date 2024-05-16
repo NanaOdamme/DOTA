@@ -97,10 +97,11 @@ const Register = () => {
                 <button className="text-xs cursor-pointer text-cyan-500">Forgot your Password?</button>
               </div>
 
+              <Link to='/login'>
               <button className="w-full lg:h-12 py-2 mt-3 bg-cyan-500 hover:bg-cyan-300 font-bold text-white hover:scale-105 duration-300 rounded-full">
                 Sign Up
               </button>
-
+              </Link>
               <div className="mt-3 text-xs flex justify-end">
                 <p className='text-white'>Already have an account</p>
                 <Link to='/login' className="mx-2 text-red-500 font-bold hover:scale-105 duration-300 cursor-pointer">
