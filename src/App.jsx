@@ -13,8 +13,8 @@ import Creators from './AllCreators.jsx';
 import CreatorProfile from './creatorsid.jsx';
 import AuctionPage from './Auction.jsx';
 import AuctionDetailPage from './AuctionDetailPage.jsx';
-
-
+import Login from './login.jsx';
+import Register from './register.jsx';
 
 const App = () => {
   return (
@@ -32,10 +32,15 @@ const App = () => {
                   <Route path="/creators/:id" element={<CreatorProfile />} />
                   <Route path="/auctions" element={<AuctionPage />} />
                   <Route path="/auction/:id" element={<AuctionDetailPage />} />
-                  
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/register" element={<Register />} />
               </Routes>
           </div>
+          <div>
+            
+          </div>
       </Router>
+
   );
 };
 

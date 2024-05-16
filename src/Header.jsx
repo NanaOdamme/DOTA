@@ -1,16 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import CartPopup from './cart.jsx';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isAccountMenuOpen, setIsAccountMenuOpen] = useState(false); // State for account dropdown
+  const [isAccountMenuOpen, setIsAccountMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const accountMenuRef = useRef(null);
+  const sidebarMenuRef = useRef(null);
+
 
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
-  }; 
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -24,12 +28,33 @@ const Header = () => {
     setIsAccountMenuOpen(!isAccountMenuOpen);
   };
 
+  const handleClickOutside = (event) => {
+    if (accountMenuRef.current && !accountMenuRef.current.contains(event.target)) {
+      setIsAccountMenuOpen(false);
+    }
+    if (sidebarMenuRef.current && !sidebarMenuRef.current.contains(event.target)) {
+      setIsMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isAccountMenuOpen || isMenuOpen) {
+      document.addEventListener('click', handleClickOutside);
+    } else {
+      document.removeEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isAccountMenuOpen, isMenuOpen]);
+
   return (
-    <header>
-      <nav className="bg-black bg-opacity-50 text-white shadow-lg flex justify-between items-center px-4 py-5 backdrop-filter backdrop-blur-lg fixed top-0 left-0 w-full z-50">
+    <header className="">
+      <nav className=" bg-black bg-opacity-50 text-white shadow-lg flex justify-between items-center px-4 py-2 backdrop-filter backdrop-blur-lg fixed top-0 left-0 w-full z-50">
         {/* Menu Bar */}
         <div className="flex">
-          <button className="text-white focus:outline-none" onClick={toggleMenu}>
+          <button className="text-white focus:outline-none" onClick={toggleMenu} ref={sidebarMenuRef}>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
@@ -49,59 +74,63 @@ const Header = () => {
               <h1 className="hidden lg:block text-1xl">Search</h1>
             </div>
           </button>
-          <div className="text-white bg-zinc-900 py-2 px-4 text-center hover:bg-zinc-800 rounded-lg cursor-pointer">
+          <Link to='/login' className="text-white bg-zinc-900 py-2 px-4 text-center hover:bg-zinc-800 rounded-lg cursor-pointer">
             <div className="flex items-center">
               <i className="mx-2 bi bi-box-arrow-in-right text-1xl"></i>
               <h1 className="hidden lg:block text-1xl">Login</h1>
             </div>
-          </div>
-          <div className="account flex  mx-2 lg:mx-4 bg-zinc-900 py-2 px-4 text-left hover:bg-zinc-800 rounded-lg cursor-pointer relative" onClick={toggleAccountMenu}>
+          </Link>
+          <div
+            className="account flex mx-2 lg:mx-4 bg-zinc-900 py-2 px-4 text-left hover:bg-zinc-800 rounded-lg cursor-pointer relative"
+            onClick={toggleAccountMenu}
+            ref={accountMenuRef}
+          >
             <i className="bi bi-person-circle text-2xl"></i>
             {/* Account Dropdown */}
             <div className={`absolute right-0 mt-10 w-64 shadow-lg bg-zinc-900 text-white rounded-lg shadow-lg ${isAccountMenuOpen ? '' : 'hidden'}`}>
               <ul>
                 <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
-                  <Link to="/profile"><i class="bi bi-person"></i> Profile</Link>
+                  <Link to="/profile"><i className="bi bi-person"></i> Profile</Link>
                 </li>
                 <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
-                  <Link to="/watchlist"><i class="bi bi-eye"></i> WatchList</Link>
+                  <Link to="/watchlist"><i className="bi bi-eye"></i> WatchList</Link>
                 </li>
-                <hr class="border-zinc-600"/>
+                <hr className="border-zinc-600"/>
                 <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
-                  <Link to="/deals"><i class="bi bi-alarm"></i> Deals</Link>
-                </li>
-                <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
-                  <Link to="/mybids"><i class="bi bi-person-check"></i> Bids</Link>
+                  <Link to="/deals"><i className="bi bi-alarm"></i> Deals</Link>
                 </li>
                 <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
-                  <Link to="/dotapro"><i class="bi bi-person-check"></i> DotaPro</Link>
-                </li>
-                <hr class="border-zinc-600"/>
-                <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
-                  <Link to="/notification"><i class="bi bi-bell"></i> Notifications</Link>
+                  <Link to="/mybids"><i className="bi bi-person-check"></i> Bids</Link>
                 </li>
                 <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
-                  <Link to="/settings"><i class="bi bi-gear"></i> Settings</Link>
+                  <Link to="/dotapro"><i className="bi bi-person-check"></i> DotaPro</Link>
                 </li>
-                <hr class="border-zinc-600"/>
+                <hr className="border-zinc-600"/>
+                <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
+                  <Link to="/notification"><i className="bi bi-bell"></i> Notifications</Link>
+                </li>
+                <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
+                  <Link to="/settings"><i className="bi bi-gear"></i> Settings</Link>
+                </li>
+                <hr className="border-zinc-600"/>
                 <li className="px-4 py-2 m-2 rounded-lg hover:bg-zinc-700">
-                  <Link to="/learn"><i class="bi bi-book"></i> Learn</Link>
-                </li>
-                <li className="px-4 py-2 m-2 rounded-lg hover:bg-zinc-700">
-                  <Link to="/help"><i class="bi bi-question-circle"></i> Help</Link>
+                  <Link to="/learn"><i className="bi bi-book"></i> Learn</Link>
                 </li>
                 <li className="px-4 py-2 m-2 rounded-lg hover:bg-zinc-700">
-                  <Link to="/"><i class="bi bi-box-arrow-left"></i> Logout</Link>
+                  <Link to="/help"><i className="bi bi-question-circle"></i> Help</Link>
+                </li>
+                <li className="px-4 py-2 m-2 rounded-lg hover:bg-zinc-700">
+                  <Link to="/"><i className="bi bi-box-arrow-left"></i> Logout</Link>
                 </li>
               </ul>
             </div>
           </div>
           <div>
-      <div className="cart flex items-center mx-2 lg:mx-4 bg-zinc-900 py-2 px-4 text-center hover:bg-zinc-800 rounded-lg cursor-pointer" onClick={toggleCart}>
-        <i className="bi bi-cart3 text-2xl"></i>
-      </div>
-      {isCartOpen && <CartPopup setIsCartOpen={setIsCartOpen} />}
-    </div>
+            <div className="cart flex items-center mx-2 lg:mx-4 bg-zinc-900 py-2 px-4 text-center hover:bg-zinc-800 rounded-lg cursor-pointer" onClick={toggleCart}>
+              <i className="bi bi-cart3 text-2xl"></i>
+            </div>
+            {isCartOpen && <CartPopup setIsCartOpen={setIsCartOpen} />}
+          </div>
         </div>
       </nav>
 
@@ -111,9 +140,9 @@ const Header = () => {
       </div>
 
       {/* Sidebar Dropdown */}
-      <div className={`bg-black bg-opacity-50 text-white shadow-lg flex justify-between px-4 py-5 backdrop-filter backdrop-blur-lg fixed top-0 left-0 h-screen z-50 ${isMenuOpen ? '' : 'hidden'}`}>
+      <div className={`bg-black bg-opacity-50 text-white shadow-lg flex justify-between px-4 py-5 backdrop-filter backdrop-blur-lg fixed top-0 left-0 h-screen z-50 ${isMenuOpen ? '' : 'hidden'}`} >
         {/* Close Button */}
-        <button className="absolute top-2 right-2 text-gray-600 focus:outline-none" onClick={toggleMenu}>
+        <button className="absolute top-2 right-2 text-gray-600 focus:outline-none" onClick={toggleMenu} >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
