@@ -9,10 +9,10 @@ const Login = () => {
   };
 
   return (
-    <div className="pt-20 min-h-screen bg-gray-900 flex justify-center py-12 sm:px-6 lg:px-8 'h-screen bg-cover bg-no-repeat" style={{ backgroundImage: "url('../assets/bg.gif')" }}>
+    <div className="pt-20 px-10 min-h-screen bg-gray-900 flex justify-center py-12 sm:px-6 lg:px-8 'h-screen bg-cover bg-no-repeat" style={{ backgroundImage: "url('../assets/bg.gif')" }}>
       <div className="absolute inset-0 bg-cover bg-no-repeat bg-center" style={{ backgroundImage: "url('../assets/bg.gif')", filter: 'blur(8px)' }}></div>
       
-      <div style={{ height: '60%' }} className="z-50 mt-16 lg:mt-2 w-full bg-zinc-800 border-white border flex rounded-2xl shadow-lg max-w-2xl p-5 ">
+      <div style={{ height: '60%' }} className="z-10 mt-16 lg:mt-2 w-full bg-zinc-800 border-white border flex rounded-2xl shadow-lg max-w-2xl p-5 ">
         <div className="sm:mx-auto w-full sm:w-full sm:max-w-md">
 
           <div className="px-2 lg:px-6 shadow sm:rounded ">
