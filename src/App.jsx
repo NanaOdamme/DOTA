@@ -15,6 +15,7 @@ import AuctionPage from './Auction.jsx';
 import AuctionDetailPage from './AuctionDetailPage.jsx';
 import Login from './login.jsx';
 import Register from './register.jsx';
+import ContactUs from './contactus.jsx';
 
 const App = () => {
   return (
@@ -25,7 +26,7 @@ const App = () => {
                   <Route path="/" element={<HomePage />} />
                   <Route path="/home" element={<Home />} />
                   <Route path="/about" element={<About />} />
-                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/contact" element={<ContactUs />} />
                   <Route path="/allAssets" element={<AllAssets />} />
                   <Route path="/details/:id" element={<AssetDetailsPage />} />
                   <Route path="/creators" element={<Creators />} />

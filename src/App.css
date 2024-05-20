@@ -621,3 +621,40 @@ text-shadow: 0 0 10px #6afdff,  0 0 30px #56fff1, 0 0 70px #0ff, 0 0 100px #0ff,
   font-weight: 600;
 }
 
+.contactus .form{
+ margin-top: -150px;
+  
+}
+@media screen and (max-width: 500px) {
+  .contactus .form{
+    margin-top: -80px;
+    width: 100%;
+    padding: 20px;
+  }
+
+  
+}
+@media screen and (max-width: 700px) {
+  .contactus .form{
+    margin-top: -150px;
+    width: 100%;
+    padding: 20px;
+  }
+
+  
+}
+
+@keyframes colorMovement {
+  0% { color: #00f2ff; } /* Start color */
+  50% { color: #eeff00; } /* Middle color */
+  100% { color: #ee00ff; } /* End color */
+}
+
+.contactus .bg{
+  margin-bottom: 2.5rem; /* 10px * 2.5 = 25px */
+}
+
+
+.contactus .animated-text {
+  animation: colorMovement 3s infinite alternate; /* Apply animation */
+}
