@@ -2,11 +2,11 @@ import React from 'react';
 
 const Checkout = () => {
     return (
-        <section className='pt-20 lg:px-20 p-5 bg-zinc-300 '>
-        <div className="rounded-lg shadow-lg mx-auto bg-zinc-700   p-3 flex justify-center items-center shadow-lg">
+        <section className='pt-20  lg:px-20 p-5 bg-zinc-800 '>
+        <div className="rounded-lg shadow-lg    p-3 flex justify-center items-center shadow-lg">
            
          
-         <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 p-5 lg:p-10 text-white'> 
+         <div className='mx-auto grid grid-cols-1  gap-4 p-5 lg:p-10 text-white'> 
               <form action="" className=' bg-zinc-900 p-5 rounded-lg shadow-lg'>
               <h1 className='text-2xl mb-5 font-bold'>Checkout</h1>
                 <div className="grid grid-cols-4 gap-1 text-center ">
@@ -52,13 +52,30 @@ const Checkout = () => {
                 </div>
                 </div>
                 <div className="grid">
-                <button type='submit' className='mb-5 mt-10 text-center bg-blue-500 font-bold py-2 px-20 rounded'>Pay</button>
+                <button type='submit' className='mb-5 mt-10 text-center bg-blue-500 font-bold py-2 lg:px-20 rounded'>Pay now</button>
                 </div>
               </form>
-           <div className="summary p-10  text-white bg-zinc-900 rounded-lg shadow-lg">
+           <div  className=" summary p-10  text-white bg-zinc-900 rounded-lg shadow-lg">
             <h1 className='text-center font-bold mb-5'>Payment Summary</h1>
             <hr className='mb-5'/>
             <p className='text-center text-gray-400 font-bold'>Orders</p>
+            <div className="flex justify-between mt-5 mb-4">
+                <h1 className='text-gray-500 lg:text-2xl font-bold'>asset 1</h1>
+                <p className='text-gray-500'>$450.09</p>
+            </div>
+            <hr className='mb-5'/>
+            <div className="flex justify-between mt-5 mb-4">
+                <h1 className='text-gray-500 lg:text-2xl font-bold'>asset 2</h1>
+                <p className='text-gray-500'>$450.09</p>
+            </div>
+            <hr className='mb-5'/>
+            <div className="flex justify-between mt-5 mb-4">
+                <h1 className=' lg:text-3xl font-bold'>Total</h1>
+                <p className='lg:text-4xl text-2xl'>$900.18</p>
+            </div>
+            <div className="flex justify-center mt-5">
+                <button className='bg-blue-500 text-white font-bold py-2 lg:px-20 px-5 rounded'>Checkout</button>
+            </div>
            </div>
          </div>
          

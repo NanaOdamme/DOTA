@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const CartPopup = ({ setIsCartOpen }) => {
   const [cartItems, setCartItems] = useState([
@@ -69,9 +70,9 @@ const CartPopup = ({ setIsCartOpen }) => {
               <p className="text-lg font-bold text-cyan-400">${cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0)}</p>
             </div>
             {/* Checkout Button */}
-            <button className="bg-cyan-400 text-white rounded-md px-4 py-2 mt-6 block w-full text-center hover:bg-cyan-500 transition duration-300" onClick={() => setIsCartOpen(false)}>
+            <Link to="/checkout" className="bg-cyan-400 text-white rounded-md px-4 py-2 mt-6 block w-full text-center hover:bg-cyan-500 transition duration-300" onClick={() => setIsCartOpen(false)}>
               Checkout
-            </button>
+            </Link>
           </div>
         )}
       </div>

@@ -14,7 +14,11 @@ const AssetDetails = ({ asset }) => {
   }, []);
 
  
-    
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
 
     
       
@@ -53,15 +57,18 @@ const AssetDetails = ({ asset }) => {
               </div>
             </div>
           </div>
+          
           <div className="py-4 px-4 lg:px-20">
-            <button className="border border-2 border-white py-1 px-4 rounded-full">
+          <div className="mt-2 grid grid-cols-2 gap-4">
+            <div className="  flex px-2 py-2 border border-1 border-white  rounded-full">
               <i className="bi bi-heart mx-2"></i>
-              {asset.likes}
-            </button>
-            <button className="border border-2 border-white py-1 px-4 rounded-full mx-5">
+              <p>{asset.likes}</p>
+            </div>
+            <div className="  flex px-2 py-2 border border-1 border-white rounded-full">
               <i className="bi bi-eye mx-2 "></i>
-              {asset.watched}
-            </button>
+             <p> {asset.watched}</p>
+            </div>
+            </div>
             <h4 className="mt-4">Creator</h4>
             <div className="flex items-center">
               {creatorsData.map((creator, index) => {
@@ -98,10 +105,29 @@ const AssetDetails = ({ asset }) => {
            
             
             <button
-              className="rounded-lg bg-zinc-200 py-2 px-10 text-black font-bold hover:bg-zinc-900 hover:text-white"
+        onClick={toggleDropdown}
+        className="rounded-lg bg-zinc-200 py-2 px-10 text-black font-bold hover:bg-zinc-900 hover:text-white"
+      >
+        Buy
+      </button>
+      {isOpen && (
+        <div className="absolute right-17 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+          <div className="py-1">
+            <button
+              className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              onClick={() => alert('Item added to cart')}
             >
-              Buy
+              Add to Cart
             </button>
+            <Link
+              to="/checkout"
+              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+            >
+              Buy Now
+            </Link>
+          </div>
+        </div>
+      )}
             <button
               
               className="ml-3 rounded-lg bg-zinc-900 py-2 px-10 text-white font-bold hover:bg-zinc-200 hover:text-black"
