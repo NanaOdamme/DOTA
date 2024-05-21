@@ -254,22 +254,23 @@ const Home = () => {
         <div className="first ">
           <i className="text-white bi bi-wallet2"></i>
           <h2 className="text-white">Set up your Account</h2>
-          <p className="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam neque laborum nobis reprehenderit tempora facilis.</p>
+          <p className="text-white">Log in to your new account using your email and password. Complete your profile by clicking on "My Profile" and adding a profile picture, bio, and links to your social media profiles or personal website. Finally, connect your cryptocurrency wallet (MetaMask, Trust Wallet, or Coinbase Wallet) by following the secure connection instructions provided.</p>
         </div>
         <div className="first ">
           <i className="bi bi-boxes"></i>
-          <h2 className="text-white">Create your collection</h2>
-          <p className="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam neque laborum nobis reprehenderit tempora facilis.</p>
+          <h2 className="text-white">Apply to Be a Creator</h2>
+          <p className="text-white">Navigate to the "Become a Creator" section in the main menu. Fill out the application form with details about your artistic background, a portfolio of your work, and a brief explanation of why you want to join our platform. After submission, wait for approval; you will receive an email notification within 3-5 business days if your application is accepted.</p>
         </div>
         <div className="first ">
           <i className="bi bi-file-plus"></i>
-          <h2 className="text-white">Add Your Asset</h2>
-          <p className="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam neque laborum nobis reprehenderit tempora facilis.</p>
+          <h2 className="text-white"> Start Minting Your Digital Assets</h2>
+          <p className="text-white">Once approved, log in to your account and access your Creator Dashboard. Click on "Create Digital Asset" to upload your digital artwork, providing a title, description, and other relevant information. Choose your pricing model (fixed price or auction) and set your royalty percentage for secondary sales. Finally, review your details and click "Mint Digital Asset," then confirm the transaction in your connected wallet to complete the minting process.
+          </p>
         </div>
         <div className="first ">
           <i className="bi bi-card-list"></i>
-          <h2 className="text-white">List them for Sale</h2>
-          <p className="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam neque laborum nobis reprehenderit tempora facilis.</p>
+          <h2 className="text-white">Promote and Sell Your Digital Assets</h2>
+          <p className="text-white">Share your newly minted digital assets on social media and with your network to attract potential buyers. Engage with the community by participating in our forums, attending virtual events, and collaborating with other creators to increase your visibility and network within the platform.</p>
         </div>
       </div>
     </section>

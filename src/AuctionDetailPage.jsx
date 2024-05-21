@@ -3,9 +3,16 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Assets from './db.json';
 import Footer from './Footer';
+import { Link } from 'react-router-dom'; 
+
 const AuctionDetailPage = () => {
   const { id } = useParams(); // Fetch the asset ID from the URL
   const [asset, setAsset] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
 
   useEffect(() => {
     // Simulate fetching asset details from the API or JSON file
@@ -23,8 +30,10 @@ const AuctionDetailPage = () => {
   }, [id]);
 
   if (!asset) {
-    return <div>Loading...</div>; // Add a loading state if needed
+    return <div>Loading...</div>;
   }
+ 
+
 
   return (
     <section className=" bg-zinc-800 px-2 pt-20">
@@ -52,11 +61,31 @@ const AuctionDetailPage = () => {
               </div>
             </div>
             <div className="flex justify-end mt-6 mr-4">
+              
             <button
-              className="rounded-lg bg-zinc-200 py-2 px-10 text-black font-bold hover:bg-zinc-900 hover:text-white"
+        onClick={toggleDropdown}
+        className="rounded-lg bg-zinc-200 py-2 px-10 text-black font-bold hover:bg-zinc-900 hover:text-white"
+      >
+        Buy
+      </button>
+      {isOpen && (
+        <div className="absolute  mt-12 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+          <div className="py-1">
+            <button
+              className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              onClick={() => alert('Item added to cart')}
             >
-              Buy
+              Add to Cart
             </button>
+            <Link
+              to="/checkout"
+              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+            >
+              Buy Now
+            </Link>
+          </div>
+        </div>
+      )}
             <button
               
               className="ml-3 rounded-lg bg-zinc-900 py-2 px-10 text-white font-bold hover:bg-zinc-200 hover:text-black"
