@@ -6,7 +6,7 @@ import Header from './Header.jsx';
 import HomePage from './First-page.jsx';
 import Home from './Home.jsx';
 import About from './About.jsx';
-import Contact from './Contact.jsx';
+
 import AllAssets from './AllAssets.jsx';
 import AssetDetailsPage from './AssetDetailsPage.jsx'; 
 import Creators from './AllCreators.jsx';
@@ -18,9 +18,14 @@ import Register from './register.jsx';
 import ContactUs from './contactus.jsx';
 import Checkout from './checkout.jsx';
 
+
 const App = () => {
+  
   return (
+    <>
+   
       <Router>
+         
           <div>
               <Header />
               <Routes>
@@ -43,7 +48,8 @@ const App = () => {
             
           </div>
       </Router>
-
+    
+      </>
   );
 };
 

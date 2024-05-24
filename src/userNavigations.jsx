@@ -45,13 +45,13 @@ const NavigationLinks = () => {
     <div className="flex items-center ml-auto">
       
       <div
-        className="account flex mx-2 lg:mx-4 bg-zinc-900 py-2 px-4 text-left hover:bg-zinc-800 rounded-lg cursor-pointer relative"
+        className="account flex mx-2 lg:mx-4 bg-white dark:bg-zinc-900 py-2 px-4 text-left hover:bg-gray-200 dark:hover:bg-zinc-800 rounded-lg cursor-pointer relative"
         onClick={toggleAccountMenu}
         ref={accountMenuRef}
       >
         <i className="bi bi-person-circle text-2xl"></i>
         {/* Account Dropdown */}
-        <div className={`absolute right-0 mt-10 w-64 shadow-lg bg-zinc-900 text-white rounded-lg shadow-lg ${isAccountMenuOpen ? '' : 'hidden'}`}>
+        <div className={`absolute right-0 mt-10 w-64 shadow-lg bg-white dark:bg-zinc-900 dark:text-white text-black rounded-lg shadow-lg ${isAccountMenuOpen ? '' : 'hidden'}`}>
         <ul>
                 <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
                   <Link to="/profile"><i className="bi bi-person"></i> Profile</Link>
@@ -91,7 +91,7 @@ const NavigationLinks = () => {
         </div>
       </div>
       <div>
-        <div className="cart flex items-center mx-2 lg:mx-4 bg-zinc-900 py-2 px-4 text-center hover:bg-zinc-800 rounded-lg cursor-pointer" onClick={toggleCart}>
+        <div className="cart flex items-center mx-2 lg:mx-4 dark:bg-zinc-900 bg-white py-2 px-4 text-center hover:bg-gray-300 dark:hover:bg-zinc-800 rounded-lg cursor-pointer" onClick={toggleCart}>
           <i className="bi bi-cart3 text-2xl"></i>
         </div>
         {isCartOpen && <CartPopup setIsCartOpen={setIsCartOpen} />}

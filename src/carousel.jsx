@@ -94,7 +94,7 @@ return(
     <section className="mb-10">
       <h1 className="mx-4 text-blue-400">Explore</h1>
       <div className="flex justify-between">
-        <h1 className="mx-4 mb-10 text-white text-2xl">Explore More Assets</h1>
+        <h1 className="mx-4 mb-10 dark:text-white text-black text-2xl">Explore More Assets</h1>
         <button type="button" onClick={() => window.location.href = "/allAssets"} className="mx-4 text-white">
           View All <i className="mx-6 bi bi-arrow-right"></i>
         </button>
@@ -105,7 +105,7 @@ return(
     <button key={asset.id} onClick={() => window.location.href = `/details/${asset.id}`} className="asset-list">
   <li className="card  hover:text-black">
              <div className="flex mx-2 auction ">
-               <div className="p-4 bg-zinc-800  text-white main-card max-w-xs bg-white rounded-lg shadow-md overflow-hidden">
+               <div className="p-4 dark:bg-zinc-800 bg-purple-200 dark:text-white text-black main-card max-w-xs bg-white rounded-lg shadow-md overflow-hidden">
                  <img
                    className="object-cover object-center rounded-lg w-64 h-48  transition duration-500 transform hover:-translate-y-1"
                    src={asset['asset-image']}
@@ -127,8 +127,8 @@ return(
     </button>
   ))}
 </ul>
-<i className="bi-first bg-zinc-800 hover:bg-zinc-600 text-white   rounded-lg bi bi-arrow-left-short" id="left" onClick={scrollLeft}></i>
-        <i className="bi-second bg-zinc-800 hover:bg-zinc-600  text-white  rounded-lg  bi bi-arrow-right-short" id="right" onClick={scrollRight}></i>
+<i className="bi-first dark:bg-zinc-800 hover:bg-zinc-600 dark:text-white  text-black bg-purple-500 rounded-lg bi bi-arrow-left-short" id="left" onClick={scrollLeft}></i>
+        <i className="bi-second dark:bg-zinc-800 hover:bg-zinc-600  dark:text-white text-black rounded-lg bg-purple-500 bi bi-arrow-right-short" id="right" onClick={scrollRight}></i>
 </div>
 </section>
 )

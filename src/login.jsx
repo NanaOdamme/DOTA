@@ -39,18 +39,18 @@ const Login = () => {
 
 
   return (
-    <div className="pt-20 px-10 min-h-screen bg-gray-900 flex justify-center py-12 sm:px-6 lg:px-8 'h-screen bg-cover bg-no-repeat" style={{ backgroundImage: "url('../assets/bg.gif')" }}>
+    <div className="pt-20 px-10 min-h-screen  flex justify-center py-12 sm:px-6 lg:px-8 'h-screen bg-cover bg-no-repeat" style={{ backgroundImage: "url('../assets/bg.gif')" }}>
       <div className="absolute inset-0 bg-cover bg-no-repeat bg-center" style={{ backgroundImage: "url('../assets/bg.gif')", filter: 'blur(8px)' }}></div>
       
-      <div style={{ height: '60%' }} className="z-10 mt-16 lg:mt-2 w-full bg-zinc-800 border-white border flex rounded-2xl shadow-lg max-w-2xl p-5 ">
+      <div style={{ height: '60%' }} className="bg-white text-black z-10 mt-16 lg:mt-2 w-full dark:bg-zinc-800 border-white border flex rounded-2xl  max-w-2xl p-5 ">
         <div className="sm:mx-auto w-full sm:w-full sm:max-w-md">
 
-          <div className="px-2 lg:px-6 shadow sm:rounded ">
+          <div className="px-2 lg:px-6 sm:rounded ">
             <form className="" onSubmit={handleSubmit} method="POST">
 
               <h2 className="font-bold text-1xl text-center text-cyan-500 mb-5">DOTA</h2>
-              <h1 className='text-white lg:text-center font-bold text-2xl'>Welcome back to DOTA</h1>
-              <h1 className='text-white mt-5 font-bold text-2xl'>Login</h1>
+              <h1 className='dark:text-white lg:text-center font-bold text-2xl'>Welcome back to DOTA</h1>
+              <h1 className='dark:text-white mt-5 font-bold text-2xl'>Login</h1>
 
               <div className="mt-5">
                 <input
@@ -60,7 +60,7 @@ const Login = () => {
                   autoComplete="email"
                   placeholder="Email"
                   required
-                  className="text-white bg-zinc-900 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="dark:text-white dark;bg-zinc-900 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -74,13 +74,13 @@ const Login = () => {
                   autoComplete="current-password"
                   placeholder="Password"
                   required
-                  className="text-white bg-zinc-900 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="dark:text-white dark;bg-zinc-900 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
                 <i
                   id="togglePassword"
-                  className={`bi ${passwordVisible ? 'bi-eye-slash' : 'bi-eye'} text-black absolute top-0 mt-2 text-white right-3 cursor-pointer`}
+                  className={`bi ${passwordVisible ? 'bi-eye-slash' : 'bi-eye'} text-black dark:text-white absolute top-0 mt-2 right-3 cursor-pointer`}
                   onClick={togglePasswordVisibility}
                 ></i>
                 <div className="text-sm mt-1 flex justify-end">

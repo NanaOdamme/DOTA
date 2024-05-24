@@ -30,16 +30,16 @@ const ContactUs = () => {
   };
 
     return (
-        <section className="contactus pt-20 bg-black">
-            <div className='bg mb-10 bg-zinc-700 w-full p-4 h-96 flex justify-center items-center text-center'>
-                <div className='background-hero text-white'>
+        <section className="contactus pt-20 dark:bg-black">
+            <div className='bg mb-10 dark:bg-zinc-700 bg-rose-300 w-full p-4 h-96 flex justify-center items-center text-center'>
+                <div className='background-hero dark:text-white'>
              <h1 className='text-5xl mb-5 animated-text'>Get in touch</h1>
              <p>Reach out to us for enquiries. Get answers to frequently asked questions</p>
              <p>Feel free to send feedbacks concerning our services</p>
             </div>
             </div>
         <div className="form p-9 flex justify-center items-center shadow-lg">
-           <form className="w-full lg:w-1/2 bg-white p-10 rounded-lg">
+           <form className="shadow-lg  w-full lg:w-1/2 dark:bg-white dark:text-black bg-blue-500 p-10 rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-6">
                 <div className='flex flex-col'>
             <label htmlFor="name" className='font-bold'>Name:</label>
@@ -70,30 +70,30 @@ const ContactUs = () => {
         </div>
 
         <div className="mostasked text-white lg:px-20 px-7 ">
-      <h1 className='text-3xl text-center mt-5 mb-5'>Frequently Asked Questions</h1>
+      <h1 className='text-3xl text-center mt-5 mb-5 text-black dark:text-white'>Frequently Asked Questions</h1>
       <div className='grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-6'>
-        <div className='faq bg-zinc-900 py-2 px-3 border border-white  rounded '>
+        <div className='faq dark:bg-zinc-900 bg-yellow-600 py-2 px-3 border border-white  rounded '>
             <div className="flex justify-between">
           <h1 className='text-1xl'>How do I create an account?</h1>
           <i class="text-white bi bi-arrow-down lg:ml-20"  onClick={() => toggleAnswer('faq1')}></i>
           </div>
           {isOpen['faq1'] && <p>To create an account, click on the sign up button on the top right corner of the page. Fill in your details and submit.</p>}
         </div>
-        <div className='faq bg-zinc-900 py-2 px-3 border border-white  rounded '>
+        <div className='faq dark:bg-zinc-900 bg-yellow-600 py-2 px-3 border border-white  rounded '>
             <div className="flex justify-between">
           <h1 className='text-1xl'>How do I reset my password?</h1>
           <i class="text-white bi bi-arrow-down"  onClick={() => toggleAnswer('faq2')}></i>
           </div>
           {isOpen['faq2'] && <p>To reset your password, click on the forgot password link on the sign in page. Enter your email and a reset link will be sent to you.</p>}
         </div>
-        <div className='faq bg-zinc-900 py-2 px-3 border border-white  rounded '>
+        <div className='faq dark:bg-zinc-900 bg-yellow-600 py-2 px-3 border border-white  rounded '>
             <div className="flex justify-between">
           <h1 className='text-1xl'>How do I make a payment?</h1>
           <i class="text-white bi bi-arrow-down"  onClick={() => toggleAnswer('faq3')}></i>
           </div>
           {isOpen['faq3'] && <p>To make a payment, click on the payment link on the top right corner of the page. Fill in your details and submit.</p>}
         </div>
-        <div className='faq bg-zinc-900 py-2 px-3 border border-white  rounded '>
+        <div className='faq dark:bg-zinc-900 bg-yellow-600 py-2 px-3 border border-white  rounded '>
             <div className="flex justify-between">
           <h1 className='text-1xl' >How do I contact support?</h1>
           <i class="text-white bi bi-arrow-down"  onClick={() => toggleAnswer('faq4')}></i>
@@ -103,7 +103,7 @@ const ContactUs = () => {
       </div>
     </div>
 
-    <div className="mt-20 reviews w-full lg:w-1/2  mx-auto p-6 bg-zinc-800 mt-10 text-white rounded-md shadow-md">
+    <div className="mt-20 reviews w-full lg:w-1/2  mx-auto p-6 dark:bg-zinc-800 bg-rose-800 mt-10 text-white rounded-md shadow-md">
       <h1 className="text-2xl font-bold mb-4">Rate Our Service</h1>
       <p className="mb-4">We would love to hear your feedback on our service. Please rate us and leave a comment below.</p>
       <form onSubmit={handleSubmit}>

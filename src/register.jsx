@@ -59,12 +59,12 @@ const Register = () => {
     <div className="pt-20 px-10 min-h-screen bg-gray-900 flex justify-center py-12 sm:px-6 lg:px-8 'h-screen bg-cover bg-no-repeat" style={{ backgroundImage: "url('../assets/bg.gif')" }}>
       <div className="absolute inset-0 bg-cover bg-no-repeat bg-center" style={{ backgroundImage: "url('../assets/bg.gif')", filter: 'blur(8px)' }}></div>
       
-      <div style={{ height: "60%" }} className="z-10 mt-16 lg:mt-2 w-full bg-zinc-800 border-white border flex rounded-2xl shadow-lg max-w-2xl p-5 ">
+      <div style={{ height: "60%" }} className="z-10 mt-16 lg:mt-2 w-full dark:bg-zinc-800 bg-white border-white border flex rounded-2xl shadow-lg max-w-2xl p-5 ">
         <div className="sm:mx-auto  w-full sm:w-full sm:max-w-md">
-          <div className="px-2 lg:px-6  shadow sm:rounded ">
+          <div className="px-2 lg:px-6  sm:rounded ">
             <form className="" onSubmit={handleSubmit} method="POST">
               <h2 className="font-bold text-1xl text-center text-cyan-500 mb-5">DOTA</h2>
-              <h1 className='text-white lg:text-center font-bold text-2xl'>Create, <br />Sell and Buy on <br/> DOTA </h1>
+              <h1 className='dark:text-white lg:text-center font-bold text-2xl'>Create, <br />Sell and Buy on <br/> DOTA </h1>
               <div className="cursor-pointer flex bg-zinc-900 text-white py-1 rounded-full mt-3 w-full lg:h-12 font-bold justify-center text-sm hover:scale-105 duration-300">
                 <img src="./Google.svg" alt="google" className="h-6 w-6 m-2 lg:mt-2 mx-1 " />
                 <p className="lg:mt-2 m-2">Login with Google</p>
@@ -85,12 +85,12 @@ const Register = () => {
                     autoComplete="name"
                     placeholder='username'
                     required
-                    className="bg-zinc-900 text-white appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="dark:bg-zinc-900 dark:text-white appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                   />
                 </div>
-                <div className="mt-5">
+                <div className="mt-5 lg:ml-1">
                   <input
                     id="email"
                     name="email"
@@ -98,7 +98,7 @@ const Register = () => {
                     autoComplete="email"
                     placeholder='email'
                     required
-                    className="bg-zinc-900 text-white appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="dark:bg-zinc-900 dark:text-white appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
@@ -113,13 +113,13 @@ const Register = () => {
                   autoComplete="current-password"
                   placeholder="Password"
                   required
-                  className="bg-zinc-900 text-white appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="dark:bg-zinc-900 dark:text-white appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
                 <i
                   id="togglePassword1"
-                  className={`bi ${passwordVisible ? 'bi-eye-slash' : 'bi-eye'} text- absolute top-1/4 right-3 cursor-pointer`}
+                  className={`bi ${passwordVisible ? 'bi-eye-slash' : 'bi-eye'} text-black dark:text-white absolute top-1/4 right-3 cursor-pointer`}
                   onClick={togglePasswordVisibility}
                 ></i>
                 {errors.password && <p className="text-red-500 text-xs mt-1">{errors.password}</p>}
@@ -133,13 +133,13 @@ const Register = () => {
                   autoComplete="current-password"
                   placeholder="Confirm Password"
                   required
-                  className="bg-zinc-900 text-white appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="dark:bg-zinc-900 dark:text-white appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
                 <i
                   id="togglePassword2"
-                  className={`bi ${confirmPasswordVisible ? 'bi-eye-slash' : 'bi-eye'} text-white absolute top-1/4 right-3 cursor-pointer`}
+                  className={`bi ${confirmPasswordVisible ? 'bi-eye-slash' : 'bi-eye'} dark;text-white absolute top-1/4 right-3 cursor-pointer`}
                   onClick={toggleConfirmPasswordVisibility}
                 ></i>
                 {errors.confirmPassword && <p className="text-red-500 text-xs mt-1">{errors.confirmPassword}</p>}

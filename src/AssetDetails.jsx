@@ -31,23 +31,23 @@ const AssetDetails = ({ asset }) => {
  
 
   return (
-    <section className="pt-20 lg:pt-24 assetid bg-black p-2 lg:p-10 text-white">
+    <section className="pt-20 lg:pt-24  dark:bg-black bg-gray-100 p-2  text-white">
     {asset && (
-      <div className="lg:p-10 bg-zinc-800 m-5 rounded-lg">
+      <div className="lg:p-10 dark:bg-zinc-800 bg-white m-5 rounded-lg border border-zinc-900">
         <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-2 p-4">
           <div className="grid grid-cols-1 gap-4">
           <img
             src={asset['asset-image']}
             
-            className="w-full h-96 rounded-lg shadow-md border border-white border-2"
+            className="border border-zinc-900 w-full h-96 rounded-lg shadow-md border border-white border-2"
             alt="assetid"
           />
            <div className="border rounded-lg overflow-hidden ">
-              <div className="flex">
+              <div className="flex text-black dark:text-white">
                 <div className="flex-1 border-r px-4 py-2">Auction Prize</div>
                 <div className="flex-1 px-4 py-2">Prize</div>
               </div>
-              <div className="flex">
+              <div className="flex text-black dark:text-white">
                 <div className="flex-1 border-r px-4 py-2">
                   {asset['auction-prize']}
                 </div>
@@ -60,16 +60,16 @@ const AssetDetails = ({ asset }) => {
           
           <div className="py-4 px-4 lg:px-20">
           <div className="mt-2 grid grid-cols-2 gap-4">
-            <div className="  flex px-2 py-2 border border-1 border-white  rounded-full">
-              <i className="bi bi-heart mx-2"></i>
+            <div className=" text-black dark:text-white flex px-2 py-2 border border-1 dark:border-white  rounded-full">
+              <i className="dark-text-white bi bi-heart mx-2"></i>
               <p>{asset.likes}</p>
             </div>
-            <div className="  flex px-2 py-2 border border-1 border-white rounded-full">
+            <div className="text-black dark:text-white  flex px-2 py-2 border border-1 dark;border-white rounded-full">
               <i className="bi bi-eye mx-2 "></i>
              <p> {asset.watched}</p>
             </div>
             </div>
-            <h4 className="mt-4">Creator</h4>
+            <h4 className="mt-4 text-black dark:text-white">Creator</h4>
             <div className="flex items-center">
               {creatorsData.map((creator, index) => {
                 if (creator['creator-id'] === asset['creator-id']) {
@@ -77,7 +77,7 @@ const AssetDetails = ({ asset }) => {
                     <React.Fragment key={creator['creator-id']}>
                       <img
                         src={creator.image}
-                        className="w-10 h-10 rounded-full"
+                        className="w-10 h-10 rounded-full border border-2 border-zinc-900"
                         alt="Creator"
                       />
                       <Link key={index} to={`/creators/${creator.id}`} >
@@ -91,12 +91,12 @@ const AssetDetails = ({ asset }) => {
                 return null;
               })}
             </div>
-            <h1 className="mt-5 mb-2 lg:text-5xl md:text-3xl text-2xl">
+            <h1 className="mt-5 mb-2 lg:text-5xl md:text-3xl text-2xl dark:text-white text-black">
               {asset.title}
             </h1>
             <p>{asset.description}</p>
             <i className="text-blue-400">genre</i>
-            <p style={{ fontWeight: 700 }} className="mb-6">
+            <p style={{ fontWeight: 700 }} className="mb-6 text-black dark:text-white">
               {asset.genre}
             </p>
             <p className='mb-4'>

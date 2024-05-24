@@ -3,8 +3,8 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 text-white lg:p-20 p-5 mt-20">
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+        <footer className="dark:bg-gray-900 bg-purple-600 text-white lg:p-20 p-3">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
                 <div className="logo">
                     <h1 className="mb-5 text-white text-5xl">DOTA</h1>
                     <div>
@@ -17,7 +17,7 @@ const Footer = () => {
                         <i className="mx-1 px-2 py-1 bi bi-twitter-x"></i>
                     </div>
                 </div>
-                <div className="links mx-5">
+                <div className="links lg:mx-5">
                     <h1 className="mb-9 text-white text-2xl">Communities</h1>
                     <ul>
                         <li>Help Center</li>
@@ -40,10 +40,10 @@ const Footer = () => {
                 <div className="links text-center">
                     <h1 className="mb-9 text-white text-2xl">Subscribe to our Newsletter</h1>
                     <div className="max-w-xs mx-auto">
-                        <form action="#" method="post" className="space-y-4 ">
+                        <form action="#" method="post" className=" grid grid-cols-1 lg:grid-cols-2 gap-3">
                             <input type="email" name="email" id="email" placeholder="Enter your email"
-                                className="md:w-full focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-700 rounded-md px-4 py-2 text-gray-800 placeholder-gray-400" />
-                            <button type="submit" className="submit  py-2 px-4 rounded-md">
+                                className="md:w-full focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 mx-2 rounded-md px-4 py-2 text-gray-800 placeholder-gray-400" />
+                            <button type="submit" className="submit w-1/2 py-2 px-4 rounded-md">
                                 Submit
                             </button>
                         </form>

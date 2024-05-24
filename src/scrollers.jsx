@@ -26,8 +26,8 @@ const DiscoverSection = () => {
 
   return (
     <section className="discover mb-10">
-      <h1 className="mx-4 mb-10 text-white lg:text-2xl">Discover New Assets</h1>
-      <div className="flex">
+      <h1 className="mx-4 mb-10 dark:text-white lg:text-2xl">Discover New Assets</h1>
+      <div className="flex dark:text-white text-black">
         <div className="scroller" animation-duration="slow" data-direction="left">
           <div className="tag-list scroller_inner w-full">
             <p className="gradient-border">Photography</p>
@@ -40,7 +40,7 @@ const DiscoverSection = () => {
           </div>
         </div>
       </div>
-      <div className="flex">
+      <div className="flex  dark:text-white text-black">
         <div className="scroller" animation-duration="slow" data-direction="right">
           <div className="tag-list scroller_inner w-full">
             <p className="gradient-border">Music tracks</p>

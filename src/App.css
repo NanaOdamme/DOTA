@@ -32,7 +32,7 @@
 
 .scrollers .h1{
   position: relative;
-  margin-top: -200px;
+  
   z-index: 1000;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 600;
@@ -109,13 +109,7 @@
       border-radius: 10px;
     }
 
-.home{
-background-size: cover;
-background-position: center;
-position: relative;
-transform: scaleX(-1);
-
-}        
+      
 
 
 
@@ -189,7 +183,7 @@ transform: scaleX(-1);
   font-size: 24px;
   padding: 5px 9px;
   border-radius: 100px;
-  color: rgb(0, 234, 255);
+ 
 }
 
 
@@ -209,15 +203,7 @@ font-size: 14px;
   cursor: pointer;
   transition: .4s;
 }
-.card .bi-arrow-down-right-circle-fill:hover{
-transform: scale(1.2);
-color: #00eeff;
-}
-.profile .likes{
-color: #00eeff;
-font-weight: 600;
 
-}
 .profile .cards{
 background-color: #22222d;
 transition: .4s;
@@ -430,24 +416,21 @@ border: 1px solid #edfcfb;
 .creator .card{
 cursor: pointer;
 transition: box-shadow 0.3s ease-in-out;
-box-shadow: 0 0 15px rgb(42, 41, 41);
+
 
 }
 .creator .card:hover{
 box-shadow: 0 0 20px rgb(251, 240, 250);
 }
 .creator .bi{
-color: #00e5ff;
+
 border: none;
 }
 .creator p{
 font-size: 20px;
 font-weight: 600;
 }
-.discover .tag-list p{
-color: #edfcfb;
 
-}
 .discover .tag-list{
 margin: 0;
 padding-inline: 0;
@@ -477,18 +460,9 @@ border: 1px solid #606060;
 padding: 10px;
 border-radius: 10px;
 }
-.first .bi{
-color: #ff00f7;
-font-size: 2rem;
-}
-.first h2{
-font-size: 1.3rem;
-color: #00ffee;
-font-weight: 600;
-}
-.first p{
-color: #c6c6c6;
-}
+
+
+
 footer .icons i{
 background-color: #424243;
 border-radius: 5px;
@@ -597,7 +571,7 @@ text-shadow: 0 0 10px #6afdff,  0 0 30px #56fff1, 0 0 70px #0ff, 0 0 100px #0ff,
 }
 .this-card {
   transition: transform 0.3s ease;
-  border: 2px solid rgb(253, 255, 255);
+  
   
 }
 .this-card:hover {
@@ -657,4 +631,10 @@ text-shadow: 0 0 10px #6afdff,  0 0 30px #56fff1, 0 0 70px #0ff, 0 0 100px #0ff,
 
 .contactus .animated-text {
   animation: colorMovement 3s infinite alternate; /* Apply animation */
+}
+
+.gradient-text {
+  background: linear-gradient(70deg, #00f2ff, rgb(255, 251, 0), #ff00fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
