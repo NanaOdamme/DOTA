@@ -6,7 +6,6 @@ import Header from './Header.jsx';
 import HomePage from './First-page.jsx';
 import Home from './Home.jsx';
 import About from './About.jsx';
-
 import AllAssets from './AllAssets.jsx';
 import AssetDetailsPage from './AssetDetailsPage.jsx'; 
 import Creators from './AllCreators.jsx';
@@ -17,7 +16,7 @@ import Login from './login.jsx';
 import Register from './register.jsx';
 import ContactUs from './contactus.jsx';
 import Checkout from './checkout.jsx';
-
+import Pro from './pro.jsx';
 
 const App = () => {
   
@@ -42,6 +41,7 @@ const App = () => {
                   <Route path="/login" element={<Login />} />
                   <Route path="/register" element={<Register />} />
                   <Route path="/checkout" element={<Checkout />} />
+                  <Route path='/pro' element={<Pro />} />
               </Routes>
           </div>
           <div>

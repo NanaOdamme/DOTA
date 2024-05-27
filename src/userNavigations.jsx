@@ -67,7 +67,7 @@ const NavigationLinks = () => {
                   <Link to="/mybids"><i className="bi bi-person-check"></i> Bids</Link>
                 </li>
                 <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
-                  <Link to="/dotapro"><i className="bi bi-person-check"></i> DotaPro</Link>
+                  <Link to="/pro"><i className="bi bi-person-check"></i> DotaPro</Link>
                 </li>
                 <hr className="border-zinc-600"/>
                 <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
