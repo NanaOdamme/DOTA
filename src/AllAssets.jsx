@@ -42,10 +42,10 @@ const AllAssets = () => {
 
 <section className="hero grid grid-cols-1 gap-2 p-4 text-center">
       <div className="flex justify-between mb-10 mt-10">
-        <h1 className="mx-2 dark:text-white text-2xl">100+ items</h1>
+        <h1 data-testid='hero-text' className="mx-2 dark:text-white text-2xl">100+ items</h1>
         <div className="filter dark:text-white">
           <div className="flex">
-            <button
+            <button data-testid="filter-button"
               id="filterBtn"
               onClick={toggleDropdown}
               className="dark:bg-gray-500 bg-white text-black dark:text-white font-bold px-2 rounded mx-1"
@@ -94,7 +94,7 @@ const AllAssets = () => {
           </div>
         </div>
       </div>
-      <h1 className="dark:text-white text-4xl mt-10">
+      <h1 data-testid='hero-text2' className="dark:text-white text-4xl mt-10">
         <span className="neon">Discover</span> Digital Assets, <br />
         Sell and Bid on Items
       </h1>
@@ -105,9 +105,10 @@ const AllAssets = () => {
           const creator = creatorsData.find((creator) => creator['creator-id'] === asset['creator-id']); // Find the creator for the asset
           if (!creator) return null; //this handles cases where creator is not found
           return (
-                    <Link to={`/details/${asset.id}`} key={asset.id} className="asset-link">
+            <div key={asset.id}  className="asset-link asset-card bg-white  h-64 w-full dark:bg-zinc-900 border text-black border-zinc-900 hover:bg-yellow-200 dark:hover:bg-zinc-700 hover:-translate-y-2 transition duration-500  text-white lg:p-5 p-2 rounded-lg">
+                    <Link to={`/details/${asset.id}`}>
                       
-                        <div className="asset-card bg-white  h-64 w-full dark:bg-zinc-900 border text-black border-zinc-900 hover:bg-yellow-200 dark:hover:bg-zinc-700 hover:-translate-y-2 transition duration-500  text-white lg:p-5 p-2 rounded-lg">
+                        <div className="">
                             <div className="p-1 grid grid-cols-1 lg:grid-cols-2 mb-2">
                                 <div className="flex w-96">
                                 {creator.image && <img src={creator.image} alt={creator.name} className="rounded-full h-10 w-10 mr-1 border border-2 border-zinc-900" />}
@@ -132,12 +133,14 @@ const AllAssets = () => {
                                 </div>
                                 
                             </div>
-                            <Link to='/watchlist' className="flex justify-end">
-                                <button className=" dark:text-white font-bold px-2 rounded mx-1"><i class="text-zinc-800 dark:text-white text-2xl bi bi-bookmark-plus-fill"></i></button>
-                                </Link>
+                            
                         </div>
                         
                         </Link>
+                        <Link to='/watchlist' className="flex justify-end">
+                                <button className=" dark:text-white font-bold px-2 rounded mx-1"><i className="text-zinc-800 dark:text-white text-2xl bi bi-bookmark-plus-fill"></i></button>
+                                </Link>
+                        </div>
                   );
                 })}
             </div>
