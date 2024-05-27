@@ -119,7 +119,7 @@ const Register = () => {
                 />
                 <i
                   id="togglePassword1"
-                  className={`bi ${passwordVisible ? 'bi-eye-slash' : 'bi-eye'} text-black dark:text-white absolute top-1/4 right-3 cursor-pointer`}
+                  className={`bi ${passwordVisible ? 'bi-eye-slash' : 'bi-eye'} dark:text-white absolute top-2 right-3 cursor-pointer`}
                   onClick={togglePasswordVisibility}
                 ></i>
                 {errors.password && <p className="text-red-500 text-xs mt-1">{errors.password}</p>}
@@ -139,7 +139,7 @@ const Register = () => {
                 />
                 <i
                   id="togglePassword2"
-                  className={`bi ${confirmPasswordVisible ? 'bi-eye-slash' : 'bi-eye'} dark;text-white absolute top-1/4 right-3 cursor-pointer`}
+                  className={`bi ${confirmPasswordVisible ? 'bi-eye-slash' : 'bi-eye'} dark:text-white absolute top-2 right-3 cursor-pointer`}
                   onClick={toggleConfirmPasswordVisibility}
                 ></i>
                 {errors.confirmPassword && <p className="text-red-500 text-xs mt-1">{errors.confirmPassword}</p>}
