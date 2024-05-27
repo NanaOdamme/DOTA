@@ -7,9 +7,9 @@ function About() {
   const [clients, setClients] = useState(0);
 
   useEffect(() => {
-    const yearsTarget = 10;
-    const projectsTarget = 500;
-    const clientsTarget = 1000;
+    const yearsTarget = 5;
+    const projectsTarget = 50;
+    const clientsTarget = 100;
 
     const interval = setInterval(() => {
       setYears((prev) => Math.min(prev + 1, yearsTarget));
@@ -171,15 +171,15 @@ function About() {
         <div className="py-12 md:py-6">
           <div className="flex flex-wrap justify-center mb-6 md:mb-3">
             <div className="w-full md:w-1/2 xl:w-1/3 p-4 text-center">
-              <h2 className="text-2xl font-bold text-white mb-2">{years}</h2>
+              <h2 className="text-2xl font-bold text-white mb-2">{years}+</h2>
               <p className="text-lg text-gray-200">Years of Experience</p>
             </div>
             <div className="w-full md:w-1/2 xl:w-1/3 p-4 text-center">
-              <h2 className="text-2xl font-bold text-white mb-2">{projects}</h2>
+              <h2 className="text-2xl font-bold text-white mb-2">{projects}+</h2>
               <p className="text-lg text-gray-200">Projects Completed</p>
             </div>
             <div className="w-full md:w-1/2 xl:w-1/3 p-4 text-center">
-              <h2 className="text-2xl font-bold text-white mb-2">{clients}</h2>
+              <h2 className="text-2xl font-bold text-white mb-2">{clients}+</h2>
               <p className="text-lg text-gray-200">Happy Clients</p>
             </div>
           </div>
