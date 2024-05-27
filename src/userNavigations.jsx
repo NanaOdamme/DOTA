@@ -90,7 +90,7 @@ const NavigationLinks = () => {
 
         </div>
       </div>
-      <div>
+      <div className='hidden lg:block '>
         <div className="cart flex items-center mx-2 lg:mx-4 dark:bg-zinc-900 bg-white py-2 px-4 text-center hover:bg-gray-300 dark:hover:bg-zinc-800 rounded-lg cursor-pointer" onClick={toggleCart}>
           <i className="bi bi-cart3 text-2xl"></i>
         </div>
