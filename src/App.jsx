@@ -17,7 +17,7 @@ import Register from './register.jsx';
 import ContactUs from './contactus.jsx';
 import Checkout from './checkout.jsx';
 import Pro from './pro.jsx';
-
+import Watchlist from './whatchlist.jsx';
 const App = () => {
   
   return (
@@ -42,6 +42,7 @@ const App = () => {
                   <Route path="/register" element={<Register />} />
                   <Route path="/checkout" element={<Checkout />} />
                   <Route path='/pro' element={<Pro />} />
+                  <Route path='/watchlist' element={<Watchlist />} />
               </Routes>
           </div>
           <div>
