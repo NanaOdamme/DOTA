@@ -107,11 +107,11 @@ const AllAssets = () => {
           return (
                     <Link to={`/details/${asset.id}`} key={asset.id} className="asset-link">
                       
-                        <div className="asset-card bg-white  h-64 w-full dark:bg-zinc-900 border text-black border-zinc-900 hover:bg-gray-200 dark:hover:bg-zinc-700 hover:-translate-y-2 transition duration-500  text-white lg:p-5 p-2 rounded-lg">
-                            <div className="grid grid-cols-1 lg:grid-cols-2 mb-2">
-                                <div className="flex">
+                        <div className="asset-card bg-white  h-64 w-full dark:bg-zinc-900 border text-black border-zinc-900 hover:bg-yellow-200 dark:hover:bg-zinc-700 hover:-translate-y-2 transition duration-500  text-white lg:p-5 p-2 rounded-lg">
+                            <div className="p-1 grid grid-cols-1 lg:grid-cols-2 mb-2">
+                                <div className="flex w-96">
                                 {creator.image && <img src={creator.image} alt={creator.name} className="rounded-full h-10 w-10 mr-1 border border-2 border-zinc-900" />}
-                                    <div className="info mx-2">
+                                    <div className=" mx-2">
                                         <h1 className="dark:text-gray-400 text-black text-sm">creator</h1>
                                         <p className='dark:text-white text-black'>{creator ? `${creator.name}` : 'Creator not found'}</p> {/* Display creator's name */}
                                     </div>
@@ -131,11 +131,12 @@ const AllAssets = () => {
                                 <p className="text-black dark:text-gray-400">current bids: {asset.bids} bids</p>
                                 </div>
                                 
-                            
-                       
                             </div>
-                           
+                            <Link to='/watchlist' className="flex justify-end">
+                                <button className=" dark:text-white font-bold px-2 rounded mx-1"><i class="text-zinc-800 dark:text-white text-2xl bi bi-bookmark-plus-fill"></i></button>
+                                </Link>
                         </div>
+                        
                         </Link>
                   );
                 })}
