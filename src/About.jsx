@@ -8,8 +8,8 @@ function About() {
 
   useEffect(() => {
     const yearsTarget = 5;
-    const projectsTarget = 50;
-    const clientsTarget = 100;
+    const projectsTarget = 500;
+    const clientsTarget = 1000;
 
     const interval = setInterval(() => {
       setYears((prev) => Math.min(prev + 1, yearsTarget));
