@@ -1,13 +1,14 @@
 import React from 'react';
 import { useBookmarks } from './BookmarkContext';  // Import the custom hook
 import { Link } from 'react-router-dom';
-
+import Footer from './Footer';
 const Watchlist = () => {
   const { bookmarkedAssets, removeBookmark } = useBookmarks();  // Access bookmarked assets and remove function
 
   return (
-    <section className="h-screen pt-20 bg-gray-100 dark:bg-zinc-950 pt-10 all px-10">
-      <h1 className='text-2xl dark:text-white text-black'>Your Bookmarks</h1>
+    <main className=' pt-20  dark:bg-zinc-950 pt-10 all '>
+    <section className=" all mx-10  pb-10">
+      <h1 className=' text-2xl dark:text-white text-black'>Your Bookmarks</h1>
       {bookmarkedAssets.length === 0 ? (
         <p className="text-black dark:text-white">You have no bookmarks or Watchlist</p>
       ) : (
@@ -52,7 +53,10 @@ const Watchlist = () => {
           ))}
         </div>
       )}
+     
     </section>
+    <Footer />
+    </main>
   );
 };
 

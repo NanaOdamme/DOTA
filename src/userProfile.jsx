@@ -128,7 +128,7 @@ const UserProfile = () => {
          <div className="h-96 bg-white dark:bg-zinc-800 pb-10 rounded-lg shadow-lg"> 
           <div className="flex mt-10">
             <img src="/assets/upgrade.svg" alt="pro" className="hidden md:block lg:block mx-10  w-72 h-72 rounded-full border border-2"/>
-            <div className="mx-auto mt-16">
+            <div className="mx-auto px-10 lg:px-2 mt-16">
                 <h1 className="font-bold text-2xl  mb-5">Upgrade to Pro?</h1>
                 <ul>
                     <li>
