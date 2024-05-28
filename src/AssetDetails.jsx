@@ -31,7 +31,7 @@ const AssetDetails = ({ asset }) => {
  
 
   return (
-    <section className="pt-20 lg:pt-24  dark:bg-black bg-gray-100 p-2  text-white">
+    <section className="pt-20 lg:pt-24  dark:bg-black bg-gray-100 p-2  text-white all">
     {asset && (
       <div className="lg:p-10 dark:bg-zinc-800 bg-white m-5 rounded-lg border border-zinc-900">
         <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-2 p-4">
