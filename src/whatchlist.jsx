@@ -6,11 +6,11 @@ const Watchlist = () => {
   const { bookmarkedAssets, removeBookmark } = useBookmarks();  // Access bookmarked assets and remove function
 
   return (
-    <main className=' pt-20  dark:bg-zinc-950 pt-10 all '>
-    <section className=" all mx-10  pb-10">
-      <h1 className=' text-2xl dark:text-white text-black'>Your Bookmarks</h1>
+    <main className='h-screen pt-20  dark:bg-zinc-950 pt-10 all '>
+    <section className=" all  lg:mx-10  pb-10">
+      <h1 className='mx-5 text-2xl dark:text-white text-black'>Your Bookmarks</h1>
       {bookmarkedAssets.length === 0 ? (
-        <p className="text-black dark:text-white">You have no bookmarks or Watchlist</p>
+        <p className="mx-5 text-black dark:text-white">You have no bookmarks or Watchlist</p>
       ) : (
         <div className="p-6 mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:p-4">
           {bookmarkedAssets.map((asset) => (
@@ -55,7 +55,9 @@ const Watchlist = () => {
       )}
      
     </section>
+    <div className=' bottom-0'>
     <Footer />
+    </div>
     </main>
   );
 };
