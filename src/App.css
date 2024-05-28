@@ -500,12 +500,7 @@ text-shadow: 0 0 10px #6afdff,  0 0 30px #56fff1, 0 0 70px #0ff, 0 0 100px #0ff,
       white 20%,
       white 90%,
       transparent);
-  mask: linear-gradient(
-      90deg,
-      transparent,
-      rgb(255, 255, 255) 20%,
-      white 90%,
-      transparent);
+  
 }
 
 .scroller[data-animated=true] .scroller_inner {
