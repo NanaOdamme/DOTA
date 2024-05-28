@@ -13,6 +13,9 @@ const AssetDetails = ({ asset }) => {
     setCreatorsData(Creators.creators); 
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
  
   const [isOpen, setIsOpen] = useState(false);
 

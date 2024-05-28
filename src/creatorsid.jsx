@@ -12,6 +12,10 @@ const CreatorProfile = () => {
     const [creators, setCreators] = useState(creatorsData);
     const [assets, setAssets] = useState([]);
     useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+      
+    useEffect(() => {
         const creatorAssets = Assets.assets.filter(asset => asset['creator-id'] === parseInt(id));
         setAssets(creatorAssets);
     }, [id]);

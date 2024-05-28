@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Footer from './Footer.jsx';
 
 const ContactUs = () => {
     const [isOpen, setIsOpen] = useState({});
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
   const toggleAnswer = (id) => {
     setIsOpen(prevState => ({

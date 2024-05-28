@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import Footer from "./Footer"
 const UserProfile = () => {
     const [name, setName] = useState("Marvina Gary");
   const [username, setUsername] = useState("@fubr_yeah");
@@ -13,12 +13,16 @@ const UserProfile = () => {
     setEditMode(false); // Disable edit mode after saving
   };
   
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <>
     
-      <section className="pb-10  profile-page pt-20 bg-sky-100 dark:bg-zinc-700 px-5 relative">
+      <section className=" profile-page pt-20 bg-sky-100 dark:bg-zinc-700  relative">
       
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:p-5">
+      <div className="mb-20 px-5 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:p-5">
 
         {/* frist grid has a crude. you can use the edit pen to edit name and bio */}
         <div className=" bg-white dark:bg-zinc-800 pb-10 rounded-lg shadow-lg"> 
@@ -129,7 +133,7 @@ const UserProfile = () => {
          <div className="h-96 bg-white dark:bg-zinc-800 pb-10 rounded-lg shadow-lg"> 
           <div className="flex mt-10">
             <img src="/assets/upgrade.svg" alt="pro" className="hidden md:block lg:block mx-10  w-72 h-72 rounded-full border border-2"/>
-            <div className="mx-auto px-10 lg:px-2 mt-16">
+            <div className="mx-auto px-10 lg:px-2 mt-10">
                 <h1 className="font-bold text-2xl  mb-5">Upgrade to Pro?</h1>
                 <ul>
                     <li>
@@ -161,6 +165,8 @@ const UserProfile = () => {
          </div>
          </div>
         </div>
+
+        <Footer />
       </section>
     </>
   );

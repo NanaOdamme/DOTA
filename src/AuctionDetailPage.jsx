@@ -15,6 +15,10 @@ const AuctionDetailPage = () => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     // Simulate fetching asset details from the API or JSON file
     const fetchAssetDetails = () => {
       const foundAsset = Assets.assets.find((item) => item.id === parseInt(id));
@@ -38,14 +42,14 @@ const AuctionDetailPage = () => {
   return (
     <section className="dark:bg-zinc-800  pt-20">
       
-      <h1 className="lg:ml-20 mt-10 text-2xl dark:text-white font-bold mb-4">{asset.title}</h1>
-      <div className="grid lg:grid-cols-2 gap-2">
+      <h1 className="lg:ml-20 mt-10 text-2xl mx-10 dark:text-white font-bold mb-4">{asset.title}</h1>
+      <div className="grid lg:grid-cols-2 gap-2 px-8 mb-20">
       <img src={asset['asset-image']} alt={asset.title} className="lg:ml-20  lg:w-96  w-full  lg:h-96 mb-2 rounded-lg border border-white" />
       <div className="div p-4">
-        <h1 className='dark;text-white font-bold text-2xl'>Description</h1>
+        <h1 className='dark:text-white font-bold text-2xl'>Description</h1>
       <p className="dark:text-white mb-6">{asset.info}</p>
       <p className="dark:text-white mb-4">Current Bid: ${asset.bids}</p>
-      <p className="dark;text-white mb-5">End Date: {asset.hours} Days, {asset.minutes} Minutes, {asset.seconds} Seconds</p>
+      <p className="dark:text-white mb-5">End Date: {asset.hours} Days, {asset.minutes} Minutes, {asset.seconds} Seconds</p>
       <div className="dark:text-white border rounded-lg overflow-hidden">
               <div className="flex">
                 <div className="flex-1 border-r px-4 py-2">Auction Prize</div>

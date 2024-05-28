@@ -1,13 +1,17 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useBookmarks } from './BookmarkContext';  // Import the custom hook
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
 const Watchlist = () => {
   const { bookmarkedAssets, removeBookmark } = useBookmarks();  // Access bookmarked assets and remove function
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <main className='h-screen pt-20  dark:bg-zinc-950 pt-10 all '>
-    <section className=" all  lg:mx-10  pb-10">
+    <main className=' pt-20  dark:bg-zinc-950 pt-10 all '>
+    <section className="h-auto all  lg:mx-10  pb-10">
       <h1 className='mx-5 text-2xl dark:text-white text-black'>Your Bookmarks</h1>
       {bookmarkedAssets.length === 0 ? (
         <p className="mx-5 text-black dark:text-white">You have no bookmarks or Watchlist</p>

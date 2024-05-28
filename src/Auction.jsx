@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom'; 
 import Assets from './db.json'
 
 const AuctionPage = () => {
   const auctionAssets = Assets.assets.filter((asset) => asset['auction-status'] === 'True');
   
-   
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className=" dark:bg-black p-2 pt-20">

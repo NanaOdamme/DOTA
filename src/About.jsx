@@ -7,6 +7,10 @@ function About() {
   const [clients, setClients] = useState(0);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
+  useEffect(() => {
     const yearsTarget = 5;
     const projectsTarget = 500;
     const clientsTarget = 1000;

@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-
+import React, {useEffect} from "react";
 const DiscoverSection = () => {
   const addAnimation = (scrollers) => {
     scrollers.forEach((scroller) => {
@@ -11,7 +10,7 @@ const DiscoverSection = () => {
       scrollerContent.forEach((item) => {
         const duplicatedItem = item.cloneNode(true);
         duplicatedItem.setAttribute('aria-hidden', true);
-        innerScroller.appendChild(duplicatedItem);
+        
       });
     });
   };
@@ -23,6 +22,7 @@ const DiscoverSection = () => {
       addAnimation(scrollers);
     }
   }, []);
+
 
   return (
     <section className="discover mb-10">

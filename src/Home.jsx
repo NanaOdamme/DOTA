@@ -10,6 +10,10 @@ const Home = () => {
   const [creators, setCreators] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
+  useEffect(() => {
     // Extract the first 6 creators from the creatorsData array
     const firstSixCreators = creatorsData.creators.slice(0, 6);
     setCreators(firstSixCreators);

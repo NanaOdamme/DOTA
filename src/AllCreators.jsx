@@ -7,6 +7,10 @@ const Creators = () => {
     const [creators, setCreators] = useState([]);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+      
+    useEffect(() => {
         setCreators(creatorsData.creators);
     }, []);
 
