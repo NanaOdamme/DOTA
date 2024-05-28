@@ -4,11 +4,11 @@ import Footer from './Footer.jsx';
 import Creators from './creators.json';
 import { Link } from 'react-router-dom'; 
 import Carousel from './carousel.jsx';
-
+import { useBookmarks } from './BookmarkContext';
 
 const AssetDetails = ({ asset }) => {
   const [creatorsData, setCreatorsData] = useState([]); 
-  
+  const { addBookmark } = useBookmarks();
   useEffect(() => {
     setCreatorsData(Creators.creators); 
   }, []);
@@ -103,8 +103,9 @@ const AssetDetails = ({ asset }) => {
               {asset.info}
             </p>
            
-            
-            <button
+            <div className='flex justify-between'>
+              <div>
+              <button
         onClick={toggleDropdown}
         className="rounded-lg bg-zinc-200 py-2 px-10 text-black font-bold hover:bg-zinc-900 hover:text-white"
       >
@@ -134,6 +135,11 @@ const AssetDetails = ({ asset }) => {
             >
               Bid
             </button>
+              </div>
+              <button onClick={() => addBookmark(asset)} className="  font-bold px-2 rounded mx-1"><i className="text-green-500 text-3xl bi bi-bookmark-plus-fill hover:text-green-300"></i></button>
+            </div>
+           
+            
           </div>
         </div>
       </div>
