@@ -11,6 +11,7 @@ const DiscoverSection = () => {
         const duplicatedItem = item.cloneNode(true);
         duplicatedItem.setAttribute('aria-hidden', true);
         
+        
       });
     });
   };
@@ -37,12 +38,26 @@ const DiscoverSection = () => {
             <p className="gradient-border">Icons</p>
             <p className="gradient-border">Logos</p>
             <p className="gradient-border">Animations</p>
+            <p className="gradient-border">Photography</p>
+            <p className="gradient-border">Stickers</p>
+            <p className="gradient-border">Illustrations</p>
+            <p className="gradient-border">Graphics</p>
+            <p className="gradient-border">Icons</p>
+            <p className="gradient-border">Logos</p>
+            <p className="gradient-border">Animations</p>
           </div>
         </div>
       </div>
       <div className="flex  dark:text-white text-black">
         <div className="scroller" animation-duration="slow" data-direction="right">
           <div className="tag-list scroller_inner w-full">
+            <p className="gradient-border">Music tracks</p>
+            <p className="gradient-border">Sound effects</p>
+            <p className="gradient-border">Litecoin</p>
+            <p className="gradient-border">Utility tokens</p>
+            <p className="gradient-border">NFTs</p>
+            <p className="gradient-border">3D models</p>
+            <p className="gradient-border">Digital sculptures</p>
             <p className="gradient-border">Music tracks</p>
             <p className="gradient-border">Sound effects</p>
             <p className="gradient-border">Litecoin</p>
