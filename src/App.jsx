@@ -19,6 +19,7 @@ import Checkout from './checkout.jsx';
 import Pro from './pro.jsx';
 import Watchlist from './whatchlist.jsx'
 import { BookmarkProvider } from './BookmarkContext';
+import UserProfile from './userProfile.jsx';
 
 const App = () => {
   return (
@@ -42,6 +43,7 @@ const App = () => {
             <Route path="/checkout" element={<Checkout />} />
             <Route path='/pro' element={<Pro />} />
             <Route path='/watchlist' element={<Watchlist />} />
+            <Route path="/profile" element={<UserProfile />} />
           </Routes>
         </div>
       </Router>
