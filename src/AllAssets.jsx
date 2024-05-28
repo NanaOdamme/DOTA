@@ -3,11 +3,11 @@ import Assets from './db.json';
 import Creators from './creators.json'; // Import creators data
 import Footer from './Footer.jsx';
 import { Link } from 'react-router-dom';
-
+import { useBookmarks } from './BookmarkContext';
 
 const AllAssets = () => {
   const [creatorsData, setCreatorsData] = useState([]); // State to hold creators data
-
+  const { addBookmark } = useBookmarks();
   const [showDropdown, setShowDropdown] = useState(false);
   const [searchInput, setSearchInput] = useState('');
   const [filterId, setFilterId] = useState(null);
@@ -137,9 +137,14 @@ const AllAssets = () => {
                         </div>
                         
                         </Link>
-                        <Link to='/watchlist' className="flex justify-end">
-                                <button className=" dark:text-white font-bold px-2 rounded mx-1"><i className="text-zinc-800 dark:text-white text-2xl bi bi-bookmark-plus-fill"></i></button>
+                        <div className="flex justify-end">
+                          <button className='font-bold px-2 rounded mx-5'>
+                          <i class="text-purple-500 text-2xl bi bi-cart-plus-fill"></i>
+                          </button>
+                        <Link to='/watchlist' >
+                                <button onClick={() => addBookmark(asset)} className="  font-bold px-2 rounded mx-1"><i className="text-green-500 text-2xl bi bi-bookmark-plus-fill hover:text-green-300"></i></button>
                                 </Link>
+                                </div>
                         </div>
                   );
                 })}
