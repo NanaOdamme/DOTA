@@ -47,13 +47,14 @@ const UserProfile = () => {
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="font-bold text-2xl mb-2 dark:bg-zinc-700 dark:text-white"
+                    
+                    className="border rounded-lg w-24 p-2 font-bold text-2xl mb-2 dark:bg-zinc-700 dark:text-white"
                   />
                   <input
                     type="text"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    className="text-gray-500 mb-2 dark:bg-zinc-700 dark:text-white"
+                    className="border rounded-lg w-24 p-2 text-gray-500 mb-2 dark:bg-zinc-700 dark:text-white"
                   />
                 </>
               ) : (
