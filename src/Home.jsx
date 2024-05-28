@@ -5,18 +5,18 @@ import Footer from './Footer.jsx';
 import { Link } from 'react-router-dom'; // Import Link from React Router
 import creatorsData from './creators.json'; // Importing the JSON data
 import DiscoverSection from './scrollers.jsx'
+import CreateAndSellSection from './creatensell.jsx';
 
 const Home = () => {
   const [creators, setCreators] = useState([]);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+ 
   
   useEffect(() => {
     // Extract the first 6 creators from the creatorsData array
     const firstSixCreators = creatorsData.creators.slice(0, 6);
     setCreators(firstSixCreators);
+    window.scrollTo(0, 0);
   }, []);
 
   
@@ -226,37 +226,7 @@ const Home = () => {
     </section>
   
 
- <section className="create-n-sell mb-10">
-      <h1 className="mx-4 dark:text-blue-400">Be a creator</h1>
-      <div className="flex justify-between">
-        <h1 className="mx-4 mb-10 dark:text-white text-2xl">Create and sell your asset</h1>
-        <a href="create-account.html" className="mx-4 dark:text-white">Get started<i className="mx-6 bi bi-arrow-right"></i></a>
-      </div>
-
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 p-3">
-        <div className="first bg-purple-300 text-black">
-          <i className="dark:text-purple-600 text-cyan-700 text-3xl bi bi-wallet2"></i>
-          <h2 className="font-bold dark:text-purple-600 text-cyan-700 text-2xl">Set up your Account</h2>
-          <p className="text-zinc-700">Log in to your new account using your email and password. Complete your profile by clicking on "My Profile" and adding a profile picture, bio, and links to your social media profiles or personal website. Finally, connect your cryptocurrency wallet (MetaMask, Trust Wallet, or Coinbase Wallet) by following the secure connection instructions provided.</p>
-        </div>
-        <div className="first bg-purple-300 text-black ">
-          <i className="dark:text-purple-600 text-cyan-700 text-3xl bi bi-boxes"></i>
-          <h2 className="font-bold dark:text-purple-600 text-cyan-700 text-2xl">Apply to Be a Creator</h2>
-          <p className="text-zinc-700">Navigate to the "Become a Creator" section in the main menu. Fill out the application form with details about your artistic background, a portfolio of your work, and a brief explanation of why you want to join our platform. After submission, wait for approval; you will receive an email notification within 3-5 business days if your application is accepted.</p>
-        </div>
-        <div className="first bg-purple-300 text-black">
-          <i className="dark:text-purple-600 text-cyan-700 text-3xl bi bi-file-plus"></i>
-          <h2 className="font-bold dark:text-purple-600 text-cyan-700 text-2xl"> Start Minting Your Digital Assets</h2>
-          <p className="text-zinc-700">Once approved, log in to your account and access your Creator Dashboard. Click on "Create Digital Asset" to upload your digital artwork, providing a title, description, and other relevant information. Choose your pricing model (fixed price or auction) and set your royalty percentage for secondary sales. Finally, review your details and click "Mint Digital Asset," then confirm the transaction in your connected wallet to complete the minting process.
-          </p>
-        </div>
-        <div className="first bg-purple-300 text-black">
-          <i className="dark:text-purple-600 text-cyan-700 text-3xl bi bi-card-list"></i>
-          <h2 className="font-bold dark:text-purple-600 text-cyan-700 text-2xl">Promote and Sell Your Digital Assets</h2>
-          <p className="text-zinc-700">Share your newly minted digital assets on social media and with your network to attract potential buyers. Engage with the community by participating in our forums, attending virtual events, and collaborating with other creators to increase your visibility and network within the platform.</p>
-        </div>
-      </div>
-    </section>
+ <CreateAndSellSection />
 
       </div>
 

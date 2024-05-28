@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Footer from "./Footer"
+import Chart from "chart.js/auto";
+
 const UserProfile = () => {
-    const [name, setName] = useState("Marvina Gary");
+  const [name, setName] = useState("Marvina Gary");
   const [username, setUsername] = useState("@fubr_yeah");
   const [bio, setBio] = useState("Passionate NFT enthusiast with a love for art, actively engaged in bidding and purchasing unique digital assets to enrich my collection.");
-  
+  const chartRef1 = useRef(null);
   const [editMode, setEditMode] = useState(false);
 
   const handleSave = () => {
@@ -16,7 +18,36 @@ const UserProfile = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    if (chartRef1.current) {
+      const ctx1 = chartRef1.current.getContext("2d");
+      
+
+  const bidsData = {
+    labels: ["Won", "Lost", "Pending"],
+    datasets: [
+      {
+        label: "Engagements in Bids",
+        data: [12, 5, 3], // Sample data for bids engagements
+        backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
+        borderWidth: 1,
+      },
+    ],
+  };
+
   
+
+  new Chart(ctx1, {
+    type: "pie",
+    data: bidsData,
+  });
+
+ 
+}
+}, []);
+
+
   return (
     <>
     
@@ -130,38 +161,53 @@ const UserProfile = () => {
  
          {/* second grid  */}
          <div className="flex flex-col dark:text-white">
-         <div className="h-96 bg-white dark:bg-zinc-800 pb-10 rounded-lg shadow-lg"> 
+         <h1 className="hidden lg:block md:block mb-2  bg-violet-200 dark:bg-zinc-800  text-3xl p-2 rounded-lg shadow-lg text-white font-bold  text-center ">Welcome Back {name}</h1>
+         <div className="h-96 bg-rose-200 border border-2 border-zinc-900 dark:bg-zinc-800 pb-10 rounded-lg shadow-lg"> 
           <div className="flex mt-10">
             <img src="/assets/upgrade.svg" alt="pro" className="hidden md:block lg:block mx-10  w-72 h-72 rounded-full border border-2"/>
-            <div className="mx-auto px-10 lg:px-2 mt-10">
+            <div className="mx-auto px-10 lg:px-2 lg:mt-10">
                 <h1 className="font-bold text-2xl  mb-5">Upgrade to Pro?</h1>
                 <ul>
                     <li>
-                        <i class=" bi bi-check2"></i> Access to exclusive NFTs and digital assets from top creators and artists around the world.
+                        <i className=" bi bi-check2"></i> Access to exclusive NFTs and digital assets from top creators and artists around the world.
                     </li>
                     <li>
-                        <i class=" bi bi-check2"></i> Early access to new features and updates.
+                        <i className=" bi bi-check2"></i> Early access to new features and updates.
                     </li>
                     <li>
-                        <i class=" bi bi-check2"></i> Priority support from our dedicated team.
+                        <i className=" bi bi-check2"></i> Priority support from our dedicated team.
                     </li>
                     <li>
-                        <i class=" bi bi-check2"></i> 30-day money-back guarantee.
+                        <i className=" bi bi-check2"></i> 30-day money-back guarantee.
                     </li>
                     <li>
-                        <i class=" bi bi-check2"></i> Cancel anytime.
+                        <i className=" bi bi-check2"></i> Cancel anytime.
                     </li>
                     <Link to='/pro'>
                     <li>
-                        <i class=" bi bi-check2"></i> <span className="text-cyan-500">Upgrade Now</span>
+                        <i className=" bi bi-check2"></i> <span className="text-cyan-500">Upgrade Now</span>
                     </li>
                     </Link>
                 </ul>
             </div>
           </div>
          </div>
-         <div className="mt-20 h-96 bg-white dark:bg-zinc-800 pb-10 rounded-lg shadow-lg"> 
+         <div className="text-black border border-2 dark:text-white mt-10 h-96 border-zinc-900 bg-cyan-100 dark:bg-zinc-800 pb-10 rounded-lg shadow-lg"> 
+          <h1 className="text-2xl font-bold text-center dark:text-white p-2">Other Information</h1>
+          <div className="flex">
+          <div className="flex flex-col w-96">
+               <button className="hover:bg-gray-600  p-2 mt-2 mx-2 bg-rose-100 dark:bg-zinc-600 shadow-lg rounded-lg">Account Settings</button>
+               <button className="hover:bg-gray-600  p-2 mt-10 mx-2 bg-rose-100 dark:bg-zinc-600 shadow-lg rounded-lg">UI Settings</button>
+               <button className="hover:bg-gray-600  p-2 mt-10 mx-2 bg-rose-100 dark:bg-zinc-600 shadow-lg rounded-lg">User Credentials</button>
+               <button className="hover:bg-gray-600  p-2 mt-10 mx-2 bg-rose-100 dark:bg-zinc-600 shadow-lg rounded-lg">Get Help</button>
+               </div>
 
+
+               <div className="hidden lg:block md:block mx-auto">
+              <h3 className="font-bold text-lg mb-2 mx-6">Engagements in Bids</h3>
+              <canvas ref={chartRef1}/>
+            </div>
+          </div>
          </div>
          </div>
         </div>
