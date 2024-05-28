@@ -21,9 +21,10 @@ const DiscoverSection = () => {
   useEffect(() => {
     const scrollers = document.querySelectorAll('.scroller');
 
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    // Temporarily disable this line to test
+  // if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       addAnimation(scrollers);
-    }
+    // }
   }, []);
 
   return (
