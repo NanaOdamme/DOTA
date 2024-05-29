@@ -29,7 +29,7 @@ const UserProfile = () => {
     datasets: [
       {
         label: "Engagements in Bids",
-        data: [12, 5, 3], // Sample data for bids engagements
+        data: [12, 5, 3],
         backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
         borderWidth: 1,
       },
