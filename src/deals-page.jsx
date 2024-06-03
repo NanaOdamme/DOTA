@@ -5,7 +5,7 @@ import Footer from './Footer.jsx';
 import { Link } from 'react-router-dom';
 import { useBookmarks } from './BookmarkContext';
 
-const AllAssets = () => {
+const Deals = () => {
   const [creatorsData, setCreatorsData] = useState([]);
   const { addBookmark } = useBookmarks();
   const [showDropdown, setShowDropdown] = useState(false);
@@ -13,7 +13,7 @@ const AllAssets = () => {
   const [filterId, setFilterId] = useState(null);
   const [successMessage, setSuccessMessage] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 20; // Number of assets per page
+  const pageSize = 10;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -30,7 +30,7 @@ const AllAssets = () => {
 
   const handleFilter = (id) => {
     setFilterId(id === 'all' ? null : id);
-    setCurrentPage(1); // Reset to first page when filter changes
+    setCurrentPage(1);
   };
 
   const handlePageChange = (page) => {
@@ -41,12 +41,14 @@ const AllAssets = () => {
     ? Assets.assets.filter(asset => asset['genre-id'] === filterId)
     : Assets.assets;
 
+  const dealsAssets = filteredAssets.filter(asset => asset.deals === "True");
+
   const searchedAssets = searchInput.trim().length > 0
-    ? filteredAssets.filter(asset =>
+    ? dealsAssets.filter(asset =>
       asset.title.toLowerCase().includes(searchInput.toLowerCase()) ||
       asset.creator.toLowerCase().includes(searchInput.toLowerCase())
     )
-    : filteredAssets;
+    : dealsAssets;
 
   const handleAddBookmark = (asset) => {
     addBookmark(asset);
@@ -61,9 +63,9 @@ const AllAssets = () => {
 
   return (
     <section className="dark:bg-black bg-gray-100 pt-10 all">
-      <section className="hero grid grid-cols-1 gap-2 p-4 text-center">
-        <div className="flex justify-between mb-10 mt-10">
-          <h1 data-testid='hero-text' className="mx-2 dark:text-white text-2xl">100+ items</h1>
+      <section className="bg-rose-300 dark:bg-rose-800 grid grid-cols-1 gap-2 p-4 text-center pb-20">
+        <div className="flex justify-end mb-10 mt-10">
+         
           <div className="filter dark:text-white">
             <div className="flex">
               <button data-testid="filter-button"
@@ -74,7 +76,6 @@ const AllAssets = () => {
                 <i className="text-2xl bi bi-filter"></i>
               </button>
 
-              {/* Dropdown */}
               {showDropdown && (
                 <div className="absolute mx-5 z-10 mt-12 dark:bg-gray-400 bg-white text-black dark:text-white rounded-md shadow-lg">
                   <div className="" role="menu" aria-orientation="vertical" aria-labelledby="filterBtn">
@@ -100,7 +101,6 @@ const AllAssets = () => {
                 </div>
               )}
 
-              {/* Search bar */}
               <div className="relative mx-auto max-w-md">
                 <input
                   type="text"
@@ -114,17 +114,11 @@ const AllAssets = () => {
           </div>
         </div>
         <h1 data-testid='hero-text2' className="dark:text-white text-4xl mt-10">
-          <span className="neon">Discover</span> Digital Assets, <br />
-          Sell and Bid on Items
+          <span className="text-7xl font-bold text-indigo-400">Deals!!!</span><br />
+          Rush for assets before sales are over. Reduced prized for a limited time.
         </h1>
       </section>
-      {successMessage && (
-        <div className="top-0 left-0 right-0 bg-green-500 text-white text-center py-2">
-          {successMessage}
-        </div>
-      )}
-
-      <div className="flex justify-center mt-10">
+      <div className="flex justify-center mt-6">
       <button
           className="mx-1 px-4 py-2 bg-gray-300 text-black rounded"
           onClick={() => handlePageChange(currentPage - 1)}
@@ -149,6 +143,12 @@ const AllAssets = () => {
           Next
         </button>
       </div>
+      {successMessage && (
+        <div className="top-0 left-0 right-0 bg-green-500 text-white text-center py-2">
+          {successMessage}
+        </div>
+      )}
+      
       <div className="p-6 mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:p-4">
         {paginatedAssets.map((asset) => {
           const creator = creatorsData.find((creator) => creator['creator-id'] === asset['creator-id']);
@@ -176,7 +176,9 @@ const AllAssets = () => {
                     </div>
                     <div className="grid grid-cols-1 ml-3">
                       <h1 className="dark:text-white text-black font-bold lg:text-1xl">{asset.title}</h1>
-                      <p className="text-black dark:text-gray-400">current bids: {asset.bids} bids</p>
+                      <p className="text-black dark:text-gray-400">Days: {asset['deal-duration']}</p>
+                      <p className='text-red-500 font-bold'>Was: {asset.oldprice}</p>
+                      <p className='text-green-500 font-bold'>Now: {asset.newprice}</p>
                     </div>
                   </div>
                 </div>
@@ -191,10 +193,10 @@ const AllAssets = () => {
           );
         })}
       </div>
-     
+      
       <Footer />
     </section>
   );
 };
 
-export default AllAssets;
+export default Deals;

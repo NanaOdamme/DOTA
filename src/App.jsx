@@ -20,6 +20,7 @@ import Pro from './pro.jsx';
 import Watchlist from './whatchlist.jsx'
 import { BookmarkProvider } from './BookmarkContext';
 import UserProfile from './userProfile.jsx';
+import Deals from './deals-page.jsx';
 
 const App = () => {
   return (
@@ -44,6 +45,7 @@ const App = () => {
             <Route path='/pro' element={<Pro />} />
             <Route path='/watchlist' element={<Watchlist />} />
             <Route path="/profile" element={<UserProfile />} />
+            <Route path="/deals" element={<Deals />} />
           </Routes>
         </div>
       </Router>
