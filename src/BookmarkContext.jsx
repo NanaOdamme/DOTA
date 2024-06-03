@@ -10,9 +10,13 @@ export const BookmarkProvider = ({ children }) => {
 
   // Function to add an asset to the bookmark list
   const addBookmark = (asset) => {
-    // Check if the asset is already bookmarked
-    if (!bookmarkedAssets.some((bookmarkedAsset) => bookmarkedAsset.id === asset.id)) {
+    if (bookmarkedAssets.some((bookmarkedAsset) => bookmarkedAsset.id === asset.id)) {
+      // Alert if the asset is already bookmarked
+      alert('This asset is already bookmarked.');
+    } else {
       setBookmarkedAssets((prev) => [...prev, asset]);
+      // Alert if the asset is successfully added
+      alert('Asset added to bookmarks successfully.');
     }
   };
 

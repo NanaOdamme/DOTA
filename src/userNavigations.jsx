@@ -53,36 +53,36 @@ const NavigationLinks = () => {
         {/* Account Dropdown */}
         <div className={`absolute right-0 mt-10 w-64 shadow-lg bg-white dark:bg-zinc-900 dark:text-white text-black rounded-lg shadow-lg ${isAccountMenuOpen ? '' : 'hidden'}`}>
         <ul>
-                <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
-                  <Link to="/profile"><i className="bi bi-person"></i> Profile</Link>
-                </li>
-                <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
-                  <Link to="/watchlist"><i className="bi bi-eye"></i> WatchList</Link>
-                </li>
+        <Link to="/profile"> <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
+                  <i className="bi bi-person"></i> Profile
+                </li></Link>
+                <Link to="/watchlist"><li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
+                  <i className="bi bi-eye"></i> Bookmarks
+                </li></Link>
                 <hr className="border-zinc-600"/>
-                <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
-                  <Link to="/deals"><i className="bi bi-alarm"></i> Deals</Link>
-                </li>
-                <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
-                  <Link to="/mybids"><i className="bi bi-person-check"></i> Bids</Link>
-                </li>
-                <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
-                  <Link to="/pro"><i className="bi bi-person-check"></i> DotaPro</Link>
-                </li>
+                <Link to="/deals"><li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
+                  <i className="bi bi-alarm"></i> Deals
+                </li></Link>
+                <Link to="/mybids"><li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
+                  <i className="bi bi-person-check"></i> Bids
+                </li></Link>
+                <Link to="/pro"><li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
+                  <i className="bi bi-person-check"></i> DotaPro
+                </li></Link>
                 <hr className="border-zinc-600"/>
-                <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
-                  <Link to="/notification"><i className="bi bi-bell"></i> Notifications</Link>
-                </li>
-                <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
-                  <Link to="/settings"><i className="bi bi-gear"></i> Settings</Link>
-                </li>
+                <Link to="/notification"><li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
+                  <i className="bi bi-bell"></i> Notifications
+                </li></Link>
+                <Link to="/settings"><li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
+                  <i className="bi bi-gear"></i> Settings
+                </li></Link>
                 <hr className="border-zinc-600"/>
-                <li className="px-4 py-2 m-2 rounded-lg hover:bg-zinc-700">
-                  <Link to="/learn"><i className="bi bi-book"></i> Learn</Link>
-                </li>
-                <li className="px-4 py-2 m-2 rounded-lg hover:bg-zinc-700">
-                  <Link to="/help"><i className="bi bi-question-circle"></i> Help</Link>
-                </li>
+                <Link to="/learn"><li className="px-4 py-2 m-2 rounded-lg hover:bg-zinc-700">
+                  <i className="bi bi-book"></i> Learn
+                </li></Link>
+                <Link to="/help"><li className="px-4 py-2 m-2 rounded-lg hover:bg-zinc-700">
+                  <i className="bi bi-question-circle"></i> Help
+                </li></Link>
                 <li className="px-4 py-2 m-2 rounded-lg hover:bg-zinc-700">
                   <button onClick={handleLogout} className="w-full text-left"><i className="bi bi-box-arrow-left"></i> Logout</button>
                 </li>

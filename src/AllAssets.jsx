@@ -46,7 +46,7 @@ const AllAssets = () => {
     setSuccessMessage('Asset added to bookmarks!');
     setTimeout(() => {
       setSuccessMessage('');
-    }, 4000); // Clear message after 3 seconds
+    }, 4000);
   };
 
   return (
