@@ -124,31 +124,7 @@ const AllAssets = () => {
         </div>
       )}
 
-      <div className="flex justify-center mt-10">
-      <button
-          className="mx-1 px-4 py-2 bg-gray-300 text-black rounded"
-          onClick={() => handlePageChange(currentPage - 1)}
-          disabled={currentPage === 1}
-        >
-          Previous
-        </button>
-        {Array.from({ length: totalPages }, (_, index) => (
-          <button
-            key={index + 1}
-            className={`mx-1 px-4 py-2 rounded ${currentPage === index + 1 ? 'bg-blue-500 text-white' : 'bg-gray-300 text-black'}`}
-            onClick={() => handlePageChange(index + 1)}
-          >
-            {index + 1}
-          </button>
-        ))}
-        <button
-          className="mx-1 px-4 py-2 bg-gray-300 text-black rounded"
-          onClick={() => handlePageChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
-        >
-          Next
-        </button>
-      </div>
+     
       <div className="p-6 mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:p-4">
         {paginatedAssets.map((asset) => {
           const creator = creatorsData.find((creator) => creator['creator-id'] === asset['creator-id']);
@@ -190,6 +166,31 @@ const AllAssets = () => {
             </div>
           );
         })}
+      </div>
+      <div className="flex justify-center mt-5 mb-10">
+      <button
+          className="mx-1 px-4 py-2 bg-gray-300 text-black rounded"
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
+          Previous
+        </button>
+        {Array.from({ length: totalPages }, (_, index) => (
+          <button
+            key={index + 1}
+            className={`mx-1 px-4 py-2 rounded ${currentPage === index + 1 ? 'bg-blue-500 text-white' : 'bg-gray-300 text-black'}`}
+            onClick={() => handlePageChange(index + 1)}
+          >
+            {index + 1}
+          </button>
+        ))}
+        <button
+          className="mx-1 px-4 py-2 bg-gray-300 text-black rounded"
+          onClick={() => handlePageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
+        >
+          Next
+        </button>
       </div>
      
       <Footer />
