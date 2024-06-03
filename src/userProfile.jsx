@@ -203,7 +203,7 @@ const UserProfile = () => {
                </div>
 
 
-               <div className="hidden lg:block md:block mx-auto">
+               <div className="hidden lg:block md:block mx-auto -mt-2">
               <h3 className="font-bold text-lg mb-2 mx-6">Engagements in Bids</h3>
               <canvas ref={chartRef1}/>
             </div>
