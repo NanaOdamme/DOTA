@@ -30,8 +30,8 @@ const Footer = () => {
     };
 
     return (
-        <footer className="flex flex-col justify-center dark:bg-gray-900 bg-purple-600 text-white lg:p-10 p-3">
-            <div className=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+        <footer className="flex flex-col  dark:bg-gray-900 bg-purple-600 text-white lg:p-10 p-3">
+            <div className="lg:mx-20 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
                 <div className="logo">
                     <h1 className="mb-1 text-white text-4xl lg:text-5xl font-bold">DOTA</h1>
                     <div className='mb-3'>
