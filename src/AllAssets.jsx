@@ -13,7 +13,7 @@ const AllAssets = () => {
   const [filterId, setFilterId] = useState(null);
   const [successMessage, setSuccessMessage] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 20; // Number of assets per page
+  const pageSize = 12; // Number of assets per page
 
   useEffect(() => {
     window.scrollTo(0, 0);
