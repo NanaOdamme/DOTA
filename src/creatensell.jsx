@@ -39,7 +39,7 @@ const CreateAndSellSection = () => {
         <Link to='/pro' className="mx-4 dark:text-white">Get started<i className="mx-6 bi bi-arrow-right"></i></Link>
       </div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 p-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 p-3">
         {content.map((item, index) => (
           <div key={index} className="bg-purple-300 text-black p-3 rounded-lg">
             <i className={`${item.icon} dark:text-purple-600 text-cyan-700 text-3xl mb-2`}></i>
