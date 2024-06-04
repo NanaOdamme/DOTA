@@ -464,6 +464,11 @@ box-shadow: 0 0 20px rgb(0, 255, 251);
 color: #424243;
 }
 
+.all {
+  margin: 0 auto;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 
 .neon {
