@@ -169,9 +169,9 @@ const Deals = () => {
           );
         })}
       </div>
-      <div className="flex flex-wrap justify-center mt-6 mb-10">
+      <div className="px-6 flex flex-wrap justify-center mt-6 mb-10">
       <button
-          className="mx-1 px-4 py-2 bg-gray-300 text-black rounded"
+          className="mx-1 px-2 py-2 bg-gray-300 text-black rounded"
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
         >
@@ -180,14 +180,14 @@ const Deals = () => {
         {Array.from({ length: totalPages }, (_, index) => (
           <button
             key={index + 1}
-            className={`mx-1 px-2 py-2 rounded ${currentPage === index + 1 ? 'bg-blue-500 text-white' : 'bg-gray-300 text-black'}`}
+            className={`mx-1 px-1 py-2 rounded ${currentPage === index + 1 ? 'bg-blue-500 text-white' : 'bg-gray-300 text-black'}`}
             onClick={() => handlePageChange(index + 1)}
           >
             {index + 1}
           </button>
         ))}
         <button
-          className="mx-1 px-4 py-2 bg-gray-300 text-black rounded"
+          className="mx-1 px-2 py-2 bg-gray-300 text-black rounded"
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
         >
