@@ -9,7 +9,7 @@ const Footer = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:3001/newsletters', {
+            const response = await fetch('http://localhost:3002/newsletters', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
