@@ -13,6 +13,16 @@ jest.mock('./db.json', () => ({
     // Add more mock assets as needed
   ],
 }));
+jest.mock('../src/BookmarkContext', () => ({
+  useBookmarks: () => ({
+    addBookmark: jest.fn(),
+  }),
+}));
+jest.mock('../src/CartContext', () => ({
+  useCart: () => ({
+    addToCart: jest.fn(),
+  }),
+}));
 
 jest.mock('./creators.json', () => ({
   creators: [
@@ -22,8 +32,15 @@ jest.mock('./creators.json', () => ({
   ],
 }));
 
+// Mocking the window.scrollTo function
+Object.defineProperty(window, 'scrollTo', { value: jest.fn(), writable: true });
+
+
+
+
 describe('AllAssets Component', () => {
   beforeEach(() => {
+    window.scrollTo.mockClear();
     render(
       <Router>
         <AllAssets />
@@ -38,6 +55,24 @@ describe('AllAssets Component', () => {
     // Check if assets are rendered
     Assets.assets.forEach(asset => {
       expect(screen.getByText(asset.title)).toBeInTheDocument();
+    });
+  });
+
+  
+  test('useEffect sets creators data and scrolls to top', () => {
+    const { queryAllByText } = render(
+      <Router>
+        <AllAssets />
+      </Router>
+    );
+
+    // Check if window.scrollTo was called
+    expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
+
+    // Check if creators data is set correctly
+    Creators.creators.forEach((creator) => {
+      const creatorElements = queryAllByText(creator.name);
+      expect(creatorElements.length).toBeGreaterThan(0);
     });
   });
 
@@ -68,5 +103,33 @@ describe('AllAssets Component', () => {
     // Check if the asset with the creator "Creator 2" is rendered
     expect(screen.getByText('Photography 1')).toBeInTheDocument();
     expect(screen.queryByText('Digital Art 1')).not.toBeInTheDocument();
+  });
+
+  test('add to cart', async () => {
+    const { getAllByTestId, getByText } = render(
+      <Router>
+        <AllAssets />
+      </Router>
+    );
+    const addToCartButtons = getAllByTestId('addtocart');
+    
+    // Assuming you want to click the first "add to cart" button
+    fireEvent.click(addToCartButtons[0]);
+    
+    await waitFor(() => expect(getByText('Asset added to cart!')).toBeInTheDocument());
+  });
+
+  test('add to bookmarks', async () => {
+    const { getAllByTestId, getByText } = render(
+      <Router>
+        <AllAssets />
+      </Router>
+    );
+    const addToBookmarksButtons = getAllByTestId('addtobookmark');
+
+    // Assuming you want to click the first "add to bookmarks" button
+    fireEvent.click(addToBookmarksButtons[0]);
+
+    await waitFor(() => expect(getByText('Asset added to bookmarks!')).toBeInTheDocument());
   });
 });

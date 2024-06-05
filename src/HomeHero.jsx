@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom'
 const HomeHero = () => {
   return (
     <section className="pt-20 mb-10">
@@ -17,12 +17,12 @@ const HomeHero = () => {
               Welcome to DOTA – Your destination for premium digital assets, vibrant community engagement, and exclusive auctions. Discover high-quality photos, vectors, 3D models, and audio. Connect with creatives in our forums and user groups. Join DOTA today to elevate your projects and network with like-minded individuals.
             </p>
             <div className="flex mt-10">
-              <button className="mr-2 shadow-lg rounded-full mt-5 py-2 px-6 text-white bg-gradient-to-b from-rose-500 to-purple-600 dark:bg-gradient-b dark:from-cyan-500 dark:to-zinc-900">
+              <Link to='/pro' className="mr-2 shadow-lg rounded-full mt-5 py-2 px-6 text-white bg-gradient-to-b from-rose-500 to-purple-600 dark:bg-gradient-b dark:from-cyan-500 dark:to-zinc-900">
                 Get Started
-              </button>
-              <button className="shadow-lg rounded-full mt-5 py-2 px-6 text-rose-500 dark:text-cyan-500 bg-white">
+              </Link>
+              <Link to='/learn' className="shadow-lg rounded-full mt-5 py-2 px-6 text-rose-500 dark:text-cyan-500 bg-white">
                 Learn More
-              </button>
+              </Link>
             </div>
             <div className="flex mt-20">
               <div className="flex flex-col text-white mx-5">

@@ -9,7 +9,15 @@ const UserProfile = () => {
   const [bio, setBio] = useState("Passionate NFT enthusiast with a love for art, actively engaged in bidding and purchasing unique digital assets to enrich my collection.");
   const chartRef1 = useRef(null);
   const [editMode, setEditMode] = useState(false);
+  const [user, setUser] = useState(null); 
 
+  useEffect(() => {
+    // Retrieve user from local storage when component mounts
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    if (loggedInUser) {
+      setUser(JSON.parse(loggedInUser));
+    }
+  }, []);
   const handleSave = () => {
     // Save changes to backend or update state as needed
     setEditMode(false); // Disable edit mode after saving
@@ -94,8 +102,12 @@ const UserProfile = () => {
                 </>
               ) : (
                 <>
-                  <h1 className="text-2xl font-bold">{name}</h1>
-                  <p className="text-gray-500">{username}</p>
+                {user && (
+                  <div>
+                  <h1 className="text-2xl font-bold">{user.username}</h1>
+                  <p className="text-gray-500">{user.email}</p>
+                  </div>
+                )}
                 </>
               )}
               {/* Display Mode: User Role */}
@@ -161,7 +173,9 @@ const UserProfile = () => {
  
          {/* second grid  */}
          <div className="flex flex-col dark:text-white">
-         <h1 className="hidden lg:block md:block mb-2  bg-violet-200 dark:bg-zinc-800  text-3xl p-2 rounded-lg shadow-lg text-white font-bold  text-center ">Welcome Back {name}</h1>
+  {user && (
+    <h1 className="hidden lg:block md:block mb-2 bg-violet-200 dark:bg-zinc-800 text-3xl p-2 rounded-lg shadow-lg text-white font-bold text-center">Welcome Back {user.username}</h1>
+  )}
          <div className="h-96 bg-rose-200 border border-2 border-zinc-900 dark:bg-zinc-800 pb-10 rounded-lg shadow-lg"> 
           <div className="flex mt-10">
             <img src="/assets/upgrade.svg" alt="pro" className="hidden md:block lg:block mx-10  w-72 h-72 rounded-full border border-2"/>

@@ -237,10 +237,10 @@ const AllAssets = () => {
                 </div>
               </Link>
               <div className="flex justify-end">
-                <button onClick={() => handleAddToCart(asset)} className="font-bold px-2 rounded mx-5">
+                <button data-testid='addtocart' onClick={() => handleAddToCart(asset)} className="font-bold px-2 rounded mx-5">
                   <i className="text-purple-500 text-2xl bi bi-cart-plus-fill"></i>
                 </button>
-                <button onClick={() => handleAddBookmark(asset)} className="font-bold px-2 rounded mx-1">
+                <button data-testid='addtobookmark' onClick={() => handleAddBookmark(asset)} className="font-bold px-2 rounded mx-1">
                   <i className="text-green-500 text-2xl bi bi-bookmark-plus-fill hover:text-green-300"></i>
                 </button>
               </div>

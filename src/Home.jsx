@@ -189,40 +189,48 @@ const Home = () => {
 
       </div>
       <div className="wrapper">
-        <ul className="carousel ">
-          {auctionAssets.map((asset) => (
-           <Link to={`/auction/${asset.id}`} className="asset-list ">
-           <li className="card  hover:text-black">
-             <div className="flex mx-2 auction ">
-               <div className="p-4 dark:bg-zinc-800 border border-2 border-purple-600 dark:border-black dark:text-white main-card max-w-xs bg-purple-300 rounded-lg shadow-md overflow-hidden">
-                 <img
-                   className="object-cover object-center rounded-lg w-64 h-48  transition duration-500 transform hover:-translate-y-1"
-                   src={asset['asset-image']}
-                   alt="Card"
-                 />
-                 <div className="mt-2 flex justify-between">
-                   <p>{asset.days} Days</p>
-                   <p>Time Left: {asset.hours}:{asset.minutes}:{asset.seconds}</p>
-                 </div>
-                 <h2 className="text-sm font-bold mx-2 mt-5 mb-3">{asset.title}</h2>
-                 <div className="flex">
-                   <img src={asset['creator-image']} className="imge" alt="" />
-                   <p className="text-center mt-4 mx-4">{asset.creator}</p>
-                 </div>
-                 <div className="mt-6 flex justify-between">
-                   <p>{asset.bids} bids</p>
-                   <p>{asset.total}</p>
-                 </div>
-               </div>
-             </div>
-           </li>
-         </Link>
-            
-          ))}
-        </ul>
-        <i className="bi-first dark:bg-zinc-800 dark:hover:bg-zinc-600 hover:bg-blue-500 dark:text-white bg-blue-200  rounded-lg bi bi-arrow-left-short" id="left" onClick={scrollLeft}></i>
-        <i className="bi-second dark:bg-zinc-800 dark:hover:bg-zinc-600  dark:text-white bg-blue-200 hover:bg-blue-500 rounded-lg  bi bi-arrow-right-short" id="right" onClick={scrollRight}></i>
-      </div>
+  <ul className="carousel">
+    {auctionAssets.map((asset) => (
+      <Link key={asset.id} to={`/auction/${asset.id}`} className="asset-list">
+        <li className="card hover:text-black">
+          <div className="flex mx-2 auction">
+            <div className="p-4 dark:bg-zinc-800 border border-2 border-purple-600 dark:border-black dark:text-white main-card max-w-xs bg-purple-300 rounded-lg shadow-md overflow-hidden">
+              <img
+                className="object-cover object-center rounded-lg w-64 h-48 transition duration-500 transform hover:-translate-y-1"
+                src={asset['asset-image']}
+                alt="Card"
+              />
+              <div className="mt-2 flex justify-between">
+                <p>{asset.days} Days</p>
+                <p>Time Left: {asset.hours}:{asset.minutes}:{asset.seconds}</p>
+              </div>
+              <h2 className="text-sm font-bold mx-2 mt-5 mb-3">{asset.title}</h2>
+              <div className="flex">
+                <img src={asset['creator-image']} className="imge" alt="" />
+                <p className="text-center mt-4 mx-4">{asset.creator}</p>
+              </div>
+              <div className="mt-6 flex justify-between">
+                <p>{asset.bids} bids</p>
+                <p>{asset.total}</p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </Link>
+    ))}
+  </ul>
+  <i
+    className="bi-first dark:bg-zinc-800 dark:hover:bg-zinc-600 hover:bg-blue-500 dark:text-white bg-blue-200 rounded-lg bi bi-arrow-left-short"
+    id="left"
+    onClick={scrollLeft}
+  ></i>
+  <i
+    className="bi-second dark:bg-zinc-800 dark:hover:bg-zinc-600 dark:text-white bg-blue-200 hover:bg-blue-500 rounded-lg bi bi-arrow-right-short"
+    id="right"
+    onClick={scrollRight}
+  ></i>
+</div>
+
     </section>
   
 

@@ -28,6 +28,9 @@ const initializeCart = () => {
   return storedCart ? JSON.parse(storedCart) : [];
 };
 
+
+
+
 export const CartProvider = ({ children }) => {
   const [cart, dispatch] = useReducer(cartReducer, [], initializeCart);
 

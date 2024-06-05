@@ -17,8 +17,8 @@ const AssetDetails = ({ asset }) => {
   }, []);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    window.scrollTo(0, 0); // Scroll to the top when component mounts or updates
+  }, [asset]);
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -106,12 +106,12 @@ const AssetDetails = ({ asset }) => {
               <p style={{ fontWeight: 700 }} className="mb-6 text-black dark:text-white">
                 {asset.genre}
               </p>
-              <p className="mb-4">{asset.info}</p>
+              <p className="mb-4 text-black dark:text-white">{asset.info}</p>
               <div className="flex justify-between">
-            <div>
+            <div className='flex flex-wrap'>
               <button
                 onClick={toggleDropdown}
-                className="rounded-lg bg-zinc-200 py-2 px-10 text-black font-bold hover:bg-zinc-900 hover:text-white"
+                className="mx-2 mt-2 rounded-lg bg-zinc-200 py-2 px-10 text-black font-bold hover:bg-zinc-900 hover:text-white"
               >
                 Buy
               </button>
@@ -134,7 +134,7 @@ const AssetDetails = ({ asset }) => {
                 </div>
               )}
               <button
-                className="ml-3 rounded-lg bg-zinc-900 py-2 px-10 text-white font-bold hover:bg-zinc-200 hover:text-black"
+                className="mx-2 mt-2 rounded-lg bg-zinc-900 py-2 px-10 text-white font-bold hover:bg-zinc-200 hover:text-black"
               >
                 Bid
               </button>

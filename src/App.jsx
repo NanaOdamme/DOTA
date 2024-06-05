@@ -24,6 +24,8 @@ import Deals from './deals-page.jsx';
 import Learn from './learnpage.jsx';
 import Cart from './cart.jsx';
 import { CartProvider } from './CartContext';
+import Help from './helppage.jsx'
+import FAQsList from './faqs.jsx';
 const App = () => {
   return (
     <CartProvider>
@@ -51,6 +53,8 @@ const App = () => {
             <Route path="/deals" element={<Deals />} />
             <Route path='/learn' element={<Learn />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path='/help' element={<Help />} />
+            <Route path='/faqs' element={<FAQsList />} />
           </Routes>
         </div>
       </Router>

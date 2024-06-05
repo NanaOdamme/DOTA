@@ -8,7 +8,6 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState('');
 
-
   const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
@@ -28,6 +27,7 @@ const Login = () => {
         (user) => user.email === email && user.password === password
       );
       if (user) {
+        localStorage.setItem('loggedInUser', JSON.stringify(user)); // Save user info in local storage
         navigate('/home');
       } else {
         setErrors('Invalid email or password');
