@@ -14,6 +14,9 @@ const Carousel = () => {
 useEffect(() => {
     setCreatorsData(Creators.creators); 
   }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     const carousel = document.querySelector(".carousel");

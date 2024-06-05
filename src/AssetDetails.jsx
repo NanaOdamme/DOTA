@@ -17,8 +17,8 @@ const AssetDetails = ({ asset }) => {
   }, []);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    window.scrollTo(0, 0); // Scroll to the top when component mounts or updates
+  }, [asset]);
 
   const [isOpen, setIsOpen] = useState(false);
 
