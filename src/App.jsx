@@ -22,9 +22,11 @@ import { BookmarkProvider } from './BookmarkContext';
 import UserProfile from './userProfile.jsx';
 import Deals from './deals-page.jsx';
 import Learn from './learnpage.jsx';
-
+import Cart from './cart.jsx';
+import { CartProvider } from './CartContext';
 const App = () => {
   return (
+    <CartProvider>
     <BookmarkProvider>
       <Router>
         <div>
@@ -48,10 +50,12 @@ const App = () => {
             <Route path="/profile" element={<UserProfile />} />
             <Route path="/deals" element={<Deals />} />
             <Route path='/learn' element={<Learn />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </div>
       </Router>
     </BookmarkProvider>
+    </CartProvider>
   );
 };
 

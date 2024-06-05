@@ -1,13 +1,16 @@
+// src/AllAssets.jsx
 import React, { useState, useEffect } from 'react';
 import Assets from './db.json';
 import Creators from './creators.json';
-import Footer from './Footer.jsx';
+import Footer from './Footer';
 import { Link } from 'react-router-dom';
 import { useBookmarks } from './BookmarkContext';
+import { useCart } from './CartContext';
 
 const AllAssets = () => {
   const [creatorsData, setCreatorsData] = useState([]);
   const { addBookmark } = useBookmarks();
+  const { addToCart } = useCart(); // Add this line
   const [showDropdown, setShowDropdown] = useState(false);
   const [searchInput, setSearchInput] = useState('');
   const [filterId, setFilterId] = useState(null);
@@ -38,14 +41,14 @@ const AllAssets = () => {
   };
 
   const filteredAssets = filterId
-    ? Assets.assets.filter(asset => asset['genre-id'] === filterId)
+    ? Assets.assets.filter((asset) => asset['genre-id'] === filterId)
     : Assets.assets;
 
   const searchedAssets = searchInput.trim().length > 0
-    ? filteredAssets.filter(asset =>
-      asset.title.toLowerCase().includes(searchInput.toLowerCase()) ||
-      asset.creator.toLowerCase().includes(searchInput.toLowerCase())
-    )
+    ? filteredAssets.filter((asset) =>
+        asset.title.toLowerCase().includes(searchInput.toLowerCase()) ||
+        asset.creator.toLowerCase().includes(searchInput.toLowerCase())
+      )
     : filteredAssets;
 
   const handleAddBookmark = (asset) => {
@@ -56,17 +59,31 @@ const AllAssets = () => {
     }, 4000);
   };
 
+  const handleAddToCart = (asset) => {
+    addToCart(asset);
+    setSuccessMessage('Asset added to cart!');
+    setTimeout(() => {
+      setSuccessMessage('');
+    }, 4000);
+  };
+
   const totalPages = Math.ceil(searchedAssets.length / pageSize);
-  const paginatedAssets = searchedAssets.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+  const paginatedAssets = searchedAssets.slice(
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize
+  );
 
   return (
     <section className="dark:bg-black bg-gray-100 pt-10 all">
       <section className="hero grid grid-cols-1 gap-2 p-4 text-center">
         <div className="flex justify-between mb-10 mt-10">
-          <h1 data-testid='hero-text' className="mx-2 dark:text-white text-2xl">100+ items</h1>
+          <h1 data-testid="hero-text" className="mx-2 dark:text-white text-2xl">
+            100+ items
+          </h1>
           <div className="filter dark:text-white">
             <div className="flex">
-              <button data-testid="filter-button"
+              <button
+                data-testid="filter-button"
                 id="filterBtn"
                 onClick={toggleDropdown}
                 className="dark:bg-gray-500 bg-white text-black dark:text-white font-bold px-2 rounded mx-1"
@@ -77,23 +94,63 @@ const AllAssets = () => {
               {/* Dropdown */}
               {showDropdown && (
                 <div className="absolute mx-5 z-10 mt-12 dark:bg-gray-400 bg-white text-black dark:text-white rounded-md shadow-lg">
-                  <div className="" role="menu" aria-orientation="vertical" aria-labelledby="filterBtn">
-                    <button type="button" onClick={() => handleFilter('all')} className="block w-full px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-800" role="menuitem">
+                  <div
+                    className=""
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby="filterBtn"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => handleFilter('all')}
+                      className="block w-full px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-800"
+                      role="menuitem"
+                    >
                       All
                     </button>
-                    <button type="button" id='2' onClick={() => handleFilter(2)} className="block px-4 py-2 w-full hover:bg-gray-200 dark:hover:bg-gray-800" role="menuitem">
+                    <button
+                      type="button"
+                      id="2"
+                      onClick={() => handleFilter(2)}
+                      className="block px-4 py-2 w-full hover:bg-gray-200 dark:hover:bg-gray-800"
+                      role="menuitem"
+                    >
                       NFTs
                     </button>
-                    <button type="button" id='1' onClick={() => handleFilter(1)} className="block px-4 py-2 w-full  hover:bg-gray-200 dark:hover:bg-gray-800" role="menuitem">
+                    <button
+                      type="button"
+                      id="1"
+                      onClick={() => handleFilter(1)}
+                      className="block px-4 py-2 w-full  hover:bg-gray-200 dark:hover:bg-gray-800"
+                      role="menuitem"
+                    >
                       Photography
                     </button>
-                    <button type="button" id='0' onClick={() => handleFilter(0)} className="block px-4 py-2 w-full  hover:bg-gray-200 dark:hover:bg-gray-800" role="menuitem">
+                    <button
+                      type="button"
+                      id="0"
+                      onClick={() => handleFilter(0)}
+                      className="block px-4 py-2 w-full  hover:bg-gray-200 dark:hover:bg-gray-800"
+                      role="menuitem"
+                    >
                       Digital Arts
                     </button>
-                    <button type="button" id='3' onClick={() => handleFilter(3)} className="block px-4 py-2 w-full  hover:bg-gray-200 dark:hover:bg-gray-800" role="menuitem">
+                    <button
+                      type="button"
+                      id="3"
+                      onClick={() => handleFilter(3)}
+                      className="block px-4 py-2 w-full  hover:bg-gray-200 dark:hover:bg-gray-800"
+                      role="menuitem"
+                    >
                       Logo
                     </button>
-                    <button type="button" id='4' onClick={() => handleFilter(4)} className="block px-4 py-2 w-full  hover:bg-gray-200 dark:hover:bg-gray-800" role="menuitem">
+                    <button
+                      type="button"
+                      id="4"
+                      onClick={() => handleFilter(4)}
+                      className="block px-4 py-2 w-full  hover:bg-gray-200 dark:hover:bg-gray-800"
+                      role="menuitem"
+                    >
                       3d Arts
                     </button>
                   </div>
@@ -113,7 +170,10 @@ const AllAssets = () => {
             </div>
           </div>
         </div>
-        <h1 data-testid='hero-text2' className="dark:text-white text-4xl mt-10">
+        <h1
+          data-testid="hero-text2"
+          className="dark:text-white text-4xl mt-10"
+        >
           <span className="neon">Discover</span> Digital Assets, <br />
           Sell and Bid on Items
         </h1>
@@ -124,31 +184,50 @@ const AllAssets = () => {
         </div>
       )}
 
-     
       <div className="p-6 mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:p-4">
         {paginatedAssets.map((asset) => {
-          const creator = creatorsData.find((creator) => creator['creator-id'] === asset['creator-id']);
+          const creator = creatorsData.find(
+            (creator) => creator['creator-id'] === asset['creator-id']
+          );
           if (!creator) return null;
           return (
-            <div key={asset.id} className="asset-link asset-card bg-white h-64 w-full dark:bg-zinc-900 border text-black border-zinc-900 hover:bg-yellow-200 dark:hover:bg-zinc-700 hover:-translate-y-2 transition duration-500 text-white lg:p-5 p-2 rounded-lg">
+            <div
+              key={asset.id}
+              className="asset-link asset-card bg-white h-64 w-full dark:bg-zinc-900 border text-black border-zinc-900 hover:bg-yellow-200 dark:hover:bg-zinc-700 hover:-translate-y-2 transition duration-500 text-white lg:p-5 p-2 rounded-lg"
+            >
               <Link to={`/details/${asset.id}`}>
                 <div className="">
                   <div className="p-1 grid grid-cols-1 lg:grid-cols-2 mb-2">
                     <div className="flex w-96">
-                      {creator.image && <img src={creator.image} alt={creator.name} className="rounded-full h-10 w-10 mr-1 border border-2 border-zinc-900" />}
+                      {creator.image && (
+                        <img
+                          src={creator.image}
+                          alt={creator.name}
+                          className="rounded-full h-10 w-10 mr-1 border border-2 border-zinc-900"
+                        />
+                      )}
                       <div className="mx-2">
-                        <h1 className="dark:text-gray-400 text-black text-sm">creator</h1>
-                        <p className='dark:text-white text-black'>{creator ? `${creator.name}` : 'Creator not found'}</p>
-                      </div>
+                        <h1 className="dark:text-gray-400 text-black text-sm">
+                          creator
+                        </h1>
+                        <p className="dark:text-white text-black">
+                          {creator ? `${creator.name}` : 'Creator not found'}
+                        </p>
+                        </div>
                     </div>
                     <div className="flex justify-end lg:py-1 lg:px-2 rounded-lg h-6" style={{ fontSize: '12px' }}>
                       <i className="dark:text-white text-black mx-1 bi bi-heart"></i>
                       <p className="text-black dark:text-gray-200">{asset.likes}</p>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 ">
+                  <div className="grid grid-cols-2">
                     <div className="justify-center">
-                      <img src={asset['asset-image']} alt="Asset" id={asset.id} className="rounded-lg w-48 h-32 lg:w-54 lg:h-54 transition duration-500 transform hover:scale-95 border border-2 border-zinc-900" />
+                      <img
+                        src={asset['asset-image']}
+                        alt="Asset"
+                        id={asset.id}
+                        className="rounded-lg w-48 h-32 lg:w-54 lg:h-54 transition duration-500 transform hover:scale-95 border border-2 border-zinc-900"
+                      />
                     </div>
                     <div className="grid grid-cols-1 ml-3">
                       <h1 className="dark:text-white text-black font-bold lg:text-1xl">{asset.title}</h1>
@@ -158,17 +237,19 @@ const AllAssets = () => {
                 </div>
               </Link>
               <div className="flex justify-end">
-                <button className='font-bold px-2 rounded mx-5'>
+                <button onClick={() => handleAddToCart(asset)} className="font-bold px-2 rounded mx-5">
                   <i className="text-purple-500 text-2xl bi bi-cart-plus-fill"></i>
                 </button>
-                <button onClick={() => handleAddBookmark(asset)} className="font-bold px-2 rounded mx-1"><i className="text-green-500 text-2xl bi bi-bookmark-plus-fill hover:text-green-300"></i></button>
+                <button onClick={() => handleAddBookmark(asset)} className="font-bold px-2 rounded mx-1">
+                  <i className="text-green-500 text-2xl bi bi-bookmark-plus-fill hover:text-green-300"></i>
+                </button>
               </div>
             </div>
           );
         })}
       </div>
-      <div className="px-6 flex  flex-wrap justify-center mt-5 mb-10">
-      <button
+      <div className="px-6 flex flex-wrap justify-center mt-5 mb-10">
+        <button
           className="mb-2 mx-1 px-2 py-2 bg-gray-300 text-black rounded"
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
@@ -192,10 +273,10 @@ const AllAssets = () => {
           Next
         </button>
       </div>
-     
       <Footer />
     </section>
   );
 };
 
 export default AllAssets;
+
