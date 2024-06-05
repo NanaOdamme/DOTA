@@ -11,7 +11,7 @@
             "Likes": "11.5k",
             "Sales": "10k",
             "tokens": "1340",
-            "image": "/assets/profile (1).jpeg"
+            "image": "./assets/profile (1).jpeg"
         },
         {
             "id": 2,
@@ -24,7 +24,7 @@
             "Likes": "15k",
             "Sales": "8k",
             "tokens": "502",
-            "image": "/assets/profile (2).jpeg"
+            "image": "./assets/profile (2).jpeg"
         },
         {
             "id": 3,
@@ -37,7 +37,7 @@
             "Likes": "25k",
             "Sales": "12k",
             "tokens": "500",
-            "image": "/assets/profile (3).jpeg"
+            "image": "./assets/profile (3).jpeg"
         },
         {
             "id": 4,
@@ -50,7 +50,7 @@
             "Likes": "30k",
             "Sales": "15k",
             "tokens": "560",
-            "image": "/assets/profile (4).jpeg"
+            "image": "./assets/profile (4).jpeg"
         },
         {
             "id": 5,
@@ -63,7 +63,7 @@
             "Likes": "20k",
             "Sales": "10k",
             "tokens": "610",
-            "image": "/assets/profile (5).jpeg"
+            "image": "./assets/profile (5).jpeg"
         },
         {
             "id": 6,
@@ -76,7 +76,7 @@
             "Likes": "28k",
             "Sales": "14k",
             "tokens": "200",
-            "image": "/assets/profile (6).jpeg"
+            "image": "./assets/profile (6).jpeg"
         },
         {
             "id": 7,
@@ -89,7 +89,7 @@
             "Likes": "12k",
             "Sales": "6k",
             "tokens": "510",
-            "image": "/assets/profile (7).jpeg"
+            "image": "./assets/profile (7).jpeg"
         },
         {
             "id": 8,
@@ -102,7 +102,7 @@
             "Likes": "25k",
             "Sales": "10k",
             "tokens": "300",
-            "image": "/assets/profile (8).jpeg"
+            "image": "./assets/profile (8).jpeg"
         },
         {
             "id": 9,
@@ -115,7 +115,7 @@
             "Likes": "15k",
             "Sales": "7k",
             "tokens": "509",
-            "image": "/assets/profile (16).jpeg"
+            "image": "./assets/profile (16).jpeg"
         },
         {
             "id": 10,
@@ -128,7 +128,7 @@
             "Likes": "18k",
             "Sales": "9k",
             "tokens": "1200",
-            "image": "/assets/profile (10).jpeg"
+            "image": "./assets/profile (10).jpeg"
         },
         {
             "id": 11,
@@ -141,7 +141,7 @@
             "Likes": "28k",
             "Sales": "12k",
             "tokens": "570",
-            "image": "/assets/profile (11).jpeg"
+            "image": "./assets/profile (11).jpeg"
         },
         {
             "id": 12,
@@ -154,7 +154,7 @@
             "Likes": "22k",
             "Sales": "11k",
             "tokens": "500",
-            "image": "/assets/profile (12).jpeg"
+            "image": "./assets/profile (12).jpeg"
         },
         {
             "id": 13,
@@ -167,7 +167,7 @@
             "Likes": "20k",
             "Sales": "9k",
             "tokens": "300",
-            "image": "/assets/profile (13).jpeg"
+            "image": "./assets/profile (13).jpeg"
         },
         {
             "id": 14,
@@ -180,7 +180,7 @@
             "Likes": "26k",
             "Sales": "13k",
             "tokens": "580",
-            "image": "/assets/profile (14).jpeg"
+            "image": "./assets/profile (14).jpeg"
         },
         {
             "id": 15,
@@ -193,7 +193,7 @@
             "Likes": "16k",
             "Sales": "8k",
             "tokens": "500",
-            "image": "/assets/profile (15).jpeg"
+            "image": "./assets/profile (15).jpeg"
         }
     ]
 }
