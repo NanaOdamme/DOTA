@@ -1,5 +1,5 @@
 {
-  "homepage":"https://NanaOdamme.github.io/DOTA",
+  "homepage": "https://NanaOdamme.github.io/DOTA",
   "name": "dota_v1",
   "private": true,
   "version": "0.0.0",
@@ -12,7 +12,6 @@
     "test": "jest",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
-
   },
   "dependencies": {
     "@material-tailwind/react": "^2.1.9",
