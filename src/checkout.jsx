@@ -3,10 +3,17 @@ import { useCart } from './CartContext';
 
 
 const Checkout = () => {
-    const { cart } = useCart();
+    const { cart, clearCart } = useCart();
+
+    const handlePayNow = () => {
+        console.log('Handling payment...');
+        alert('Payment made successfully. You will receive a notification soon.');
+        clearCart(); // Clear the cart
+        window.location.href = '/home'; // Redirect to /home after clicking OK
+    }; 
 
     const totalAmount = cart.reduce((sum, item) => sum + item['selling-prize'] * item.quantity, 0);
-
+    
     return (
         <section className='pt-20 lg:px-20 p-5 dark:bg-zinc-800'>
             <div className="rounded-lg shadow-lg p-3 flex justify-center items-center">
@@ -54,7 +61,7 @@ const Checkout = () => {
                             </div>
                         </div>
                         <div className="grid">
-                            <button type='submit' className='mb-5 mt-10 text-center dark:bg-blue-500 bg-zinc-900 text-white font-bold py-2 lg:px-20 rounded'>Pay now</button>
+                            <button type='button' onClick={handlePayNow} className='mb-5 mt-10 text-center dark:bg-blue-500 bg-zinc-900 text-white font-bold py-2 lg:px-20 rounded'>Pay now</button>
                         </div>
                     </form>
                     <div className="summary p-10 dark:text-white text-black bg-purple-100 dark:bg-zinc-900 rounded-lg shadow-lg">
