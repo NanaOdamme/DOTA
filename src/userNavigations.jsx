@@ -43,8 +43,8 @@ const NavigationLinks = () => {
             >
                 <i className="bi bi-person-circle text-2xl"></i>
                 {/* Account Dropdown */}
-                <div className={`absolute right-0 mt-10 w-64 shadow-lg bg-white dark:bg-zinc-900 dark:text-white text-black rounded-lg shadow-lg ${isAccountMenuOpen ? '' : 'hidden'}`}>
-                    <ul>
+                <div className={`absolute right-0 mt-10 w-64 shadow-lg bg-white dark:bg-zinc-900 dark:text-white text-black rounded-lg ${isAccountMenuOpen ? '' : 'hidden'}`}>
+                    <ul style={{height: 600}} className='  overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-blue-400 scrollbar-track-blue-200 dark:scrollbar-thumb-gray-600 dark:scrollbar-track-zinc-700'>
                         <Link to="/profile">
                             <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
                                 <i className="bi bi-person"></i> Profile

@@ -629,3 +629,49 @@ text-shadow: 0 0 10px #6afdff,  0 0 30px #56fff1, 0 0 70px #0ff, 0 0 100px #0ff,
 .whishlist button.relative:hover span {
   opacity: 1;
 }
+
+/* Custom scrollbar styles */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #1a202c; /* Change this to your desired track color */
+  border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #6b46c1, #805ad5); /* Gradient for the thumb */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(128, 90, 213, 0.5); /* Glowing effect */
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #805ad5, #9f7aea);
+  box-shadow: 0 0 15px rgba(159, 122, 234, 0.75);
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(45deg, #9f7aea, #d6bcfa);
+  box-shadow: 0 0 20px rgba(214, 188, 250, 1);
+}
+
+/* Dark mode adjustments */
+.dark .scrollbar-thin::-webkit-scrollbar-track {
+  background: #2d3748;
+}
+
+.dark .scrollbar-thin::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #4a5568, #718096);
+  box-shadow: 0 0 10px rgba(113, 128, 150, 0.5);
+}
+
+.dark .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #718096, #a0aec0);
+  box-shadow: 0 0 15px rgba(160, 174, 192, 0.75);
+}
+
+.dark .scrollbar-thin::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(45deg, #a0aec0, #e2e8f0);
+  box-shadow: 0 0 20px rgba(226, 232, 240, 1);
+}

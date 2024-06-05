@@ -97,11 +97,11 @@ useEffect(() => {
 return(
     <section className="mb-10">
       <h1 className="mx-4 text-blue-400">Explore</h1>
-      <div className="flex justify-between">
-        <h1 className="mx-4 mb-10 dark:text-white text-black text-2xl">Explore More Assets</h1>
-        <button type="button" onClick={() => window.location.href = "/allAssets"} className="mx-4 text-white">
+      <div className="flex justify-between ">
+        <h1 className="font-bold mx-4 mb-10 dark:text-white text-black text-2xl">Explore More Assets</h1>
+        <Link  to = "/allAssets" className="text-cyan-700 mx-4 font-bold dark:text-white">
           View All <i className="mx-6 bi bi-arrow-right"></i>
-        </button>
+        </Link>
       </div>
 <div className="wrapper">
 <ul className="carousel">
