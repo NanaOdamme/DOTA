@@ -1,12 +1,15 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
 // Create a context for bookmarks
 const BookmarkContext = createContext();
 
 // Provider component that wraps around the parts of the app where you need access to the bookmark state
 export const BookmarkProvider = ({ children }) => {
-  // State to store the list of bookmarked assets
-  const [bookmarkedAssets, setBookmarkedAssets] = useState([]);
+  // State to store the list of bookmarked assets, initialized from local storage
+  const [bookmarkedAssets, setBookmarkedAssets] = useState(() => {
+    const storedBookmarks = localStorage.getItem('bookmarkedAssets');
+    return storedBookmarks ? JSON.parse(storedBookmarks) : [];
+  });
 
   // Function to add an asset to the bookmark list
   const addBookmark = (asset) => {
@@ -25,6 +28,11 @@ export const BookmarkProvider = ({ children }) => {
     setBookmarkedAssets((prev) => prev.filter((asset) => asset.id !== id));
   };
 
+  // Store bookmarkedAssets in local storage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('bookmarkedAssets', JSON.stringify(bookmarkedAssets));
+  }, [bookmarkedAssets]);
+
   return (
     // Provide the bookmark state and functions to the component tree
     <BookmarkContext.Provider value={{ bookmarkedAssets, addBookmark, removeBookmark }}>
@@ -34,4 +42,4 @@ export const BookmarkProvider = ({ children }) => {
 };
 
 // Custom hook to use the BookmarkContext in other components
-export const useBookmarks = () => useContext(BookmarkContext);
+export const useBookmarks = () => React.useContext(BookmarkContext);
