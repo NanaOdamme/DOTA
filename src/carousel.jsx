@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Assets from './db.json';
 import Creators from './creators.json';
+import { Link } from 'react-router-dom';
 
 const Carousel = () => {
   const [creatorsData, setCreatorsData] = useState([]); 
@@ -102,7 +103,8 @@ return(
 <div className="wrapper">
 <ul className="carousel">
   {Assets.assets.map((asset) => (
-    <button key={asset.id} onClick={() => window.location.href = `/details/${asset.id}`} className="asset-list">
+    <Link to={`/details/${asset.id}`}>
+    
   <li className="card  hover:text-black">
              <div className="flex mx-2 auction ">
                <div className="p-4 dark:bg-zinc-800 bg-purple-200 dark:text-white text-black main-card max-w-xs bg-white rounded-lg shadow-md overflow-hidden">
@@ -124,7 +126,7 @@ return(
                </div>
              </div>
            </li>
-    </button>
+    </Link>
   ))}
 </ul>
 <i className="bi-first dark:bg-zinc-800 hover:bg-zinc-600 dark:text-white  text-black bg-purple-500 rounded-lg bi bi-arrow-left-short" id="left" onClick={scrollLeft}></i>
