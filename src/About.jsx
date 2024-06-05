@@ -33,7 +33,7 @@ function About() {
             <img
               alt="About Us"
               className="max-w-full rounded-lg shadow-lg"
-              src="/assets/img/front page.jpg"
+              src="./assets/img/front page.jpg"
             />
           </div>
           <div className="w-full md:w-5/12 ml-auto mr-auto px-4">

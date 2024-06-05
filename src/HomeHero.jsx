@@ -6,7 +6,7 @@ const HomeHero = () => {
       <div className=" rounded-lg lg:mx-10 px-6 shadow-lg dark:bg-gradient-to-r dark:from-indigo-800 dark:to-cyan-800 bg-gradient-to-r from-cyan-800 to-rose-300">
       <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-4">
         <div className="p-6 order-1 lg:order-2">
-          <img src="/assets/hero.png" alt="Placeholder" className="w-full h-96"  />
+          <img src="./assets/hero.png" alt="Placeholder" className="w-full h-96"  />
         </div>
         <div className="flex flex-col items-center justify-center p-6 order-2 lg:order-1">
           <div>
