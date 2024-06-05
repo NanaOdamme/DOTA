@@ -77,7 +77,7 @@ const Help = () => {
             For further assistance, you can contact our support team via email.
           </p>
           <a
-            href="mailto:eronstyles@gmail.com"
+            href="mailto:ronstyles@gmail.com"
             className="text-blue-500 hover:underline mt-2 block"
           >
             dotasupport@gmail.com
