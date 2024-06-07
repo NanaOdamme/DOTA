@@ -10,13 +10,14 @@ import { useCart } from './CartContext';
 const AllAssets = () => {
   const [creatorsData, setCreatorsData] = useState([]);
   const { addBookmark } = useBookmarks();
-  const { addToCart } = useCart(); // Add this line
+  const { cart, addToCart } = useCart(); // Add this line
   const [showDropdown, setShowDropdown] = useState(false);
   const [searchInput, setSearchInput] = useState('');
   const [filterId, setFilterId] = useState(null);
   const [successMessage, setSuccessMessage] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 12; // Number of assets per page
+  const [alert, setAlert] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -59,12 +60,16 @@ const AllAssets = () => {
     }, 4000);
   };
 
-  const handleAddToCart = (asset) => {
-    addToCart(asset);
-    setSuccessMessage('Asset added to cart!');
-    setTimeout(() => {
-      setSuccessMessage('');
-    }, 4000);
+  const handleAddToCart = item => {
+    const itemInCart = cart.find(cartItem => cartItem.id === item.id);
+    if (itemInCart) {
+      setAlert(`"${item.title}" is already in your cart!`);
+      setTimeout(() => setAlert(null), 3000); // Hide alert after 3 seconds
+    } else {
+      addToCart(item);
+      setAlert(`"${item.title}" has been added to your cart!`);
+      setTimeout(() => setAlert(null), 3000); // Hide alert after 3 seconds
+    }
   };
 
   const totalPages = Math.ceil(searchedAssets.length / pageSize);
@@ -75,6 +80,7 @@ const AllAssets = () => {
 
   return (
     <section className="dark:bg-black bg-gray-100 pt-10 all">
+      
       <section className="hero grid grid-cols-1 gap-2 p-4 text-center">
         <div className="flex justify-between mb-10 mt-10">
           <h1 data-testid="hero-text" className="mx-2 dark:text-white text-2xl">
@@ -177,13 +183,13 @@ const AllAssets = () => {
           <span className="neon">Discover</span> Digital Assets, <br />
           Sell and Bid on Items
         </h1>
+        
       </section>
-      {successMessage && (
-        <div className="top-0 left-0 right-0 bg-green-500 text-white text-center py-2">
-          {successMessage}
+      {alert && (
+        <div className="mt-20 fixed z-50 w-full transform  bg-green-500 text-white py-2 px-4  shadow-md">
+          {alert}
         </div>
-      )}
-
+          )}
       <div className="p-6 mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:p-4">
         {paginatedAssets.map((asset) => {
           const creator = creatorsData.find(
@@ -244,10 +250,14 @@ const AllAssets = () => {
                   <i className="text-green-500 text-2xl bi bi-bookmark-plus-fill hover:text-green-300"></i>
                 </button>
               </div>
+              
             </div>
+            
           );
         })}
       </div>
+      
+      
       <div className="px-6 flex flex-wrap justify-center mt-5 mb-10">
         <button
           className="mb-2 mx-1 px-2 py-2 bg-gray-300 text-black rounded"
