@@ -1,89 +1,105 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import bgImage from './assets/help.gif';
+import helpTopicsData from './support.json';
+import Footer from './Footer'
 
 const Help = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [complaint, setComplaint] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
 
-  const handleSearch = () => {
-    // Implement search functionality here
-    console.log('Search query:', searchQuery);
-  };
+  const handleSearch = (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    setSearchTerm(searchTerm);
 
-  const handleSubmitComplaint = () => {
-    // Implement complaint submission logic here
-    console.log('Complaint submitted:', complaint);
-    setComplaint('');
+    const results = helpTopicsData.filter((topic) =>
+      topic.title.toLowerCase().includes(searchTerm)
+    );
+    setSearchResults(results);
   };
 
   return (
-   <div className="pt-20 min-h-screen dark:bg-zinc-700 dark:text-white bg-gray-100 ">
-    <div className='p-4 w-full  items-center justify-center'>
-      <div className="bg-white p-8 rounded-lg shadow-lg ">
-        <h1 className="text-3xl text-rose-800 font-bold mb-4">Help Center</h1>
-        <div className="flex items-center border border-gray-300 rounded-lg px-3 py-2 mb-4">
-          <input
-            type="text"
-            placeholder="Search for help..."
-            className="text-rose-800 flex-1 outline-none px-2"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <button
-            className="-ml-7 flex items-center justify-center bg-blue-500 text-white rounded-lg p-2 hover:bg-blue-600"
-            onClick={handleSearch}
-          >
-            <i class="bi bi-search"></i>
-          </button>
+    <div className="pt-16 min-h-screen dark:bg-zinc-800 dark:text-white bg-gray-100">
+      <div
+        style={{ backgroundImage: `url(${bgImage})` }}
+        className="relative h-96 bg-hero-pattern bg-cover bg-center flex items-center justify-center"
+      >
+        <div className="absolute inset-0 bg-cyan-400 dark:bg-purple-900 opacity-90 shadow-lg"></div>
+
+        <div className="p-3 z-10 dark:text-white text-black text-center">
+          <h1 className="text-4xl font-bold">Welcome to <br />DOTA HELP CENTER</h1>
+          <p className="text-lg mt-4">Find All Your Answers Here!</p>
+          <div className="mt-8">
+            <input
+              type="text"
+              placeholder="Search..."
+              value={searchTerm}
+              onChange={handleSearch}
+              className="w-full p-2 rounded-full bg-white border  border-white placeholder-white::placeholder text-black focus:outline-none focus:border-primary focus:ring focus:ring-primary"
+            />
+          </div>
         </div>
-        <div className="mb-4">
-          <h2 className="text-xl font-semibold mb-2">Submit a Complaint</h2>
-          <textarea
-            placeholder="Describe your issue or complaint..."
-            className="text-rose-800 w-full border border-gray-300 rounded-lg p-2 resize-none"
-            rows={5}
-            value={complaint}
-            onChange={(e) => setComplaint(e.target.value)}
-          />
-          <button
-            className="mt-2 bg-red-500 text-white rounded-lg px-4 py-2 hover:bg-red-600"
-            onClick={handleSubmitComplaint}
-          >
-            <i class="bi bi-exclamation-lg mr-2"></i>
-            Submit
-          </button>
-        </div>
-        <p className="text-gray-500 text-sm">
-          Need further assistance? Contact support@example.com
-        </p>
       </div>
+
+      <Link
+        to="/faqs"
+        className="text-center font-bold m-10 p-2 bg-red-500 rounded-lg shadowl-lg w-1/4 text-white hover:bg-cyan-400 mt-2 block"
+      >
+        View FAQs
+      </Link>
+
+      <div className="mt-10 mx-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {searchResults.length > 0
+          ? searchResults.map((topic, index) => (
+              <div
+                key={index}
+                className="cursor-pointer bg-white rounded-lg shadow-lg hover:bg-cyan-200 transform hover:scale-105 transition duration-300 ease-in-out"
+              >
+                <div className="flex">
+                
+                  <i
+                    className={` text-rose-500 text-5xl p-3 font-bold ${topic.icon}`}
+                  ></i>
+                 
+                  <div className="p-3">
+                    <h1 className="font-bold text-cyan-700">{topic.title}</h1>
+                    <p className="text-sm font-bold text-gray-500">
+                      {topic.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))
+          : helpTopicsData.map((topic, index) => (
+              <div
+                key={index}
+                className="cursor-pointer bg-white rounded-lg shadow-lg hover:bg-cyan-200 transform hover:scale-105 transition duration-300 ease-in-out"
+              >
+                <div className="flex">
+                  <i
+                    className={`text-rose-500 text-5xl p-3 font-bold ${topic.icon}`}
+                  ></i>
+                  <div className="p-3">
+                    <h1 className="font-bold text-cyan-700">{topic.title}</h1>
+                    <p className="text-sm font-bold text-gray-500">
+                      {topic.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
       </div>
+
       <div className="p-5">
-      <div className="mb-4">
-          <h2 className="text-xl font-semibold mb-2">Frequently Asked Questions</h2>
-          <p className="dark:text-white text-gray-600">
-            Check out our FAQs section for answers to common questions.
-          </p>
-          <Link to='/faqs'
-           
-            className="text-blue-500 hover:underline mt-2 block"
-          >
-            View FAQs
-          </Link>
-        </div>
-        <div>
-          <h2 className="text-xl font-semibold mb-2">Contact Support</h2>
-          <p className="dark:text-whitetext-gray-600">
-            For further assistance, you can contact our support team via email.
-          </p>
-          <a
-            href="mailto:ronstyles@gmail.com"
-            className="text-blue-500 hover:underline mt-2 block"
-          >
-            dotasupport@gmail.com
-          </a>
-        </div>
-        </div>
+        <h2 className="text-xl font-semibold mb-2">Contact Support</h2>
+        <p className="dark:text-whitetext-gray-600">
+          For further assistance, you can contact our support team via email.
+        </p>
+        <a href="mailto:ronstyles@gmail.com" className="text-blue-500 hover:underline mt-2 block">
+          dotasupport@gmail.com
+        </a>
+      </div>
+      <Footer />
     </div>
   );
 };

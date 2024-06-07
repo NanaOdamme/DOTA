@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Get Started",
+    "description": "Sign up as a creator or user to get started, pay subscription to get latest components",
+    "icon": "bi bi-phone"
+  },
+  {
+    "title": "How to Mint NFTs",
+    "description": "Learn how to mint your own NFTs and showcase your digital art",
+    "icon": "bi bi-file-earmark-image"
+  },
+  {
+    "title": "Buying NFTs",
+    "description": "Explore our marketplace and buy unique digital assets and NFTs",
+    "icon": "bi bi-cart"
+  },
+  {
+    "title": "Selling NFTs",
+    "description": "List your digital creations for sale and earn from your NFTs",
+    "icon": "bi bi-currency-dollar"
+  },
+  {
+    "title": "Royalties & Licensing",
+    "description": "Understand how royalties and licensing work for NFTs and digital assets",
+    "icon": "bi bi-gem"
+  },
+  {
+    "title": "NFT Wallets",
+    "description": "Set up and manage your digital wallet for storing and trading NFTs",
+    "icon": "bi bi-wallet"
+  },
+  {
+    "title": "Blockchain Technology",
+    "description": "Learn about the blockchain technology powering NFTs and its benefits",
+    "icon": "bi bi-link-45deg"
+  },
+  {
+    "title": "Community Guidelines",
+    "description": "Review our community guidelines for respectful and ethical interactions",
+    "icon": "bi bi-shield"
+  },
+  {
+    "title": "FAQs",
+    "description": "Find answers to commonly asked questions about NFTs and our platform",
+    "icon": "bi bi-question-circle"
+  },
+  {
+    "title": "Contact Support",
+    "description": "Reach out to our support team for any assistance or inquiries",
+    "icon": "bi bi-envelope"
+  },
+  {
+    "title": "Terms of Service",
+    "description": "Learn about our terms of service and usage guidelines",
+    "icon": "bi bi-file-earmark-text"
+  },
+  {
+    "title": "Digital Asset Security",
+    "description": "Discover how we ensure the security of your digital assets and NFTs",
+    "icon": "bi bi-lock-fill"
+  },
+  {
+    "title": "Artistic Copyright",
+    "description": "Understand the copyright laws and protection for digital art and NFTs",
+    "icon": "bi bi-shield-fill"
+  },
+  {
+    "title": "Digital Artwork Showcase",
+    "description": "Explore our featured digital artwork and NFT collections",
+    "icon": "bi bi-images"
+  },
+  {
+    "title": "Marketplace Trends",
+    "description": "Stay updated with the latest trends and insights in the NFT marketplace",
+    "icon": "bi bi-shop"
+  },
+  {
+    "title": "Tokenization Process",
+    "description": "Learn about the tokenization process and its significance in NFTs",
+    "icon": "bi bi-diagram-3"
+  },
+  {
+    "title": "Smart Contracts",
+    "description": "Understand how smart contracts facilitate NFT transactions and ownership",
+    "icon": "bi bi-file-earmark-code"
+  },
+  {
+    "title": "Blockchain Explorer",
+    "description": "Explore the blockchain explorer to track NFT transactions and history",
+    "icon": "bi bi-search"
+  }
+]
