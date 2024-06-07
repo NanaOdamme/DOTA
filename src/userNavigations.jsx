@@ -88,11 +88,6 @@ const NavigationLinks = () => {
                                 <i className="bi bi-bell"></i> Notifications
                             </li>
                         </Link>
-                        <Link to="/settings">
-                            <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
-                                <i className="bi bi-gear"></i> Settings
-                            </li>
-                        </Link>
                         <hr className="border-zinc-600" />
                         <Link to="/learn">
                             <li className="px-4 py-2 m-2 rounded-lg hover:bg-zinc-700">
