@@ -32,7 +32,7 @@ const CreateAndSellSection = () => {
   ];
 
   return (
-    <section className="create-n-sell mb-10 px-10">
+    <section className="create-n-sell pb-10 px-10">
       <h1 className="mx-4 dark:text-blue-400">Be a creator</h1>
       <div className="flex justify-between">
         <h1 className="mx-4 mb-10 dark:text-white text-2xl">Create and sell your asset</h1>

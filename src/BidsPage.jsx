@@ -40,8 +40,8 @@ const lostBids = bids.filter((asset) => asset['auction-status'] === "False");
 
   return (
     <section className="pt-20 dark:bg-zinc-900 dark:text-gray-200">
-      <div className='p-10'>
-        <h1 className="text-4xl font-bold mb-10 text-center dark:text-blue-400">Bids List</h1>
+      <div className=' p-10'>
+        <h1 className="text-4xl font-bold mb-10 text-center dark:text-blue-400">All Bids</h1>
 
         {/* All Bids Table */}
         <div className="overflow-x-auto mb-12">

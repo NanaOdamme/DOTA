@@ -10,12 +10,12 @@ const Cart = () => {
 
   return (
     <section className="dark:bg-black bg-gray-100 pt-20 all">
-      <div className="container mx-auto p-4">
+      <div className=" container mx-auto p-4">
         <h1 className="text-4xl font-bold text-center dark:text-white">Your Cart</h1>
         {cart.length === 0 ? (
             <div className="empty text-center dark:text-white">
           <p className=" mt-10 ">Your cart is empty</p>
-          <Link to='/allassets'>Add items <i class=" text-2xl bi bi-cart-plus"></i>
+          <Link to='/allassets'>Add items <i className=" text-2xl bi bi-cart-plus"></i>
           </Link>
           </div>
         ) : (
