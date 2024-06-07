@@ -3,12 +3,15 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Assets from './db.json';
 import Footer from './Footer';
-import { Link } from 'react-router-dom'; 
+import { useCart } from './CartContext';
 
 const AuctionDetailPage = () => {
   const { id } = useParams(); // Fetch the asset ID from the URL
   const [asset, setAsset] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
+  const { cart, addToCart } = useCart();
+  const [alert, setAlert] = useState(null);
+
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -37,7 +40,17 @@ const AuctionDetailPage = () => {
     return <div>Loading...</div>;
   }
  
-
+  const handleAddToCart = item => {
+    const itemInCart = cart.find(cartItem => cartItem.id === item.id);
+    if (itemInCart) {
+      setAlert(`"${item.title}" is already in your cart!`);
+      setTimeout(() => setAlert(null), 3000); // Hide alert after 3 seconds
+    } else {
+      addToCart(item);
+      setAlert(`"${item.title}" has been added to your cart!`);
+      setTimeout(() => setAlert(null), 3000); // Hide alert after 3 seconds
+    }
+  };
 
   return (
     <section className="dark:bg-zinc-800  pt-20">
@@ -75,18 +88,9 @@ const AuctionDetailPage = () => {
       {isOpen && (
         <div className="absolute  mt-12 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
           <div className="py-1">
-            <button
-              className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-              onClick={() => alert('Item added to cart')}
-            >
-              Add to Cart
-            </button>
-            <Link
-              to="/checkout"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-            >
-              Buy Now
-            </Link>
+          <button data-testid='addtocart' onClick={() => handleAddToCart(asset)} className="font-bold px-2 rounded mx-5">
+                 Add to cart <i className="text-red-500 text-2xl bi bi-cart-plus-fill"></i>
+                </button>
           </div>
         </div>
       )}
@@ -97,9 +101,15 @@ const AuctionDetailPage = () => {
               Bid
             </button>
             </div>
+            
       </div>
+      
       </div>
-     
+      {alert && (
+        <div className=" z-50 rounded-lg transform  bg-green-500 text-white py-2 px-4  shadow-md">
+          {alert}
+        </div>
+          )}
        
     <Footer/>
 
