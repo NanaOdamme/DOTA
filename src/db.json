@@ -19,7 +19,9 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "status": "popular",
+            "auction-status": "False",
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
         },
         {
@@ -41,6 +43,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "info" : "A logo design with variations included and pdf files for reusability"
         },
         {
@@ -62,7 +65,9 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "status": "popular",
+            "auction-status": "False",
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
         },
         {
@@ -84,6 +89,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "status": "popular",
             "auction-status": "True",
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
@@ -107,6 +113,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "status": "popular",
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
         },
@@ -130,6 +137,8 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
+            "auction-status": "False",
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
         },
         {
@@ -151,6 +160,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
         },
         {
@@ -172,6 +182,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "status": "popular",
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
         },
@@ -194,6 +205,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
         },
         {
@@ -215,6 +227,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "status": "popular",
             "auction-status": "True",
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
@@ -238,6 +251,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
         },
         {
@@ -259,6 +273,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "status": "popular",
             "auction-status": "True",
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
@@ -281,7 +296,9 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "status": "popular",
+            "auction-status": "False",
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
         },
         {
@@ -303,6 +320,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "status": "popular",
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
         },
@@ -325,6 +343,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "status": "popular",
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
         },
@@ -347,6 +366,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "auction-status": "True",
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
         },
@@ -370,6 +390,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
         },
         {
@@ -391,6 +412,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "status": "popular",
             "auction-status": "True",
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
@@ -414,6 +436,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "auction-status": "True",
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
         },
@@ -436,6 +459,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "status": "popular",
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
         },
@@ -458,6 +482,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "status": "popular",
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
         },
@@ -480,6 +505,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "status": "popular",
             "info" : "A logo design with variations included and pdf files for reusability"
         },
@@ -502,6 +528,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "auction-status": "True",
             "info" : "A logo design with variations included and pdf files for reusability"
         },
@@ -524,6 +551,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "info" : "A logo design with variations included and pdf files for reusability"
         },
         {
@@ -545,6 +573,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "info" : "A logo design with variations included and pdf files for reusability"
         },
         {
@@ -566,6 +595,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "info" : "A logo design with variations included and pdf files for reusability"
         },
         {
@@ -587,6 +617,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "info" : "A logo design with variations included and pdf files for reusability"
         },
         {
@@ -608,6 +639,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "info" : "Immerse in a surreal realm of vibrant colors and delicate brush strokes. Abstract forms intertwine, teasing the imagination with hints of recognizable shapes. Layers of textures and gradients create depth, inviting exploration. Play of light and shadow enhances the otherworldly allure."
         },
         {
@@ -629,6 +661,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "info" : "A logo design with variations included and pdf files for reusability"
         },
        
@@ -651,6 +684,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "info" : "A logo design with variations included and pdf files for reusability"
         },
         {
@@ -672,6 +706,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "info" : "Photography images for your personal projects. Comes in different sizes and shapes"
         },
         {
@@ -693,6 +728,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "info" : "Photography images for your personal projects. Comes in different sizes and shapes"
         },
         {
@@ -714,6 +750,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "info" : "Photography images for your personal projects. Comes in different sizes and shapes"
         },
         {
@@ -735,6 +772,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "info" : "Photography images for your personal projects. Comes in different sizes and shapes"
         },
         {
@@ -756,6 +794,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "info" : "Photography images for your personal projects. Comes in different sizes and shapes"
         },
         {
@@ -777,6 +816,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "info" : "The one and only copy of this nft, digitally created and made for you"
         },
         {
@@ -798,6 +838,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "info" : "The one and only copy of this nft, digitally created and made for you"
         },
         {
@@ -819,6 +860,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 308000,
             "auction-status": "True",
             "info" : "The one and only copy of this nft, digitally created and made for you"
         },
@@ -841,6 +883,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 3000870,
             "info" : "The one and only copy of this nft, digitally created and made for you"
         },
         {
@@ -862,6 +905,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 370000,
             "info" : "The one and only copy of this nft, digitally created and made for you"
         },
         {
@@ -883,6 +927,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 303000,
             "info" : "The one and only copy of this nft, digitally created and made for you"
         },
         {
@@ -904,6 +949,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "info" : "The one and only copy of this nft, digitally created and made for you"
         },
         {
@@ -925,6 +971,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "info" : "The one and only copy of this nft, digitally created and made for you"
         },
         {
@@ -946,6 +993,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "info" : "The one and only copy of this nft, digitally created and made for you"
         },
         {
@@ -967,6 +1015,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "info" : "The one and only copy of this nft, digitally created and made for you"
         },
         {
@@ -988,6 +1037,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 3320000,
             "auction-status": "True",
             "info" : "The one and only copy of this nft, digitally created and made for you"
         },
@@ -1010,6 +1060,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 33000,
             "auction-status": "True",
             "info" : "The one and only copy of this nft, digitally created and made for you"
         },
@@ -1032,6 +1083,7 @@
             "watched": "15.3k",
             "auction-prize": 400000,
             "selling-prize": 500000,
+            "bidAmount": 300000,
             "auction-status": "True",
             "info" : "The one and only copy of this nft, digitally created and made for you"
         },
@@ -1055,6 +1107,7 @@
             "selling-prize": 500000,
             "oldprice": 600000,
             "newprice": 500000,
+            "bidAmount": 230000,
             "auction-status": "True",
             "deals": "True",
             "deal-duration": "2 days",
@@ -1080,6 +1133,7 @@
             "selling-prize": 300000,
             "oldprice": 650000,
             "newprice": 300000,
+            "bidAmount": 3670000,
             "auction-status": "True",
             "deals": "True",
             "deal-duration": "6 days",
@@ -1105,6 +1159,7 @@
             "selling-prize": 500000,
             "oldprice": 700000,
             "newprice": 500000,
+            "bidAmount": 300000,
             "auction-status": "True",
             "deals": "True",
             "deal-duration": "6 days",
@@ -1130,6 +1185,7 @@
             "selling-prize": 58000,
             "oldprice": 610000,
             "newprice": 580000,
+            "bidAmount": 343000,
             "auction-status": "False",
             "deals": "True",
             "deal-duration": "6 days",
@@ -1155,6 +1211,7 @@
             "selling-prize": 300000,
             "oldprice": 600000,
             "newprice":300000,
+            "bidAmount": 800000,
             "auction-status": "False",
             "deals": "True",
             "deal-duration": "6 days",
@@ -1180,6 +1237,7 @@
             "selling-prize": 200000,
             "oldprice": 400000,
             "newprice": 200000,
+            "bidAmount": 300000,
             "auction-status": "True",
             "deals": "True",
             "deal-duration": "6 days",
@@ -1205,6 +1263,7 @@
             "selling-prize": 400000,
             "oldprice": 800000,
             "newprice": 400000,
+            "bidAmount": 3540000,
             "auction-status": "False",
             "deals": "True",
             "deal-duration": "2 days",
@@ -1230,6 +1289,7 @@
             "selling-prize": 500000,
             "oldprice": 600000,
             "newprice": 500000,
+            "bidAmount": 650000,
             "auction-status": "True",
             "deals": "True",
             "deal-duration": "3 days",
@@ -1255,6 +1315,7 @@
             "selling-prize": 590000,
             "oldprice": 10000000,
             "newprice": 590000,
+            "bidAmount": 360000,
             "auction-status": "False",
             "deals": "True",
             "deal-duration": "2 days",
@@ -1280,6 +1341,7 @@
             "selling-prize": 400000,
             "oldprice": 500000,
             "newprice": 400000,
+            "bidAmount": 1250000,
             "auction-status": "False",
             "deals": "True",
             "deal-duration": "2 days",
@@ -1305,6 +1367,7 @@
             "selling-prize": 390000,
             "oldprice": 500000,
             "newprice": 300000,
+            "bidAmount": 300000,
             "auction-status": "False",
             "deals": "True",
             "deal-duration": "2 days",
@@ -1330,6 +1393,7 @@
             "selling-prize": 35000,
             "oldprice": 400000,
             "newprice": 350000,
+            "bidAmount": 300000,
             "auction-status": "False",
             "deals": "True",
             "deal-duration": "4 days",
@@ -1355,6 +1419,7 @@
             "selling-prize": 350000,
             "oldprice": 400000,
             "newprice": 350000,
+            "bidAmount": 300000,
             "auction-status": "False",
             "deals": "True",
             "deal-duration": "4 days",
@@ -1380,6 +1445,7 @@
             "selling-prize": 350000,
             "oldprice": 400000,
             "newprice": 350000,
+            "bidAmount": 300000,
             "auction-status": "False",
             "deals": "True",
             "deal-duration": "4 days",
@@ -1405,6 +1471,7 @@
             "selling-prize": "$350,000",
             "oldprice": 400000,
             "newprice": 350000,
+            "bidAmount": 300000,
             "auction-status": "False",
             "deals": "True",
             "deal-duration": "4 days",
@@ -1430,6 +1497,7 @@
             "selling-prize": 350000,
             "oldprice": 400000,
             "newprice": 350000,
+            "bidAmount": 300000,
             "auction-status": "False",
             "deals": "True",
             "deal-duration": "4 days",
@@ -1455,6 +1523,7 @@
             "selling-prize": 150000,
             "oldprice": 200000,
             "newprice": 150000,
+            "bidAmount": 300000,
             "auction-status": "False",
             "deals": "True",
             "deal-duration": "5 days",
@@ -1480,6 +1549,7 @@
             "selling-prize": 150000,
             "oldprice": 200000,
             "newprice": 150000,
+            "bidAmount": 300000,
             "auction-status": "False",
             "deals": "True",
             "deal-duration": "5 days",
@@ -1505,6 +1575,7 @@
             "selling-prize": 150000,
             "oldprice": 200000,
             "newprice": 150000,
+            "bidAmount": 300000,
             "auction-status": "False",
             "deals": "True",
             "deal-duration": "5 days",
@@ -1530,6 +1601,7 @@
             "selling-prize": 150000,
             "oldprice": 200000,
             "newprice": 150000,
+            "bidAmount": 300000,
             "auction-status": "False",
             "deals": "True",
             "deal-duration": "5 days",
@@ -1555,6 +1627,7 @@
             "selling-prize": 150000,
             "oldprice": 200000,
             "newprice": 150000,
+            "bidAmount": 300000,
             "auction-status": "False",
             "deals": "True",
             "deal-duration": "5 days",
@@ -1580,6 +1653,7 @@
             "selling-prize": 750000,
             "oldprice": 800000,
             "newprice": 750000,
+            "bidAmount": 300000,
             "auction-status": "False",
             "deals": "True",
             "deal-duration": "5 days",
@@ -1605,6 +1679,7 @@
             "selling-prize": 750000,
             "oldprice": 800000,
             "newprice": 750000,
+            "bidAmount": 300000,
             "auction-status": "False",
             "deals": "True",
             "deal-duration": "5 days",
@@ -1630,6 +1705,7 @@
             "selling-prize": 750000,
             "oldprice": 800000,
             "newprice": 750000,
+            "bidAmount": 300000,
             "auction-status": "False",
             "deals": "True",
             "deal-duration": "5 days",
@@ -1655,6 +1731,7 @@
             "selling-prize": 750000,
             "oldprice": 800000,
             "newprice": 750000,
+            "bidAmount": 300000,
             "auction-status": "False",
             "deals": "True",
             "deal-duration": "5 days",
@@ -1680,6 +1757,7 @@
             "selling-prize": 750000,
             "oldprice": 800000,
             "newprice": 700000,
+            "bidAmount": 300000,
             "auction-status": "False",
             "deals": "True",
             "deal-duration": "5 days",
@@ -1705,6 +1783,7 @@
             "selling-prize": 750000,
             "oldprice": 800000,
             "newprice": 750000,
+            "bidAmount": 300000,
             "auction-status": "False",
             "deals": "True",
             "deal-duration": "5 days",
@@ -1730,7 +1809,8 @@
             "selling-prize": 750000,
             "oldprice": 800000,
             "newprice": 750000,
-            "auction-status": "False",
+            "bidAmount": 300000,
+            "auction-status": "True",
             "deals": "True",
             "deal-duration": "5 days",
             "info" : "NFT's are the future of art. Engross in this fine beauty of art and creativity. A masterpiece that will leave you in awe"

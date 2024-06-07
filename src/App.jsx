@@ -26,8 +26,12 @@ import Cart from './cart.jsx';
 import { CartProvider } from './CartContext';
 import Help from './helppage.jsx'
 import FAQsList from './faqs.jsx';
+import { BidsProvider } from './BidsContext.jsx';
+import BidsPage from './BidsPage.jsx';
+
 const App = () => {
   return (
+    <BidsProvider>
     <CartProvider>
     <BookmarkProvider>
       <Router>
@@ -55,11 +59,14 @@ const App = () => {
             <Route path="/cart" element={<Cart />} />
             <Route path='/help' element={<Help />} />
             <Route path='/faqs' element={<FAQsList />} />
+            <Route path='/mybids' element={<BidsPage />} />
+
           </Routes>
         </div>
       </Router>
     </BookmarkProvider>
     </CartProvider>
+    </BidsProvider>
   );
 };
 

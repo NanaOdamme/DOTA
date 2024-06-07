@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import Assets from './db.json';
 import Footer from './Footer';
 import { useCart } from './CartContext';
+import { useBids } from './BidsContext';
 
 const AuctionDetailPage = () => {
   const { id } = useParams(); // Fetch the asset ID from the URL
@@ -11,7 +12,7 @@ const AuctionDetailPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { cart, addToCart } = useCart();
   const [alert, setAlert] = useState(null);
-
+  const { addToBids } = useBids();
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -52,6 +53,9 @@ const AuctionDetailPage = () => {
     }
   };
 
+  const handleAddToBids = item => {
+    addToBids(item);
+  };
   return (
     <section className="dark:bg-zinc-800  pt-20">
       
@@ -97,6 +101,7 @@ const AuctionDetailPage = () => {
             <button
               
               className="ml-3 rounded-lg bg-zinc-900 py-2 px-10 text-white font-bold hover:bg-zinc-200 hover:text-black"
+              onClick={() => handleAddToBids(asset)}
             >
               Bid
             </button>

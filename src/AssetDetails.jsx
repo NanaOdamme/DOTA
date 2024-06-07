@@ -5,19 +5,21 @@ import { Link } from 'react-router-dom';
 import Carousel from './carousel.jsx';
 import { useBookmarks } from './BookmarkContext';
 import { useCart } from './CartContext';
+import { useBids } from './BidsContext';
 
 const AssetDetails = ({ asset }) => {
   const [creatorsData, setCreatorsData] = useState([]);
   const { addBookmark } = useBookmarks();
   const { cart, addToCart } = useCart(); // Use useCart hook
   const [alert, setAlert] = useState(null); // State for alert message
+  const { addToBids } = useBids();
 
   useEffect(() => {
     setCreatorsData(Creators.creators);
   }, []);
 
   useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to the top when component mounts or updates
+    window.scrollTo(0, 0); 
   }, [asset]);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -36,6 +38,9 @@ const AssetDetails = ({ asset }) => {
       setAlert(`"${item.title}" has been added to your cart!`);
       setTimeout(() => setAlert(null), 3000); // Hide alert after 3 seconds
     }
+  };
+  const handleAddToBids = item => {
+    addToBids(item);
   };
 
   return (
@@ -130,7 +135,8 @@ const AssetDetails = ({ asset }) => {
               )}
               <button
                 className="mx-2 mt-2 rounded-lg bg-zinc-900 py-2 px-10 text-white font-bold hover:bg-zinc-200 hover:text-black"
-              >
+                onClick={() => handleAddToBids(asset)}
+                >
                 Bid
               </button>
             </div>
