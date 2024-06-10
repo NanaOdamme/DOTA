@@ -52,7 +52,10 @@ const Header = () => {
 
         {/* Logo */}
         <div className="flex ml-4 lg:ml-20">
-          <span className="lg:text-3xl font-bold dark:text-white">DOTA</span>
+
+          <Link to={'/home'}>
+          <span className="hover:text-cyan-400 dark:hover:text-purple-300 lg:text-3xl font-bold dark:text-white">DOTA</span>
+          </Link>
         </div>
 
         <button
