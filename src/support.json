@@ -2,91 +2,109 @@
   {
     "title": "Get Started",
     "description": "Sign up as a creator or user to get started, pay subscription to get latest components",
-    "icon": "bi bi-phone"
+    "icon": "bi bi-phone",
+    "moreinfo": "To get started, simply create an account and choose a subscription plan that suits your needs. You'll gain access to all the latest components and features."
   },
   {
     "title": "How to Mint NFTs",
     "description": "Learn how to mint your own NFTs and showcase your digital art",
-    "icon": "bi bi-file-earmark-image"
+    "icon": "bi bi-file-earmark-image",
+    "moreinfo": "Minting NFTs involves creating a digital asset, uploading it to our platform, and using our tools to mint it on the blockchain. You'll then be able to showcase and sell your digital art."
   },
   {
     "title": "Buying NFTs",
     "description": "Explore our marketplace and buy unique digital assets and NFTs",
-    "icon": "bi bi-cart"
+    "icon": "bi bi-cart",
+    "moreinfo": "To buy NFTs, browse our marketplace, select the digital asset you want to purchase, and complete the transaction using your digital wallet."
   },
   {
     "title": "Selling NFTs",
     "description": "List your digital creations for sale and earn from your NFTs",
-    "icon": "bi bi-currency-dollar"
+    "icon": "bi bi-currency-dollar",
+    "moreinfo": "Selling NFTs is easy. Upload your digital creation, set your price, and list it in our marketplace. You'll earn from each sale directly to your digital wallet."
   },
   {
     "title": "Royalties & Licensing",
     "description": "Understand how royalties and licensing work for NFTs and digital assets",
-    "icon": "bi bi-gem"
+    "icon": "bi bi-gem",
+    "moreinfo": "Royalties ensure that creators earn a percentage of sales whenever their NFT is resold. Licensing determines the usage rights of the digital asset."
   },
   {
     "title": "NFT Wallets",
     "description": "Set up and manage your digital wallet for storing and trading NFTs",
-    "icon": "bi bi-wallet"
+    "icon": "bi bi-wallet",
+    "moreinfo": "An NFT wallet is essential for storing, buying, and selling NFTs. Set up your wallet through our platform, and manage your digital assets securely."
   },
   {
     "title": "Blockchain Technology",
     "description": "Learn about the blockchain technology powering NFTs and its benefits",
-    "icon": "bi bi-link-45deg"
+    "icon": "bi bi-link-45deg",
+    "moreinfo": "Blockchain technology ensures the security, transparency, and immutability of NFT transactions. It powers our entire platform, providing trust and reliability."
   },
   {
     "title": "Community Guidelines",
     "description": "Review our community guidelines for respectful and ethical interactions",
-    "icon": "bi bi-shield"
+    "icon": "bi bi-shield",
+    "moreinfo": "Our community guidelines promote respectful and ethical interactions. Follow these guidelines to maintain a positive environment for all users."
   },
   {
     "title": "FAQs",
     "description": "Find answers to commonly asked questions about NFTs and our platform",
-    "icon": "bi bi-question-circle"
+    "icon": "bi bi-question-circle",
+    "moreinfo": "Our FAQ section addresses common questions about NFTs, our platform, and how to use our features. Check here for quick answers."
   },
   {
     "title": "Contact Support",
     "description": "Reach out to our support team for any assistance or inquiries",
-    "icon": "bi bi-envelope"
+    "icon": "bi bi-envelope",
+    "moreinfo": "If you need help, contact our support team through the provided channels. We're here to assist you with any inquiries or issues you may have."
   },
   {
     "title": "Terms of Service",
     "description": "Learn about our terms of service and usage guidelines",
-    "icon": "bi bi-file-earmark-text"
+    "icon": "bi bi-file-earmark-text",
+    "moreinfo": "Our terms of service outline the rules and guidelines for using our platform. Review these terms to ensure compliance and understanding."
   },
   {
     "title": "Digital Asset Security",
     "description": "Discover how we ensure the security of your digital assets and NFTs",
-    "icon": "bi bi-lock-fill"
+    "icon": "bi bi-lock-fill",
+    "moreinfo": "We employ advanced security measures to protect your digital assets. Learn about our security protocols and how we safeguard your NFTs."
   },
   {
     "title": "Artistic Copyright",
     "description": "Understand the copyright laws and protection for digital art and NFTs",
-    "icon": "bi bi-shield-fill"
+    "icon": "bi bi-shield-fill",
+    "moreinfo": "Copyright laws protect your digital art and NFTs from unauthorized use. Learn about your rights and how to enforce them."
   },
   {
     "title": "Digital Artwork Showcase",
     "description": "Explore our featured digital artwork and NFT collections",
-    "icon": "bi bi-images"
+    "icon": "bi bi-images",
+    "moreinfo": "Our digital artwork showcase features top NFT collections from various artists. Explore and get inspired by these unique creations."
   },
   {
     "title": "Marketplace Trends",
     "description": "Stay updated with the latest trends and insights in the NFT marketplace",
-    "icon": "bi bi-shop"
+    "icon": "bi bi-shop",
+    "moreinfo": "Keep up with the latest trends and insights in the NFT marketplace. Our analysis helps you stay informed about market movements and opportunities."
   },
   {
     "title": "Tokenization Process",
     "description": "Learn about the tokenization process and its significance in NFTs",
-    "icon": "bi bi-diagram-3"
+    "icon": "bi bi-diagram-3",
+    "moreinfo": "Tokenization converts digital assets into NFTs, making them unique and tradable on the blockchain. Learn about this process and its importance."
   },
   {
     "title": "Smart Contracts",
     "description": "Understand how smart contracts facilitate NFT transactions and ownership",
-    "icon": "bi bi-file-earmark-code"
+    "icon": "bi bi-file-earmark-code",
+    "moreinfo": "Smart contracts automate and enforce the terms of NFT transactions. They ensure ownership transfer and other agreements without intermediaries."
   },
   {
     "title": "Blockchain Explorer",
     "description": "Explore the blockchain explorer to track NFT transactions and history",
-    "icon": "bi bi-search"
+    "icon": "bi bi-search",
+    "moreinfo": "Our blockchain explorer allows you to track NFT transactions and history. Use it to verify ownership and transaction details for transparency."
   }
 ]

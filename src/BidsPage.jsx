@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useBids } from './BidsContext';
 import Footer from './Footer';
 
@@ -6,6 +6,11 @@ const BidsPage = () => {
   const { bids, removeFromBids, updateBidAmount } = useBids();
   const [selectedAssets, setSelectedAssets] = useState([]);
   const [bidAmounts, setBidAmounts] = useState({});
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    
+  }, []);
 
   const handleCheckboxChange = (assetId) => {
     const isSelected = selectedAssets.includes(assetId);
