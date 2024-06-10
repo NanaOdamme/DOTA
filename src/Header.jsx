@@ -73,12 +73,12 @@ const Header = () => {
               <h1 className="hidden lg:block text-1xl">Search</h1>
             </div>
           </button>
-          <Link to='/login' className="dark:text-white dark:bg-zinc-900 bg-white py-2 px-4 text-center hover:bg-gray-300 dark:hover:bg-zinc-800 rounded-lg cursor-pointer">
+          <button className="cursor-not-allowed dark:text-white dark:bg-zinc-900 bg-white py-2 px-4 text-center hover:bg-gray-300 dark:hover:bg-zinc-800 rounded-lg ">
             <div className="flex items-center">
               <i className="mx-2 bi bi-box-arrow-in-right text-1xl"></i>
               <h1 className="hidden lg:block text-1xl">Login</h1>
             </div>
-          </Link>
+          </button>
          <NavigationLinks />
         </div>
       </nav>
