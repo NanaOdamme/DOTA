@@ -87,7 +87,7 @@ const NavigationLinks = () => {
                             <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
                                 <i className="bi bi-bell"></i> Notifications
                             </li>
-                        
+                       
                         <hr className="border-zinc-600" />
                         <Link to="/learn">
                             <li className="px-4 py-2 m-2 rounded-lg hover:bg-zinc-700">
