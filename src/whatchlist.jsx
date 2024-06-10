@@ -59,7 +59,7 @@ const Watchlist = () => {
       )}
      
     </section>
-    <div className=' bottom-0'>
+    <div className='absolute bottom-0'>
     <Footer />
     </div>
     </main>
