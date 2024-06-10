@@ -14,7 +14,6 @@ const AllAssets = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [searchInput, setSearchInput] = useState('');
   const [filterId, setFilterId] = useState(null);
-  const [successMessage, setSuccessMessage] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 12; // Number of assets per page
   const [alert, setAlert] = useState(null);
@@ -54,20 +53,17 @@ const AllAssets = () => {
 
   const handleAddBookmark = (asset) => {
     addBookmark(asset);
-    setSuccessMessage('Asset added to bookmarks!');
-    setTimeout(() => {
-      setSuccessMessage('');
-    }, 4000);
   };
 
   const handleAddToCart = item => {
+    
     const itemInCart = cart.find(cartItem => cartItem.id === item.id);
-    if (itemInCart) {
-      setAlert(`"${item.title}" is already in your cart!`);
-      setTimeout(() => setAlert(null), 3000); // Hide alert after 3 seconds
-    } else {
+  if (itemInCart) {
+    setAlert(`Asset is already in your cart!`);
+    setTimeout(() => setAlert(null), 3000); // Hide alert after 3 seconds
+  } else {
       addToCart(item);
-      setAlert(`"${item.title}" has been added to your cart!`);
+      setAlert(`Asset has been added to your cart!`);
       setTimeout(() => setAlert(null), 3000); // Hide alert after 3 seconds
     }
   };

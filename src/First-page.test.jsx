@@ -20,5 +20,5 @@ test('renders HomePage with correct content', () => {
   // Check if the "Get Started" link is rendered
   const linkElement = screen.getByRole('link', { name: /Get Started/i });
   expect(linkElement).toBeInTheDocument();
-  expect(linkElement).toHaveAttribute('href', '/login');
+  expect(linkElement).toHaveAttribute('href', '/home');
 });

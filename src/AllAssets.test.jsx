@@ -5,6 +5,7 @@ import AllAssets from './AllAssets.jsx';
 import Assets from './db.json';
 import Creators from './creators.json';
 
+
 // Mocking the JSON files
 jest.mock('./db.json', () => ({
   assets: [
@@ -13,13 +14,16 @@ jest.mock('./db.json', () => ({
     // Add more mock assets as needed
   ],
 }));
+
 jest.mock('../src/BookmarkContext', () => ({
   useBookmarks: () => ({
     addBookmark: jest.fn(),
   }),
 }));
+
 jest.mock('../src/CartContext', () => ({
   useCart: () => ({
+    cart: [],
     addToCart: jest.fn(),
   }),
 }));
@@ -35,9 +39,6 @@ jest.mock('./creators.json', () => ({
 // Mocking the window.scrollTo function
 Object.defineProperty(window, 'scrollTo', { value: jest.fn(), writable: true });
 
-
-
-
 describe('AllAssets Component', () => {
   beforeEach(() => {
     window.scrollTo.mockClear();
@@ -51,14 +52,13 @@ describe('AllAssets Component', () => {
   test('renders AllAssets component with assets', () => {
     expect(screen.getByTestId('hero-text')).toBeInTheDocument();
     expect(screen.getByTestId('hero-text2')).toBeInTheDocument();
-    
+
     // Check if assets are rendered
     Assets.assets.forEach(asset => {
       expect(screen.getByText(asset.title)).toBeInTheDocument();
     });
   });
 
-  
   test('useEffect sets creators data and scrolls to top', () => {
     const { queryAllByText } = render(
       <Router>
@@ -83,13 +83,11 @@ describe('AllAssets Component', () => {
     const photographyFilter = screen.getByText('Photography');
     fireEvent.click(photographyFilter);
 
-    
     // Check if only Photography assets are rendered
     expect(screen.getByText('Photography 1')).toBeInTheDocument();
     expect(screen.queryByText('Digital Art 1')).toBeNull();
     // Add more checks for other genres as needed
   });
-
 
   test('searches assets by title and creator', () => {
     fireEvent.change(screen.getByPlaceholderText('Search...'), { target: { value: 'Digital Art 1' } });
@@ -106,7 +104,7 @@ describe('AllAssets Component', () => {
   });
 
   test('add to cart', async () => {
-    const { getAllByTestId, getByText } = render(
+    const { getAllByTestId } = render(
       <Router>
         <AllAssets />
       </Router>
@@ -116,20 +114,24 @@ describe('AllAssets Component', () => {
     // Assuming you want to click the first "add to cart" button
     fireEvent.click(addToCartButtons[0]);
     
-    await waitFor(() => expect(getByText('Asset added to cart!')).toBeInTheDocument());
+    await waitFor(() => expect(screen.getByText(/Asset has been added to your cart!/i)).toBeInTheDocument());
   });
 
   test('add to bookmarks', async () => {
-    const { getAllByTestId, getByText } = render(
+    render(
       <Router>
         <AllAssets />
       </Router>
     );
-    const addToBookmarksButtons = getAllByTestId('addtobookmark');
 
-    // Assuming you want to click the first "add to bookmarks" button
+    const addToBookmarksButtons = screen.getAllByTestId('addtobookmark');
+
     fireEvent.click(addToBookmarksButtons[0]);
 
-    await waitFor(() => expect(getByText('Asset added to bookmarks!')).toBeInTheDocument());
+    await waitFor(() => {
+      const updatedBookmarkIcon = screen.getAllByTestId('addtobookmark')[0].querySelector('i');
+      expect(updatedBookmarkIcon).toHaveClass('text-green-500 text-2xl bi bi-bookmark-plus-fill hover:text-green-300');
+    });
+
   });
 });
