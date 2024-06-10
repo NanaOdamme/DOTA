@@ -28,7 +28,7 @@ import Help from './helppage.jsx'
 import FAQsList from './faqs.jsx';
 import { BidsProvider } from './BidsContext.jsx';
 import BidsPage from './BidsPage.jsx';
-
+import TermsAndPrivacy from './terms.jsx'
 const App = () => {
   return (
     <BidsProvider>
@@ -60,7 +60,7 @@ const App = () => {
             <Route path='/help' element={<Help />} />
             <Route path='/faqs' element={<FAQsList />} />
             <Route path='/mybids' element={<BidsPage />} />
-
+            <Route path='/terms' element={<TermsAndPrivacy />} />
           </Routes>
         </div>
       </Router>
