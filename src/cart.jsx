@@ -93,7 +93,7 @@ const Cart = () => {
           </div>
         )}
       </div>
-      <div className='absolute bottom-0'>
+      <div className=''>
     <Footer />
     </div>
     </section>
