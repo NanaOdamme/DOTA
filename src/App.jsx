@@ -29,14 +29,20 @@ import FAQsList from './faqs.jsx';
 import { BidsProvider } from './BidsContext.jsx';
 import BidsPage from './BidsPage.jsx';
 import TermsAndPrivacy from './terms.jsx'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { NotificationsProvider } from './NotificationsContext';
+import NotificationsPage from './notifications.jsx';
 const App = () => {
   return (
+    <NotificationsProvider>
     <BidsProvider>
     <CartProvider>
     <BookmarkProvider>
       <Router>
         <div>
           <Header />
+          <ToastContainer />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/home" element={<Home />} />
@@ -61,12 +67,14 @@ const App = () => {
             <Route path='/faqs' element={<FAQsList />} />
             <Route path='/mybids' element={<BidsPage />} />
             <Route path='/terms' element={<TermsAndPrivacy />} />
+            <Route path='/notification' element={<NotificationsPage />} />
           </Routes>
         </div>
       </Router>
     </BookmarkProvider>
     </CartProvider>
     </BidsProvider>
+    </NotificationsProvider>
   );
 };
 

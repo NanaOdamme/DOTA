@@ -1,16 +1,29 @@
 import React from 'react';
 import { useCart } from './CartContext';
-
+import { toast } from 'react-toastify';
+import { useNotifications } from './NotificationsContext';
 
 const Checkout = () => {
     const { cart, clearCart } = useCart();
+    const { addNotification } = useNotifications();
 
     const handlePayNow = () => {
         console.log('Handling payment...');
         alert('Payment made successfully. You will receive a notification soon.');
         clearCart(); // Clear the cart
-        window.location.href = '/home'; // Redirect to /home after clicking OK
-    }; 
+        toast.success('Payment was successful!'); // Show success notification
+
+        // Add notification to the context
+        addNotification({
+            message: 'Payment was successful!',
+            read: false,
+            timestamp: new Date().toISOString(),
+        });
+
+        setTimeout(() => {
+            window.location.href = '/home'; // Redirect to /home after clicking OK
+        }, 3000); // Wait for 3 seconds before redirecting
+    };
 
     const totalAmount = cart.reduce((sum, item) => sum + item['selling-prize'] * item.quantity, 0);
     
