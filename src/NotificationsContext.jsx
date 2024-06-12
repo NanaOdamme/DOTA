@@ -35,8 +35,14 @@ export const NotificationsProvider = ({ children }) => {
         );
     };
 
+    const deleteNotifications = (indexes) => {
+        setNotifications((prevNotifications) =>
+            prevNotifications.filter((_, i) => !indexes.includes(i))
+        );
+    };
+
     return (
-        <NotificationsContext.Provider value={{ notifications, addNotification, markAsRead }}>
+        <NotificationsContext.Provider value={{ notifications, addNotification, markAsRead, deleteNotifications }}>
             {children}
         </NotificationsContext.Provider>
     );

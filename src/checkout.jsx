@@ -9,24 +9,41 @@ const Checkout = () => {
 
     const handlePayNow = () => {
         console.log('Handling payment...');
-        alert('Payment made successfully. You will receive a notification soon.');
-        clearCart(); // Clear the cart
-        toast.success('Payment was successful!'); // Show success notification
 
-        // Add notification to the context
-        addNotification({
-            message: 'Payment was successful!',
-            read: false,
-            timestamp: new Date().toISOString(),
-        });
+        if (cart.length === 0) {
+            toast.error('Cart is empty. Cannot proceed with payment.');
+            return;
+        }
 
-        setTimeout(() => {
-            window.location.href = '/home'; // Redirect to /home after clicking OK
-        }, 3000); // Wait for 3 seconds before redirecting
+        
+        try {
+            // Simulate payment process (replace this with actual payment logic)
+            if (Math.random() < 0.5) { // Simulating a payment error randomly
+                throw new Error('Payment failed due to network error.');
+            }
+
+            clearCart(); // Clear the cart
+            toast.success('Payment was successful! Your package will be delivered in 2 days!'); // Show success notification
+
+            // Add notification to the context
+            addNotification({
+                message: 'Payment was successful! Your package will be delivered in 2 days!',
+                from: 'Dota assets',
+                read: false,
+                timestamp: new Date().toISOString(),
+            });
+
+            setTimeout(() => {
+                window.location.href = '/home'; // Redirect to /home after clicking OK
+            }, 4000); // Wait for 3 seconds before redirecting
+        } catch (error) {
+            console.error(error);
+            toast.error(`Payment failed: ${error.message}`); // Show error notification
+        }
     };
 
     const totalAmount = cart.reduce((sum, item) => sum + item['selling-prize'] * item.quantity, 0);
-    
+
     return (
         <section className='pt-20 lg:px-20 p-5 dark:bg-zinc-800'>
             <div className="rounded-lg shadow-lg p-3 flex justify-center items-center">
@@ -98,7 +115,6 @@ const Checkout = () => {
                     </div>
                 </div>
             </div>
-            
         </section>
     );
 };

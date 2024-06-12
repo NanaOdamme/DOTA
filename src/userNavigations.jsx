@@ -1,13 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from './CartContext';  // Importing useCart hook
+import { useNotifications } from './NotificationsContext';  // Importing useNotifications hook
 
 const NavigationLinks = () => {
     const [isAccountMenuOpen, setIsAccountMenuOpen] = useState(false);
     const accountMenuRef = useRef(null);
     const navigate = useNavigate();
     const { cart } = useCart();  // Using useCart to get cart data
-    
+    const { notifications } = useNotifications();  // Using useNotifications to get notifications
+
+    const unreadNotificationsCount = notifications.filter(notification => !notification.read).length;
+
     const toggleAccountMenu = () => {
         setIsAccountMenuOpen(!isAccountMenuOpen);
     };
@@ -44,7 +48,7 @@ const NavigationLinks = () => {
                 <i className="bi bi-person-circle text-2xl"></i>
                 {/* Account Dropdown */}
                 <div className={`absolute right-0 mt-10 w-64 shadow-lg bg-white dark:bg-zinc-900 dark:text-white text-black rounded-lg ${isAccountMenuOpen ? '' : 'hidden'}`}>
-                    <ul style={{height: 600}} className='  overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-blue-400 scrollbar-track-blue-200 dark:scrollbar-thumb-gray-600 dark:scrollbar-track-zinc-700'>
+                    <ul style={{height: 600}} className='overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-blue-400 scrollbar-track-blue-200 dark:scrollbar-thumb-gray-600 dark:scrollbar-track-zinc-700'>
                         <Link to="/profile">
                             <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
                                 <i className="bi bi-person"></i> Profile
@@ -84,10 +88,16 @@ const NavigationLinks = () => {
                         </Link>
                         <hr className="border-zinc-600" />
                         <Link to='/notification'>
-                            <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700">
-                                <i className="bi bi-bell"></i> Notifications
+                            <li className="px-4 py-4 m-2 rounded-lg hover:bg-zinc-700 flex items-center">
+                                <i className="bi bi-bell relative">
+                                    {unreadNotificationsCount > 0 && (
+                                        <span className="absolute top-0 right-0 inline-block w-4 h-4 text-xs font-bold text-white bg-red-600 rounded-full flex items-center justify-center">
+                                            {unreadNotificationsCount}
+                                        </span>
+                                    )}
+                                </i> Notifications
                             </li>
-                            </Link>
+                        </Link>
                         <hr className="border-zinc-600" />
                         <Link to="/learn">
                             <li className="px-4 py-2 m-2 rounded-lg hover:bg-zinc-700">

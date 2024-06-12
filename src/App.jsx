@@ -33,6 +33,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { NotificationsProvider } from './NotificationsContext';
 import NotificationsPage from './notifications.jsx';
+import { showRandomToast } from './showRandomToast';
+showRandomToast();
 const App = () => {
   return (
     <NotificationsProvider>
@@ -67,7 +69,7 @@ const App = () => {
             <Route path='/faqs' element={<FAQsList />} />
             <Route path='/mybids' element={<BidsPage />} />
             <Route path='/terms' element={<TermsAndPrivacy />} />
-            <Route path='/notification' element={<NotificationsPage />} />
+            <Route path='/notifications' element={<NotificationsPage />} />
           </Routes>
         </div>
       </Router>

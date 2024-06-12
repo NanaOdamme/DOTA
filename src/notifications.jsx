@@ -1,17 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNotifications } from './NotificationsContext';
 
 const NotificationsPage = () => {
-    const { notifications, markAsRead } = useNotifications();
+    const { notifications, markAsRead, deleteNotifications } = useNotifications();
+    const [selectedNotifications, setSelectedNotifications] = useState([]);
+
+    const handleCheckboxChange = (index) => {
+        setSelectedNotifications(prevState => 
+            prevState.includes(index) 
+            ? prevState.filter(item => item !== index) 
+            : [...prevState, index]
+        );
+    };
+
+    const handleDelete = () => {
+        deleteNotifications(selectedNotifications);
+        setSelectedNotifications([]);
+    };
 
     return (
-        <div className="p-5">
-            <h1 className="text-2xl mb-5 font-bold">Notifications</h1>
+        <section className='pt-14 h-screen dark:bg-zinc-400 lg:px-20'>
+        <div className="lg:m-20 m-5 bg-gray-300 dark:bg-zinc-700 p-5 rounded-lg shadow-lg">
+            <h1 className="text-2xl mb-5 font-bold dark:text-white ">Notifications</h1>
             <ul>
                 {notifications.map((notification, index) => (
-                    <li key={index} className={`p-3 mb-2 ${notification.read ? 'bg-gray-200' : 'bg-gray-100'}`}>
-                                            <div className="flex justify-between items-center">
-                            <span>{notification.message}</span>
+                    <li key={index} className={`rounded-lg shadow-lg p-3 mb-2 ${notification.read ? 'dark:text-white dark:bg-zinc-800 bg-gray-200' : 'dark:text-gray-400 dark:bg-zinc-900 bg-gray-100'}`}>
+                        <div className="flex justify-between items-center">
+                            <div className="flex items-center">
+                                <input 
+                                    type="checkbox" 
+                                    checked={selectedNotifications.includes(index)} 
+                                    onChange={() => handleCheckboxChange(index)} 
+                                    className="mr-2"
+                                />
+                                <span>{notification.message}</span>
+                            </div>
                             {!notification.read && (
                                 <button
                                     onClick={() => markAsRead(index)}
@@ -27,9 +50,17 @@ const NotificationsPage = () => {
                     </li>
                 ))}
             </ul>
+            {selectedNotifications.length > 0 && (
+                <button
+                    onClick={handleDelete}
+                    className="mt-3 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700"
+                >
+                    Delete Selected
+                </button>
+            )}
         </div>
+        </section>
     );
 };
 
 export default NotificationsPage;
-   
