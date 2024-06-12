@@ -31,53 +31,51 @@ import BidsPage from './BidsPage.jsx';
 import TermsAndPrivacy from './terms.jsx'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { NotificationsProvider } from './NotificationsContext';
 import NotificationsPage from './notifications.jsx';
-import { showRandomToast } from './showRandomToast';
-showRandomToast();
+import NotificationInterval from './NotificationInterval.jsx'; // Create this component
+
 const App = () => {
-  return (
-    <NotificationsProvider>
-    <BidsProvider>
-    <CartProvider>
-    <BookmarkProvider>
-      <Router>
-        <div>
-          <Header />
-          <ToastContainer />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<ContactUs />} />
-            <Route path="/allAssets" element={<AllAssets />} />
-            <Route path="/details/:id" element={<AssetDetailsPage />} />
-            <Route path="/creators" element={<Creators />} />
-            <Route path="/creators/:id" element={<CreatorProfile />} />
-            <Route path="/auctions" element={<AuctionPage />} />
-            <Route path="/auction/:id" element={<AuctionDetailPage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path='/pro' element={<Pro />} />
-            <Route path='/watchlist' element={<Watchlist />} />
-            <Route path="/profile" element={<UserProfile />} />
-            <Route path="/deals" element={<Deals />} />
-            <Route path='/learn' element={<Learn />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path='/help' element={<Help />} />
-            <Route path='/faqs' element={<FAQsList />} />
-            <Route path='/mybids' element={<BidsPage />} />
-            <Route path='/terms' element={<TermsAndPrivacy />} />
-            <Route path='/notifications' element={<NotificationsPage />} />
-          </Routes>
-        </div>
-      </Router>
-    </BookmarkProvider>
-    </CartProvider>
-    </BidsProvider>
-    </NotificationsProvider>
-  );
+    return (
+        <BidsProvider>
+            <CartProvider>
+                <BookmarkProvider>
+                    <Router>
+                        <div>
+                            <Header />
+                            <ToastContainer />
+                            <NotificationInterval /> {/* Add the interval component */}
+                            <Routes>
+                                <Route path="/" element={<HomePage />} />
+                                <Route path="/home" element={<Home />} />
+                                <Route path="/about" element={<About />} />
+                                <Route path="/contact" element={<ContactUs />} />
+                                <Route path="/allAssets" element={<AllAssets />} />
+                                <Route path="/details/:id" element={<AssetDetailsPage />} />
+                                <Route path="/creators" element={<Creators />} />
+                                <Route path="/creators/:id" element={<CreatorProfile />} />
+                                <Route path="/auctions" element={<AuctionPage />} />
+                                <Route path="/auction/:id" element={<AuctionDetailPage />} />
+                                <Route path="/login" element={<Login />} />
+                                <Route path="/register" element={<Register />} />
+                                <Route path="/checkout" element={<Checkout />} />
+                                <Route path='/pro' element={<Pro />} />
+                                <Route path='/watchlist' element={<Watchlist />} />
+                                <Route path="/profile" element={<UserProfile />} />
+                                <Route path="/deals" element={<Deals />} />
+                                <Route path='/learn' element={<Learn />} />
+                                <Route path="/cart" element={<Cart />} />
+                                <Route path='/help' element={<Help />} />
+                                <Route path='/faqs' element={<FAQsList />} />
+                                <Route path='/mybids' element={<BidsPage />} />
+                                <Route path='/terms' element={<TermsAndPrivacy />} />
+                                <Route path='/notification' element={<NotificationsPage />} />
+                            </Routes>
+                        </div>
+                    </Router>
+                </BookmarkProvider>
+            </CartProvider>
+        </BidsProvider>
+    );
 };
 
 export default App;

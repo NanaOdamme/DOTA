@@ -24,7 +24,13 @@ export const NotificationsProvider = ({ children }) => {
     }, [notifications]);
 
     const addNotification = (notification) => {
-        setNotifications((prevNotifications) => [...prevNotifications, notification]);
+        const message = typeof notification === 'string' ? notification : notification.message;
+        const newNotification = {
+            message,
+            timestamp: new Date().toISOString(), // Save timestamp as ISO string
+            read: false
+        };
+        setNotifications((prevNotifications) => [...prevNotifications, newNotification]);
     };
 
     const markAsRead = (index) => {

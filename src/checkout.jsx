@@ -34,6 +34,7 @@ const Checkout = () => {
             });
 
             setTimeout(() => {
+                alert('you are being redirected to the home page')
                 window.location.href = '/home'; // Redirect to /home after clicking OK
             }, 4000); // Wait for 3 seconds before redirecting
         } catch (error) {
