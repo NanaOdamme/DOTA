@@ -34,7 +34,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import NotificationsPage from './notifications.jsx';
 import NotificationInterval from './NotificationInterval.jsx'; // Create this component
 import DisableRightClick from './PrintScreen.jsx';
-
+import PreventMobileScreenshots from './PreventMobileScreenshots';
 const App = () => {
     return (
         <BidsProvider>
@@ -44,6 +44,7 @@ const App = () => {
                         <div>
                             <Header />
                             <DisableRightClick />
+                            <PreventMobileScreenshots />
                             <ToastContainer />
                             <NotificationInterval /> {/* Add the interval component */}
                             <Routes>

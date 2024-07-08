@@ -14,7 +14,6 @@ img {
     -webkit-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
-    user-drag: none;
   }
   img {
     -webkit-user-select: none;
@@ -28,6 +27,14 @@ img {
   @media print {
     *{
       display: none;
+    }
+  }
+  
+  @media screen and (max-device-width: 480px) {
+    @media print {
+      *{
+        display: none;
+      }
     }
   }
   
