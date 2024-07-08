@@ -7,6 +7,7 @@ const NotificationsPage = () => {
     const [selectedNotifications, setSelectedNotifications] = useState([]);
     const [modalOpen, setModalOpen] = useState(false);
     const [modalContent, setModalContent] = useState('');
+    const [selectAll, setSelectAll] = useState(false);
 
     const handleCheckboxChange = (index) => {
         setSelectedNotifications((prevState) =>
@@ -16,9 +17,19 @@ const NotificationsPage = () => {
         );
     };
 
+    const handleSelectAll = () => {
+        if (selectAll) {
+            setSelectedNotifications([]);
+        } else {
+            setSelectedNotifications(notifications.map((_, index) => index));
+        }
+        setSelectAll(!selectAll);
+    };
+
     const handleDelete = () => {
         deleteNotifications(selectedNotifications);
         setSelectedNotifications([]);
+        setSelectAll(false);
     };
 
     const openModal = (content) => {
@@ -31,9 +42,18 @@ const NotificationsPage = () => {
     };
 
     return (
-        <section className="h-screen flex items-center justify-center pt-14  dark:bg-zinc-400 lg:px-20">
+        <section className="h-screen flex items-center justify-center pt-14 dark:bg-zinc-400 lg:px-20">
             <div className="lg:m-20 m-5 bg-gray-300 dark:bg-zinc-700 p-5 rounded-lg shadow-lg">
                 <h1 className="text-2xl mb-5 font-bold dark:text-white">Notifications</h1>
+                <div className="flex items-center mb-3">
+                    <input
+                        type="checkbox"
+                        checked={selectAll}
+                        onChange={handleSelectAll}
+                        className="mr-2"
+                    />
+                    <span>Select All</span>
+                </div>
                 <ul className="overflow-y-auto lg:max-h-96 md:max-h-96">
                     {notifications.map((notification, index) => (
                         <li
@@ -43,7 +63,6 @@ const NotificationsPage = () => {
                                     ? 'dark:text-white dark:bg-zinc-800 bg-gray-200'
                                     : 'dark:text-gray-400 dark:bg-zinc-900 bg-gray-100'
                             }`}
-                            
                             style={{ cursor: 'pointer' }}
                         >
                             <div className="flex justify-between items-center">
@@ -54,7 +73,9 @@ const NotificationsPage = () => {
                                         onChange={() => handleCheckboxChange(index)}
                                         className="mr-2"
                                     />
-                                    <span  onClick={() => openModal(notification.message)}>{notification.message}</span>
+                                    <span onClick={() => openModal(notification.message)}>
+                                        {notification.message}
+                                    </span>
                                 </div>
                                 {!notification.read && (
                                     <button
