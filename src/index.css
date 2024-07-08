@@ -2,3 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+ *{
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+img {
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+  }
+  img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  img {
+    -webkit-touch-callout: none;
+  }  
+  @media print {
+    *{
+      display: none;
+    }
+  }
+  

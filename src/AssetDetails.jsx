@@ -51,7 +51,7 @@ const AssetDetails = ({ asset }) => {
             <div className="grid grid-cols-1 gap-4">
               <img
                 src={asset['asset-image']}
-                className="border border-zinc-900 w-full h-96 rounded-lg shadow-md border border-white border-2"
+                className="border border-zinc-900 w-full lg:h-96 rounded-lg shadow-md border border-white border-2"
                 alt="assetid"
               />
               <div className="border rounded-lg overflow-hidden">
