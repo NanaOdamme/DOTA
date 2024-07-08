@@ -31,7 +31,7 @@ const NotificationsPage = () => {
     };
 
     return (
-        <section className="flex items-center justify-center pt-14  dark:bg-zinc-400 lg:px-20">
+        <section className="h-screen flex items-center justify-center pt-14  dark:bg-zinc-400 lg:px-20">
             <div className="lg:m-20 m-5 bg-gray-300 dark:bg-zinc-700 p-5 rounded-lg shadow-lg">
                 <h1 className="text-2xl mb-5 font-bold dark:text-white">Notifications</h1>
                 <ul className="overflow-y-auto lg:max-h-96 md:max-h-96">
@@ -43,7 +43,7 @@ const NotificationsPage = () => {
                                     ? 'dark:text-white dark:bg-zinc-800 bg-gray-200'
                                     : 'dark:text-gray-400 dark:bg-zinc-900 bg-gray-100'
                             }`}
-                            onClick={() => openModal(notification.message)}
+                            
                             style={{ cursor: 'pointer' }}
                         >
                             <div className="flex justify-between items-center">
@@ -54,7 +54,7 @@ const NotificationsPage = () => {
                                         onChange={() => handleCheckboxChange(index)}
                                         className="mr-2"
                                     />
-                                    <span>{notification.message}</span>
+                                    <span  onClick={() => openModal(notification.message)}>{notification.message}</span>
                                 </div>
                                 {!notification.read && (
                                     <button
