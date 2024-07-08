@@ -44,12 +44,14 @@ const AllAssets = () => {
     ? Assets.assets.filter((asset) => asset['genre-id'] === filterId)
     : Assets.assets;
 
-  const searchedAssets = searchInput.trim().length > 0
-    ? filteredAssets.filter((asset) =>
-        asset.title.toLowerCase().includes(searchInput.toLowerCase()) ||
-        asset.creator.toLowerCase().includes(searchInput.toLowerCase())
-      )
+    const searchedAssets = searchInput.trim().length > 0
+    ? filteredAssets.filter((asset) => {
+        const title = asset.title ? asset.title.toLowerCase() : '';
+        const creator = asset.creator ? asset.creator.toLowerCase() : '';
+        return title.includes(searchInput.toLowerCase()) || creator.includes(searchInput.toLowerCase());
+      })
     : filteredAssets;
+  
 
   const handleAddBookmark = (asset) => {
     addBookmark(asset);

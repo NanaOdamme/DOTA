@@ -43,13 +43,20 @@ const Deals = () => {
 
   const dealsAssets = filteredAssets.filter(asset => asset.deals === "True");
 
-  const searchedAssets = searchInput.trim().length > 0
-    ? dealsAssets.filter(asset =>
-      asset.title.toLowerCase().includes(searchInput.toLowerCase()) ||
-      asset.creator.toLowerCase().includes(searchInput.toLowerCase())
-    )
-    : dealsAssets;
-
+//  const searchedAssets = searchInput.trim().length > 0
+ //   ? dealsAssets.filter(asset =>
+ //     asset.title.toLowerCase().includes(searchInput.toLowerCase()) ||
+ //     asset.creator.toLowerCase().includes(searchInput.toLowerCase())
+  //  )
+ //   : dealsAssets;
+    const searchedAssets = searchInput.trim().length > 0
+    ? dealsAssets.filter(asset => {
+        const title = asset.title ? asset.title.toLowerCase() : '';
+        const creator = asset.creator ? asset.creator.toLowerCase() : '';
+        return title.includes(searchInput.toLowerCase()) || creator.includes(searchInput.toLowerCase());
+      })
+      : dealsAssets;
+  
   const handleAddBookmark = (asset) => {
     addBookmark(asset);
     setSuccessMessage('Asset added to bookmarks!');
