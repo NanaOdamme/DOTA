@@ -1,11 +1,11 @@
 // src/AllAssets.jsx
 import React, { useState, useEffect } from 'react';
-import Assets from './db.json';
-import Creators from './creators.json';
+import Assets from '../storage/db.json';
+import Creators from '../storage/creators.json';
 import Footer from './Footer';
 import { Link } from 'react-router-dom';
-import { useBookmarks } from './BookmarkContext';
-import { useCart } from './CartContext';
+import { useBookmarks } from '../Context/BookmarkContext';
+import { useCart } from '../Context/CartContext';
 
 const AllAssets = () => {
   const [creatorsData, setCreatorsData] = useState([]);
@@ -79,7 +79,7 @@ const AllAssets = () => {
   return (
     <section className="dark:bg-black bg-gray-100 pt-10 all">
       
-      <section className="hero grid grid-cols-1 gap-2 p-4 text-center">
+      <div className="hero grid grid-cols-1 gap-2 p-4 text-center">
         <div className="flex justify-between mb-10 mt-10">
           <h1 data-testid="hero-text" className="mx-2 dark:text-white text-2xl">
             100+ items
@@ -182,7 +182,7 @@ const AllAssets = () => {
           Sell and Bid on Items
         </h1>
         
-      </section>
+      </div>
       {alert && (
         <div className="mt-20 fixed z-50 w-full transform  bg-green-500 text-white py-2 px-4  shadow-md">
           {alert}

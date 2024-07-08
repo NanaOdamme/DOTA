@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; // Import Link from React Router
-import creatorsData from './creators.json'; // Importing the JSON data
+import creatorsData from '../storage/creators.json'; // Importing the JSON data
 import Footer from './Footer';
 
 const Creators = () => {

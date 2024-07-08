@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import React from 'react';
-import creatorsData from './creators.json';
-import Assets from './db.json';
+import creatorsData from '../storage/creators.json';
+import Assets from '../storage/db.json';
 import { useParams } from 'react-router-dom';
 import Footer from './Footer'
 import { Link } from 'react-router-dom';

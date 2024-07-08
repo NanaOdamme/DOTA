@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Assets from './db.json';
-import Creators from './creators.json';
+import Assets from '../storage/db.json';
+import Creators from '../storage/creators.json';
 import { Link } from 'react-router-dom';
 
 const Carousel = () => {

@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
-import Assets from './db.json';
+import Assets from '../storage/db.json';
 import HomeHero from './HomeHero.jsx';
 import Footer from './Footer.jsx';
 import { Link } from 'react-router-dom'; // Import Link from React Router
-import creatorsData from './creators.json'; // Importing the JSON data
+import creatorsData from '../storage/creators.json'; // Importing the JSON data
 import DiscoverSection from './scrollers.jsx'
 import CreateAndSellSection from './creatensell.jsx';
 

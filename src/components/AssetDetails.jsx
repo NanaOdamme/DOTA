@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Footer from './Footer.jsx';
-import Creators from './creators.json';
+import Creators from '../storage/creators.json';
 import { Link } from 'react-router-dom';
 import Carousel from './carousel.jsx';
-import { useBookmarks } from './BookmarkContext';
-import { useCart } from './CartContext';
-import { useBids } from './BidsContext';
+import { useBookmarks } from '../Context/BookmarkContext.jsx';
+import { useCart } from '../Context/CartContext.jsx';
+import { useBids } from '../Context/BidsContext.jsx';
 
 const AssetDetails = ({ asset }) => {
   const [creatorsData, setCreatorsData] = useState([]);

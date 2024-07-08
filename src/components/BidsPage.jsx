@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useBids } from './BidsContext';
+import { useBids } from '../Context/BidsContext';
 import Footer from './Footer';
 
 const BidsPage = () => {

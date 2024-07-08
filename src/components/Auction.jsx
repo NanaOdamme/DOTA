@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom'; 
-import Assets from './db.json'
+import Assets from '../storage/db.json'
 
 const AuctionPage = () => {
   const auctionAssets = Assets.assets.filter((asset) => asset['auction-status'] === 'True');

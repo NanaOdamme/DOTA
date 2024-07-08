@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Assets from './db.json'; // Import your assets JSON
+import Assets from '../storage/db.json'; // Import your assets JSON
 import AssetDetails from './AssetDetails';
 
 const AssetDetailsPage = () => {

@@ -1,7 +1,7 @@
 import React from 'react';
-import { useCart } from './CartContext';
+import { useCart } from '../Context/CartContext';
 import { toast } from 'react-toastify';
-import { useNotifications } from './NotificationsContext';
+import { useNotifications } from '../Context/NotificationsContext';
 
 const Checkout = () => {
     const { cart, clearCart } = useCart();

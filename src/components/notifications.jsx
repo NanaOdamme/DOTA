@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useNotifications } from './NotificationsContext';
-import Modal from './notificationpopup.jsx'; 
+import { useNotifications } from '../Context/NotificationsContext';
+import Modal from '../utils/notificationpopup.jsx'; 
 
 const NotificationsPage = () => {
     const { notifications, markAsRead, deleteNotifications } = useNotifications();

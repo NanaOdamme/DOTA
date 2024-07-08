@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCart } from './CartContext';
+import { useCart } from '../Context/CartContext';
 import Footer from './Footer';
 import { Link } from 'react-router-dom';
 

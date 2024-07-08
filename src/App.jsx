@@ -2,39 +2,39 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import Header from './Header.jsx';
-import HomePage from './First-page.jsx';
-import Home from './Home.jsx';
-import About from './About.jsx';
-import AllAssets from './AllAssets.jsx';
-import AssetDetailsPage from './AssetDetailsPage.jsx';
-import Creators from './AllCreators.jsx';
-import CreatorProfile from './creatorsid.jsx';
-import AuctionPage from './Auction.jsx';
-import AuctionDetailPage from './AuctionDetailPage.jsx';
-import Login from './login.jsx';
-import Register from './register.jsx';
-import ContactUs from './contactus.jsx';
-import Checkout from './checkout.jsx';
-import Pro from './pro.jsx';
-import Watchlist from './whatchlist.jsx'
-import { BookmarkProvider } from './BookmarkContext';
-import UserProfile from './userProfile.jsx';
-import Deals from './deals-page.jsx';
-import Learn from './learnpage.jsx';
-import Cart from './cart.jsx';
-import { CartProvider } from './CartContext';
-import Help from './helppage.jsx'
-import FAQsList from './faqs.jsx';
-import { BidsProvider } from './BidsContext.jsx';
-import BidsPage from './BidsPage.jsx';
-import TermsAndPrivacy from './terms.jsx'
+import Header from './components/Header';
+import HomePage from './components/First-page.jsx';
+import Home from './components/Home.jsx';
+import About from './components/About.jsx';
+import AllAssets from './components/AllAssets.jsx';
+import AssetDetailsPage from './components/AssetDetailsPage.jsx';
+import Creators from './components/AllCreators.jsx';
+import CreatorProfile from './components/creatorsid.jsx';
+import AuctionPage from './components/Auction.jsx';
+import AuctionDetailPage from './components/AuctionDetailPage.jsx';
+import Login from './components/login.jsx';
+import Register from './components/register.jsx';
+import ContactUs from './components/contactus.jsx';
+import Checkout from './components/checkout.jsx';
+import Pro from './components/pro.jsx';
+import Watchlist from './components/whatchlist.jsx'
+import { BookmarkProvider } from './Context/BookmarkContext';
+import UserProfile from './components/userProfile.jsx';
+import Deals from './components/deals-page.jsx';
+import Learn from './components/learnpage.jsx';
+import Cart from './components/cart.jsx';
+import { CartProvider } from './Context/CartContext';
+import Help from './components/helppage.jsx'
+import FAQsList from './components/faqs.jsx';
+import { BidsProvider } from './Context/BidsContext';
+import BidsPage from './components/BidsPage.jsx';
+import TermsAndPrivacy from './components/terms.jsx'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import NotificationsPage from './notifications.jsx';
-import NotificationInterval from './NotificationInterval.jsx'; // Create this component
-import DisableRightClick from './PrintScreen.jsx';
-import PreventMobileScreenshots from './PreventMobileScreenshots';
+import NotificationsPage from './components/notifications.jsx';
+import NotificationInterval from './utils/NotificationInterval.jsx';
+import DisableRightClick from './utils/PrintScreen.jsx';
+import PreventMobileScreenshots from './utils/PreventMobileScreenshots';
 const App = () => {
     return (
         <BidsProvider>

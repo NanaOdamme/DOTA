@@ -1,10 +1,10 @@
 // AuctionDetailPage.jsx
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Assets from './db.json';
+import Assets from '../storage/db.json';
 import Footer from './Footer';
-import { useCart } from './CartContext';
-import { useBids } from './BidsContext';
+import { useCart } from '../Context/CartContext';
+import { useBids } from '../Context/BidsContext';
 
 const AuctionDetailPage = () => {
   const { id } = useParams(); // Fetch the asset ID from the URL

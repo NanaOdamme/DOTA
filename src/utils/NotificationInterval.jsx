@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { showRandomToast } from './showRandomToast';
-import { useNotifications } from './NotificationsContext.jsx';
+import { showRandomToast } from './showRandomToast.jsx';
+import { useNotifications } from '../Context/NotificationsContext.jsx';
 
 const NotificationInterval = () => {
     const { addNotification } = useNotifications();

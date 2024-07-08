@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCart } from './CartContext';  // Importing useCart hook
-import { useNotifications } from './NotificationsContext';  // Importing useNotifications hook
+import { useCart } from '../Context/CartContext';  // Importing useCart hook
+import { useNotifications } from '../Context/NotificationsContext';  // Importing useNotifications hook
 
 const NavigationLinks = () => {
     const [isAccountMenuOpen, setIsAccountMenuOpen] = useState(false);

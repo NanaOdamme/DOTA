@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import bgImage from './assets/help.gif';
-import helpTopicsData from './support.json';
+import bgImage from '../assets/help.gif';
+import helpTopicsData from '../storage/support.json';
 import Footer from './Footer';
 
 const Help = () => {
