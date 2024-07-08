@@ -675,3 +675,24 @@ text-shadow: 0 0 10px #6afdff,  0 0 30px #56fff1, 0 0 70px #0ff, 0 0 100px #0ff,
   background: linear-gradient(45deg, #a0aec0, #e2e8f0);
   box-shadow: 0 0 20px rgba(226, 232, 240, 1);
 }
+
+
+/* App.css */
+img {
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media screen and (max-device-width: 480px) {
+  @media print {
+    body {
+      display: none;
+    }
+  }
+}
