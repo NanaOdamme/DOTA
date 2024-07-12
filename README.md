@@ -16,7 +16,6 @@
 
 ### Prerequisites
 
-- Node.js
 - npm (Node Package Manager)
 - JSON Server
 
@@ -77,11 +76,6 @@ json-server --watch logins.json --port 3001
 
 This project was built by **Nana Akosua** and **King Bygone**. Our combined efforts and dedication have brought this platform to life, and we are excited to continue improving and expanding its capabilities.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
 
 We hope you enjoy using DOTA as much as we enjoyed building it. Your feedback and contributions are always welcome!
 
