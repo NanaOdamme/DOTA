@@ -74,7 +74,7 @@ json-server --watch logins.json --port 3001
 
 ## Credits
 
-This project was built by **Nana Akosua** and **King Bygone**. Our combined efforts and dedication have brought this platform to life, and we are excited to continue improving and expanding its capabilities.
+This project was built by **Nana Akosua** and **Isaac Annor (King Bygone)**. Our combined efforts and dedication have brought this platform to life, and we are excited to continue improving and expanding its capabilities.
 
 
 We hope you enjoy using DOTA as much as we enjoyed building it. Your feedback and contributions are always welcome!
@@ -86,7 +86,7 @@ We hope you enjoy using DOTA as much as we enjoyed building it. Your feedback an
 For any inquiries or support, please reach out to us:
 
 - **Nana Akosua:** [eronastyles@gmail.com](mailto:your-email@example.com)
-- **King Bygone:** [partner-email@example.com](mailto:partner-email@example.com)
+- **King Bygone:** [kingbygone@gmail.com](mailto:kingbygone@gmail.com)
 
 ---
 
