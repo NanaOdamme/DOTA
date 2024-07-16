@@ -3,7 +3,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Pro from './pro.jsx'; // Adjust the path as necessary
+import Pro from './components/pro.jsx'; // Adjust the path as necessary
 
 test('renders Pro component with correct content', () => {
     render(

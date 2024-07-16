@@ -2,7 +2,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import HomePage from './First-page.jsx';
+import HomePage from './components/First-page';
 
 test('renders HomePage with correct content', () => {
   render(

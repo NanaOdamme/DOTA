@@ -1,13 +1,13 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import AllAssets from './AllAssets.jsx';
-import Assets from './db.json';
-import Creators from './creators.json';
+import AllAssets from './components/AllAssets';
+import Assets from './storage/db.json'
+import Creators from './storage/creators.json';
 
 
 // Mocking the JSON files
-jest.mock('./db.json', () => ({
+jest.mock('./storage/db.json', () => ({
   assets: [
     { id: 1, 'genre-id': 0, title: 'Digital Art 1', creator: 'Creator 1', 'creator-id': 1, 'asset-image': 'path/to/image1.jpg', likes: 10, bids: 5 },
     { id: 2, 'genre-id': 1, title: 'Photography 1', creator: 'Creator 2', 'creator-id': 2, 'asset-image': 'path/to/image2.jpg', likes: 20, bids: 10 },
@@ -15,20 +15,20 @@ jest.mock('./db.json', () => ({
   ],
 }));
 
-jest.mock('../src/BookmarkContext', () => ({
+jest.mock('./Context/BookmarkContext', () => ({
   useBookmarks: () => ({
     addBookmark: jest.fn(),
   }),
 }));
 
-jest.mock('../src/CartContext', () => ({
+jest.mock('./Context/CartContext', () => ({
   useCart: () => ({
     cart: [],
     addToCart: jest.fn(),
   }),
 }));
 
-jest.mock('./creators.json', () => ({
+jest.mock('./storage/creators.json', () => ({
   creators: [
     { 'creator-id': 1, name: 'Creator 1', image: 'path/to/creator1.jpg' },
     { 'creator-id': 2, name: 'Creator 2', image: 'path/to/creator2.jpg' },
