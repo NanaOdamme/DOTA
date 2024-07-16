@@ -35,8 +35,10 @@ import NotificationsPage from './components/notifications.jsx';
 import NotificationInterval from './utils/NotificationInterval.jsx';
 import DisableRightClick from './utils/PrintScreen.jsx';
 import PreventMobileScreenshots from './utils/PreventMobileScreenshots';
+import { SearchProvider } from './Context/SearchContext.jsx';
 const App = () => {
     return (
+        <SearchProvider>
         <BidsProvider>
             <CartProvider>
                 <BookmarkProvider>
@@ -78,6 +80,7 @@ const App = () => {
                 </BookmarkProvider>
             </CartProvider>
         </BidsProvider>
+        </SearchProvider>
     );
 };
 

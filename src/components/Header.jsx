@@ -1,10 +1,14 @@
+// Header.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../Context/ThemeContext.jsx';
+import { useSearch } from '../Context/SearchContext.jsx';
 
 import NavigationLinks from './userNavigations.jsx';
+
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
+  const { searchTerm, setSearchTerm } = useSearch();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
@@ -18,7 +22,9 @@ const Header = () => {
     setIsSearchOpen(!isSearchOpen);
   };
 
-
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
 
   const handleClickOutside = (event) => {
     if (sidebarMenuRef.current && !sidebarMenuRef.current.contains(event.target)) {
@@ -36,11 +42,11 @@ const Header = () => {
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
-  }, [ isMenuOpen]);
+  }, [isMenuOpen]);
 
   return (
     <header className="">
-      <nav className=" dark:bg-black dark:bg-opacity-50 bg-white text-black bg-opacity-50 dark:text-white shadow-lg flex justify-between items-center px-4 py-2 backdrop-filter backdrop-blur-lg fixed top-0 left-0 w-full z-50">
+      <nav className="dark:bg-black dark:bg-opacity-50 bg-white text-black bg-opacity-50 dark:text-white shadow-lg flex justify-between items-center px-4 py-2 backdrop-filter backdrop-blur-lg fixed top-0 left-0 w-full z-50">
         {/* Menu Bar */}
         <div className="flex">
           <button className="dark:text-white focus:outline-none" onClick={toggleMenu} ref={sidebarMenuRef}>
@@ -52,22 +58,19 @@ const Header = () => {
 
         {/* Logo */}
         <div className="flex ml-4 lg:ml-20">
-
           <Link to={'/home'}>
-          <span className="hover:text-cyan-400 dark:hover:text-purple-300 lg:text-3xl font-bold dark:text-white">DOTA</span>
+            <span className="hover:text-cyan-400 dark:hover:text-purple-300 lg:text-3xl font-bold dark:text-white">DOTA</span>
           </Link>
         </div>
 
-        <button
-          onClick={toggleTheme}
-          className="p-2 rounded-full  text-black dark:text-white"
-        >
+        <button onClick={toggleTheme} className="p-2 rounded-full text-black dark:text-white">
           {theme === 'light' ? (
             <i className="bi bi-moon-fill"></i>
           ) : (
             <i className="bi bi-sun-fill"></i>
           )}
         </button>
+        
         {/* Navigation Links */}
         <div className="flex items-center ml-auto">
           <button className="dark:text-white focus:outline-none mx-2 lg:mx-4" onClick={toggleSearch}>
@@ -76,25 +79,25 @@ const Header = () => {
               <h1 className="hidden lg:block text-1xl">Search</h1>
             </div>
           </button>
-          <button className=" dark:text-white dark:bg-zinc-900 bg-white py-2 px-4 text-center hover:bg-gray-300 dark:hover:bg-zinc-800 rounded-lg ">
+          <button className="dark:text-white dark:bg-zinc-900 bg-white py-2 px-4 text-center hover:bg-gray-300 dark:hover:bg-zinc-800 rounded-lg">
             <div className="flex items-center">
               <i className="mx-2 bi bi-box-arrow-in-right text-1xl"></i>
               <Link to='/login' className="hidden lg:block text-1xl">Login</Link>
             </div>
           </button>
-         <NavigationLinks />
+          <NavigationLinks />
         </div>
       </nav>
 
       {/* Search Bar */}
-      <div className={`dark:text-white backdrop-filter backdrop-blur-lg  dark:bg-black bg-opacity-50 shadow-lg p-4 fixed top-16 left-0 right-0 z-50 ${isSearchOpen ? '' : 'hidden'}`}>
-        <input type="text" placeholder="Search..." className="px-4 py-2 w-full border rounded-md focus:outline-none focus:border-blue-500 bg-black bg-opacity-50" />
+      <div className={`dark:text-white backdrop-filter backdrop-blur-lg dark:bg-black bg-opacity-50 shadow-lg p-4 fixed top-16 left-0 right-0 z-50 ${isSearchOpen ? '' : 'hidden'}`}>
+        <input type="text" placeholder="Search..." value={searchTerm} onChange={handleSearchChange} className="px-4 py-2 w-full border rounded-md focus:outline-none focus:border-blue-500 bg-black bg-opacity-50" />
       </div>
 
       {/* Sidebar Dropdown */}
-      <div className={`dark:bg-black  dark:bg-opacity-50 font-bold  dark:text-white shadow-lg flex justify-between px-4 py-5 backdrop-filter backdrop-blur-lg fixed top-14 left-1 rounded-lg shadow-lg z-50 ${isMenuOpen ? '' : 'hidden'}`} >
+      <div className={`dark:bg-black dark:bg-opacity-50 font-bold dark:text-white shadow-lg flex justify-between px-4 py-5 backdrop-filter backdrop-blur-lg fixed top-14 left-1 rounded-lg shadow-lg z-50 ${isMenuOpen ? '' : 'hidden'}`}>
         {/* Close Button */}
-        <button className="absolute top-2 right-2 text-red-600  focus:outline-none" onClick={toggleMenu} >
+        <button className="absolute top-2 right-2 text-red-600 focus:outline-none" onClick={toggleMenu}>
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>

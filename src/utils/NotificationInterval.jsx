@@ -12,7 +12,7 @@ const NotificationInterval = () => {
                 addNotification(notificationMessage);
                 
             }
-        }, 60000); // 30000 milliseconds = 30 seconds
+        }, 100000); // 30000 milliseconds = 30 seconds
 
         return () => clearInterval(interval); // Cleanup interval on component unmount
     }, [addNotification]);
